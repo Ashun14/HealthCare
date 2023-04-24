@@ -1,0 +1,519 @@
+/*========== Navbar ==========*/
+nav {
+  max-width: 100%;
+  height: auto;
+}
+.hamburger .hamburger--container .hamburger--bars {
+  background: #ffffff;
+}
+.logo {
+  filter: invert(1);
+}
+.logo.is-active img {
+  filter: invert(100%);
+}
+
+/*<===================BODY===================>*/
+
+/* --------------The herosection----------- */
+
+.herosection {
+  width: 100%;
+  height: 100vh;
+  background-color: #555555;
+  margin: 0 0 4em 0;
+}
+
+/* --------------The background video----------- */
+
+#herobg {
+  max-width: 100%;
+  height: fit-content;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+/* --------------The Fitness Section----------- */
+
+.fitness,
+.nutrition,
+.health {
+  min-height: 60vh;
+  max-width: 100%;
+  margin: 6em 0 4em 0;
+  position: relative;
+}
+.fitnessSection {
+  max-width: 100%;
+  min-height: 60vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin: 0 1em 2em 1em;
+  position: relative;
+}
+.fitnessSection .content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  max-width: 80%;
+}
+.fitnessSection .content .title,
+.nutritionSection .content .title,
+.healthSection .content .title {
+  margin: 0 1em 0.7em 1.7em;
+  font-family: var(--bold-text);
+  font-size: 1.6em;
+  text-transform: uppercase;
+  font-weight: 500;
+  max-width: 20%;
+  text-align: left;
+  color: var(--text-color);
+}
+.fitnessSection .content .subtitle,
+.nutritionSection .content .subtitle,
+.healthSection .content .subtitle {
+  margin: 0 1em 0.3em 1.4em;
+  font-family: var(--heading-text);
+  font-size: 1.9em;
+  text-transform: uppercase;
+  font-weight: 500;
+  max-width: 70%;
+  text-align: left;
+  line-height: 35px;
+  color: var(--home-fitness-color);
+}
+.fitnessSection .content .desc,
+.nutritionSection .content .desc,
+.healthSection .content .desc {
+  font-size: 1.1em;
+  font-family: var(--clean-text);
+  font-weight: 500;
+  margin: 0.5em 1em 1.2em 2.6em;
+  color: var(--home-para-color);
+  text-align: left;
+  max-width: 83%;
+  line-height: 28px;
+}
+.fitnessSection .fitnessbtn,
+.nutritionSection .nutritionbtn,
+.healthSection .healthbtn {
+  padding: 8px 27px;
+  text-align: left;
+  margin: 0.8em 0 3.8em 2.3em;
+  font-size: 1.18em;
+  font-family: var(--clean-text);
+  font-weight: 400;
+  color: #ffffff;
+  background-color: #8437e2;
+  border: 2px solid #8437e2;
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+.fitnessSection a .fitnessbtn,
+.nutritionSection a .nutritionbtn,
+.healthSection a .healthbtn{
+  text-decoration: none;
+}
+.fitnessbtn:hover,
+.nutritionbtn:hover,
+.healthbtn:hover {
+  background-color: #ffffff;
+  color: var(--text-color);
+  font-weight: 500;
+}
+.fitnessSection .fitnessBg {
+  max-width: 48%;
+  max-height: 25em;
+}
+.fitnessBg img {
+  max-width: 100%;
+  box-shadow: 3px 5px 19px -5px rgba(0, 0, 0, 0.8);
+  object-fit: cover;
+}
+
+/* --------------The Nutrition Section----------- */
+
+.nutrition {
+  margin: 2em 0 4em 0;
+}
+.nutritionSection {
+  width: 100%;
+  min-height: 60vh;
+}
+.nutritionSection .content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+}
+.nutritionSection .content .subtitle {
+  color: var(--home-nutrition-color);
+  max-width: 80%;
+}
+.nutritionSection .content .desc {
+  max-width: 67%;
+}
+.nutritionSection .nutritionbtn {
+  margin: 0.8em 0 0.8em 2.3em;
+  background-color: #167e32;
+  border: 2px solid #167e32;
+}
+.nutritionbtn:hover {
+  background-color: #ffffff;
+}
+.nutritionSection .nutritionBg {
+  max-width: 100%;
+  height: 35em;
+}
+.nutritionBg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 5px 1px 19px -4px rgba(0, 0, 0, 0.8)
+}
+/* --------------The Health Section----------- */
+
+.health {
+  max-width: 100%;
+  height: 39em;
+  background: url("/static/Materials/Images/Home/health.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 1.6em;
+  margin: 1em 0 2em 0;
+  transform: scaleX(-1);
+  box-shadow: 3px 8px 19px -13px rgba(0, 0, 0, 0.8);
+}
+.healthSection {
+  max-width: 100%;
+  height: 39em;
+  margin-bottom: 5em;
+  transform: scaleX(-1);
+}
+.healthSection .content {
+  width: 100%;
+}
+.healthSection .content .title {
+  margin: 0 1em 0.7em 0.6em;
+  color: var(--text-color);
+}
+.healthSection .content .subtitle {
+  margin: 0 1em 0.3em 0.5em;
+  width: 52%;
+  text-align: left;
+  color: var(--home-health-color);
+}
+.healthSection .content .desc {
+  margin: 0.5em 1em 1.2em 0.8em;
+  width: 58%;
+}
+.healthSection .healthbtn {
+  margin: 0.5em 0 3.8em 0.7em;
+  background-color: #129fce;
+  border: 2px solid #129fce;
+}
+.healthbtn:hover {
+  background: #ffffff;
+}
+
+/*========= The Choose Us Section =========*/
+
+.chooseUs {
+  max-width: 100%;
+  min-height: 40vh;
+  padding: 3em;
+  margin-bottom: 4em;
+}
+.chooseUs .whyUs,
+.features-main .subtitle {
+  font-size: 1.1em;
+  font-family: var(--clean-text);
+  font-weight: 500;
+  margin: 0.2em 0 2.2em 0;
+  color: #7e7e7e;
+  text-align: center;
+  text-transform: uppercase;
+  max-width: 100%;
+  letter-spacing: 8px;
+}
+.chooseUs .content {
+  margin: 0.8em 0 1.7em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.chooseUs .content .title,
+.features-main .title {
+  margin: 0 0 0.2em 0;
+  font-family: var(--bold-text);
+  font-size: 3.2em;
+  text-transform: uppercase;
+  font-weight: 800;
+  max-width: 100%;
+  text-align: center;
+  color: var(--home-title-color);
+}
+.chooseUs .content .desc {
+  font-size: 1.14em;
+  font-family: var(--clean-text);
+  font-weight: 500;
+  margin: 0.5em 0 1.2em 0;
+  color: #505050;
+  text-align: center;
+  max-width: 70%;
+  line-height: 28px;
+}
+.chooseUs .buttons {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.chooseUs .buttons button {
+  text-decoration: none;
+  text-align: center;
+  width: 14em;
+  height: 4em;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.98em;
+  text-transform: uppercase;
+  font-family: var(--styling-text);
+  transition: all 0.2s ease-in-out;
+}
+.chooseUs .buttons .get_started {
+  background-color: #aaaaaa;
+  border: 2px solid #aaaaaa;
+}
+.chooseUs .buttons .learn_more {
+  background-color: var(--home-title-color);
+  border: 2px solid var(--home-title-color);
+}
+.chooseUs .buttons .get_started:hover,
+.chooseUs .buttons .learn_more:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/*========= The Features Section =========*/
+
+.features {
+  max-width: 100%;
+  min-height: 50vh;
+  margin: 1em 0 3em 0;
+}
+.f-slantedDiv {
+  max-width: 100%;
+  height: 500px;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)),
+    url("/static/Materials/Images/Home/slantedbg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.f-slantedDiv .f-title {
+  width: 85%;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--styling-text);
+  color: #fff;
+  text-shadow: 0 2px 20px #000;
+  font-size: 2.8em;
+  font-weight: 600;
+  text-align: center;
+  line-height: 55px;
+}
+.f-slantedDiv img {
+  max-width: 100%;
+}
+.features-main {
+  background: #fff;
+  min-height: 40vh;
+  padding-top: 150px;
+  position: relative;
+  text-align: center;
+  max-width: 100%;
+}
+.features-main::before {
+  position: absolute;
+  content: "";
+  width: 60%;
+  height: 125px;
+  top: -50px;
+  left: 0;
+  background-color: #fff;
+  transform: skewY(10deg);
+}
+.features-main::after {
+  position: absolute;
+  content: "";
+  width: 60%;
+  height: 125px;
+  top: -50px;
+  right: 0;
+  background-color: #fff;
+  transform: skewY(-10deg);
+}
+.features-cards {
+  margin: 1.5em 0 1.2em 0;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  padding: 0 2.6em;
+}
+.features-cards .card {
+  display: flex;
+  align-items: center;
+  margin: 1.3em 0;
+  pointer-events: none;
+}
+.card-img {
+  width: 10em;
+  height: 6.7em;
+  margin: 0 1.2em;
+}
+.card-img img {
+  width: 100%;
+}
+.card .content .c-title {
+  margin: 0.6em 0;
+  font-size: 1em;
+  letter-spacing: 1px;
+  font-family: var(--clean-text);
+  text-align: left;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.card .content .c-desc {
+  margin: 0.4em 0;
+  font-size: 0.98em;
+  font-family: var(--para-text);
+  text-align: left;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/*========= Latest Posts Section =========*/
+
+.latest-posts {
+  max-width: 100%;
+  min-height: 50vh;
+  background: #f1f1f1;
+  padding: 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.intro-section {
+  width: 100%;
+  min-height: 4em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0.6em 0 1em 0;
+  padding-bottom: 1.5em;
+}
+.intro-section .p-title {
+  font-size: 2em;
+  font-family: var(--clean-text);
+  font-weight: 400;
+  margin: 0.5em 0;
+  text-align: center;
+}
+.intro-section .p-desc {
+  font-size: 1em;
+  font-family: var(--clean-text);
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0.3em 0;
+  text-align: center;
+}
+.posts {
+  max-width: 100%;
+  height: 25em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.post-card {
+  width: 25%;
+  height: 22em;
+  margin: 1.2em 0.8em;
+  padding: 0.8em;
+  cursor: pointer;
+}
+.post-card .card-title {
+  font-size: 1em;
+  font-family: var(--clean-text);
+  text-align: left;
+  font-weight: 500;
+}
+.post-card .post-img {
+  width: 100%;
+  height: 50%;
+  cursor: pointer;
+  margin: 0.8em 0;
+}
+.post-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.post-card .content {
+  width: 100%;
+  min-height: 7em;
+  cursor: pointer;
+  margin-top: 0.8em;
+}
+.post-card .content .title {
+  margin: 0.1em 0 0 0;
+  font-size: 1em;
+  font-family: var(--clean-text);
+  text-align: left;
+  font-weight: 400;
+}
+.post-card .content .desc {
+  margin: 0 0 0.4em 0;
+  font-size: 0.95em;
+  font-family: var(--clean-text);
+  text-align: left;
+  font-weight: 300;
+  line-height: 22px;
+}
+.post-card .content .time-type {
+  margin: 0 0 0.6em 0;
+  font-size: 0.87em;
+  font-family: var(--clean-text);
+  text-align: left;
+  font-weight: 300;
+  color: #7286d3;
+}
+.latest-posts a {
+  text-decoration: none;
+}
+.latest-posts a span {
+  color: #7286d3;
+  font-size: 1em;
+  font-family: var(--clean-text);
+  font-weight: 500;
+  text-transform: capitalize;
+  margin: 0.8em 1em;
+  display: block;
+  transition: all 0.1s ease-in-out;
+}
+.latest-posts a span:hover {
+  color: #1c6dd0;
+}

@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} Get Fit and Feel Great with VitalityOne {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'fitness/CSS/_fitness.css' %}?now=U">
+{% endblock %}
+
+{% block content %}
+
+<!--========== The Hero section ==========-->
+
+<section class="herosection">
+    <div class="main-section __fitnessTitle__">
+        <h2 class="title">Fit for Life</h2>
+        <p class="subtitle">Start your journey to a healthier you today! Discover a world of fitness
+            possibilities with our wide range of workouts </p>
+    </div>
+    <div class="imgBg __fitnessImg__">
+        <img src="{% static 'fitness/Materials/Images/hero-section.png' %}" alt="">
+    </div>
+</section>
+
+<!--========== The Workout section ==========-->
+
+<section class="workout-section">
+    <section class="workout-categories">
+        <h1 class="workouts">Workouts</h1>
+
+        <!--========== The Workout Programs ==========-->
+        {% for category in categories|slice:":4" %}
+        <section class="{{ category.heading }} __WorkoutProgram__" id="{{ category.heading }}">
+            <div class="title-section">
+                <span class="workout-title">{{ category.heading }}</span>
+                <a href="workoutscategories/workouts/{{ category.url }}">View all {{ category.heading }}<i
+                        class="ri-arrow-right-line"></i></a>
+            </div>
+
+            <div class="{{ category.heading }} __Program__">
+                {% for workout in category.workouts.all|slice:":4" %}
+                <div class="programs-card" onclick="window.location.href='workoutscategories/workouts/posts/{{workout.url}}';">
+                    <div class="program-img">
+                        <img src="{{ workout.img.url }} " loading="lazy" alt="">
+                    </div>
+                    <div class="content">
+                        <p class="title">{{ workout.title }}</p>
+                        <p class="desc">{{workout.description | truncatewords:8 | safe}}</p>
+                        <p class="time-type"><span class="time">{{ workout.workout_time }} Min</span> <span
+                                class="type">&#x2022; {{ workout.get_workouts_type_display }}</span></p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        {% endfor %}
+
+        <a href="{% url 'fitness:WorkoutsCategories' %}" class="explore"><button type="button">Explore More</button></a>
+    </section>
+</section>
+
+<!--========== The ExerciseDB Intro ==========-->
+
+<div class="exercise-db" id="exercise-db">
+    <h1 class="db-title">Exercise Database</h1>
+    <div class="container">
+        <img src="{% static 'fitness/Materials/Illustration/exerciseDb.gif' %}" alt="" class="__exerciseDBeImg__" loading="lazy">
+        <div class="content __exerciseDBContent__">
+            <h2 class="title">Browse More Than 1000 Exercises</h2>
+            <p class="para">Get in shape and feel great with our exercise database - find the perfect workout
+                for you and start sweating!</p>
+            <a href="{% url 'fitness:ExerciseDb' %}"><button type="button">Try It Now</button></a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

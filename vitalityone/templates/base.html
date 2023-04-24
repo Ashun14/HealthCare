@@ -1,0 +1,228 @@
+{% load static %}
+
+{% block head %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+
+    <!--========== CSS FILES ==========-->
+
+    <!--========== Favicons ==========-->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'Materials/Icons/Favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'Materials/Icons/Favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'Materials/Icons/Favicon//favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'Materials/Icons/Favicon/site.webmanifest' %}">
+
+    <!--========== CSS Links ==========-->
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css?now=U" rel="stylesheet">
+
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'CSS/base.css' %}?now=U">
+    {% block css %} {% endblock %}
+
+</head>
+
+<body>
+    <!--========== The NavBar Begins Here ==========-->
+
+    <nav>
+        <div class="logo">
+            <a href="{% url 'Home' %}"><img src="{% static 'Materials/Icons/logo.png' %}" title="Home"></a>
+        </div>
+
+        <div class="hamburger">
+            <div class="hamburger--container">
+                <div class="hamburger--bars">
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="fsmenu">
+        <div class="fsmenu--container">
+            <div class="fsmenu--text-block">
+                <div class="fsmenu--text-container">
+                    <ul class="fsmenu--list">
+                        <li class="fsmenu--list-element">
+                            <a href="{% url 'fitness:FitnessHome' %}">
+                                <span>Fitness</span>
+                            </a>
+                            <div class="fsmenu--scrolling-text">
+                                <span>Fitness</span><span>Fitness</span><span>Fitness</span><span>Fitness</span><span>Fitness</span>
+                            </div>
+                            <div class="fsmenu--link-img">
+                                <div class="fsmenu--img-container">
+                                    <img src="{% static 'Materials/Images/Home/navbar-f.jpg' %}">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="fsmenu--list-element">
+                            <a href="{% url 'nutrition:NutritionHome' %}">
+                                <span>Nutrition</span>
+                            </a>
+                            <div class="fsmenu--scrolling-text">
+                                <span>Nutrition</span><span>Nutrition</span><span>Nutrition</span><span>Nutrition</span><span>Nutrition</span>
+                            </div>
+                            <div class="fsmenu--link-img">
+                                <div class="fsmenu--img-container">
+                                    <img src="{% static 'Materials/Images/Home/navbar-n.jpg' %}">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="fsmenu--list-element">
+                            <a href="{% url 'health:HealthHome' %}">
+                                <span>Health</span>
+                            </a>
+                            <div class="fsmenu--scrolling-text">
+                                <span>Health</span><span>Health</span><span>Health</span><span>Health</span><span>Health</span>
+                            </div>
+                            <div class="fsmenu--link-img">
+                                <div class="fsmenu--img-container">
+                                    <img src="{% static 'Materials/Images/Home/navbar-h.jpg' %}">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="fsmenu--list-element">
+                            <a href="{% url 'tools:ToolsHome' %}">
+                                <span>Tools</span>
+                            </a>
+                            <div class="fsmenu--scrolling-text">
+                                <span>Tools</span><span>Tools</span><span>Tools</span><span>Tools</span><span>Tools</span>
+                            </div>
+                            <div class="fsmenu--link-img">
+                                <div class="fsmenu--img-container">
+                                    <img src="{% static 'Materials/Images/Home/navbar-t.jpg' %}">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="fsmenu--list-element">
+                            <a href="{% url 'about:About' %}">
+                                <span>About Us</span>
+                            </a>
+                            <div class="fsmenu--scrolling-text">
+                                <span>About</span><span>About</span><span>About</span><span>About</span><span>About</span>
+                            </div>
+                            <div class="fsmenu--link-img">
+                                <div class="fsmenu--img-container">
+                                    <img src="{% static 'Materials/Images/Home/navbar-a.jpg' %}">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--========== The NavaBar Section Ends ==========-->
+
+    <!--========== The Body Styling Begins ==========-->
+
+    <main>
+
+        {% block content %} {% endblock %}
+
+    </main>
+    <!--========== The Body Styling Ends ==========-->
+
+    <!--========= The Footer Starts =========-->
+
+    <footer id="footer">
+
+        <div class="footer-links-container">
+            <div class="logo-email">
+                <div class="logo-container">
+                    <a href="{% url 'Home' %}"><img src="{% static 'Materials/Icons/logo.png' %}" alt=""
+                            title="Home"></a>
+                </div>
+                <div class="email">
+                    <div class="email-card">
+                        <h3>Get the latest news sent right to your inbox!</h3>
+                        <form action="">
+                            <input type="email" maxlength="50" required placeholder="Enter your email address">
+                            <button class="bt">OK</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="footer-links">
+                <ul>
+                    <li><a href="{% url 'fitness:FitnessHome' %}" class="title">Fitness</a></li>
+                    <li><a href="{% url 'fitness:WorkoutsCategories' %}">Workout plans</a></li>
+                    <li><a href="{% url 'fitness:WorkoutsCategories' %}workouts/beginner-training">Beginner Training Workouts</a></li>
+                    <li><a href="{% url 'fitness:WorkoutsCategories' %}workouts/strength-training">Strength Training Workouts</a></li>
+                    <li><a href="{% url 'fitness:WorkoutsCategories' %}workouts/cardiovascular-training">Cardio Workouts</a></li>
+                    <li><a href="{% url 'fitness:WorkoutsCategories' %}workouts/yoga-and-pilates">Yoga & Pilates Workouts</a></li>
+                    <li><a href="{% url 'fitness:ExerciseDb' %}">Exercise Database</a></li>
+                </ul>
+                <ul>
+                    <li><a href="{% url 'nutrition:NutritionHome' %}" class="title">Nutrition</a></li>
+                    <li><a href="{% url 'nutrition:NutritionHome' %}nutritioncategories/nutritioncategorypage/healthy-recipes">Healthy Recipes</a></li>
+                    <li><a href="{% url 'nutrition:NutritionHome' %}nutritioncategories/nutritioncategorypage/special-diets">Special Diets</a></li>
+                    <li><a href="{% url 'nutrition:NutritionHome' %}nutritioncategories/nutritioncategorypage/nutrition-studies">Nutrition Studies</a></li>
+                    <li><a href="{% url 'nutrition:NutritionHome' %}nutritioncategories/nutritioncategorypage/food-and-culture">Food & Culture</a></li>
+                    <li><a href="{% url 'nutrition:NutritionHome' %}nutritioncategories/nutritioncategorypage/fad-diets">Fad Diets</a></li>
+                </ul>
+                <ul>
+                    <li><a href="{% url 'health:HealthHome' %}" class="title">Health</a></li>
+                    <li><a href="{% url 'health:HealthHome' %}healthcategories/healthcategorypage/mental-health">Mental Health & Wellness</a></li>
+                    <li><a href="{% url 'health:HealthHome' %}healthcategories/healthcategorypage/physical-health">Physical Health & Awareness</a></li>
+                    <li><a href="{% url 'health:HealthHome' %}healthcategories/healthcategorypage/allergy-relief">Allergy Relief</a></li>
+                    <li><a href="{% url 'health:HealthHome' %}healthcategories/healthcategorypage/cancer-care">Cancer Care</a></li>
+                    <li><a href="{% url 'tools:ToolsHome' %}">Health Tools</a></li>
+                </ul>
+                <ul>
+                    <li><a href="{% url 'about:About' %}" class="title">About Us</a></li>
+                    <li><a href="{% url 'about:About' %}#team">Our Team</a></li>
+                    <li><a href="{% url 'about:About' %}#aboutsection">Mission statement</a></li>
+                    <li><a href="{% url 'about:About' %}#goals">Goals</a></li>
+                    <li><a href="{% url 'about:About' %}#get-in-touch">Contact Us</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'loginsystem:Logout' %}">Logout</a></li>
+                    {% else %}
+                    <li><a href="{% url 'loginsystem:Register' %}">Register</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+
+        </div>
+        <div class="copyright-socialMedia">
+
+            <div class="copyright">
+                <span>Copyright &#169; 2023 Fitness Blender. All rights reserved. </span>
+                <a href="#"><span class="sp">Terms and Conditions </span></a>
+                <a href="#"><span class="sp">Privacy Policy </span></a>
+            </div>
+
+            <div class="social-media">
+                <a href="https://www.facebook.com/"><i class="ri-facebook-circle-fill fb"></i></a>
+                <a href="https://www.instagram.com/"><i class="ri-instagram-fill insta"></i></a>
+                <a href="https://www.twitter.com/"><i class="ri-twitter-fill tw"></i></a>
+            </div>
+        </div>
+
+    </footer>
+
+    <!--========= The Footer Ends =========-->
+
+    <!--========= Scroll Up =========-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line"></i>
+    </a>
+
+    <!--========= JAVASCRIPT FILES =========-->
+
+    <script src="{% static 'JS/scrollreveal.min.js' %}?now=U"></script>
+    <script src="{% static 'JS/main.js' %}?now=U"></script>
+    {% block js %} {% endblock %}
+</body>
+
+</html>

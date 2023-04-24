@@ -1,0 +1,506 @@
+/*<===================BODY===================>*/
+
+/*========== The Hero Section ==========*/
+.tools-container {
+  max-width: 100%;
+  min-height: 100vh;
+  padding: 2em 3em;
+}
+
+.hero-container {
+  position: relative;
+  max-width: 100%;
+  height: 30vh;
+  transition: 0.5s ease;
+  margin: 1em 0;
+}
+.herosection {
+  max-width: 100%;
+  height: 12em;
+  margin: 2em 0 2em 5em;
+  padding-left: 1em;
+}
+.herosection .title {
+  margin: 0.7em 0;
+  font-family: var(--bold-text);
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 200;
+  width: 60%;
+  text-align: left;
+  color: var(--tools-title-color);
+}
+.herosection .subtitle {
+  margin: 0.3em 0 2.8em 0;
+  font-family: var(--heading-text);
+  font-size: 2.5em;
+  font-weight: 200;
+  width: 70%;
+  text-align: left;
+  color: var(--tools-title-color);
+  line-height: 50px;
+  word-spacing: 5px;
+}
+.subtitle .multitext {
+  font-family: var(--heading-text);
+  font-size: 1.1em;
+  font-weight: 200;
+  color: var(--tools-title-color);
+  line-height: 58px;
+  word-spacing: 5px;
+  text-transform: capitalize;
+}
+.subtitle .typed-cursor {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+/*========== Tools Menu defined here ==========*/
+
+.main-container {
+  position: relative;
+  min-height: 70vh;
+  margin: 2em 0;
+}
+
+/*========== Tab Navigation Bar ==========*/
+
+.tab-nav-bar {
+  position: relative;
+  margin: 65px 10px 40px 10px;
+}
+.tab-navigation {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: fit-content;
+  margin: 0 auto;
+}
+.tab-menu {
+  color: var(--primary-color);
+  list-style: none;
+  background: var(--tools-tab-bg);
+  max-width: 800px;
+  padding: 10px;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--tools-tab-bg);
+  border-radius: 50px;
+  box-shadow: var(--tools-box-shadow);
+  overflow-x: auto;
+  user-select: none;
+  scroll-behavior: smooth;
+}
+.tab-menu.dragging {
+  scroll-behavior: unset;
+  cursor: grab;
+}
+.tab-menu::-webkit-scrollbar {
+  display: none;
+}
+.tab-btn {
+  color: var(--primary-color);
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 400;
+  margin: 0 2px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s ease;
+  font-family: var(--clean-text);
+}
+.tab-menu.dragging .tab-btn {
+  pointer-events: none;
+}
+.tab-btn:hover {
+  background: var(--tools-bg-color);
+}
+.tab-btn.active {
+  background: var(--tools-tab-btn);
+}
+.left-btn,
+.right-btn {
+  position: absolute;
+  color: var(--primary-color);
+  font-size: 1.8em;
+  padding: 10px;
+  cursor: pointer;
+}
+.left-btn {
+  left: 0;
+  background: linear-gradient(to left, transparent, var(--tools-bg-color) 80%);
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  display: none;
+}
+.right-btn {
+  right: 0;
+  background: linear-gradient(to right, transparent, var(--tools-bg-color) 80%);
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+/*========== Tab Content ==========*/
+
+.tab-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 3.6em;
+}
+.tab {
+  position: relative;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: auto;
+  max-width: 1100px;
+  padding: 30px 0;
+  transform: translateX(25px);
+  content-visibility: hidden;
+  opacity: 0;
+}
+.tab.active {
+  transform: translateX(0);
+  content-visibility: visible;
+  opacity: 1;
+  transition: 1s ease;
+}
+
+.tab-title-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em 0;
+}
+
+.tab-title-container::before {
+  content: "";
+  border: 3px solid #c9b2ff;
+  width: 14%;
+  margin-bottom: 1em;
+  border-radius: 30px;
+}
+
+.tab-title-container .tab-title {
+  margin-bottom: 0.4em;
+  font-family: var(--bold-text);
+  font-size: 2.2em;
+  text-transform: uppercase;
+  font-weight: 200;
+  width: 60%;
+  text-align: center;
+  color: var(--tools-title-color);
+}
+
+.tab-title-container .tab-para {
+  font-family: var(--para-text);
+  font-size: 1.06em;
+  font-weight: 500;
+  color: #5c5c5c;
+  word-spacing: 2px;
+  width: 60%;
+}
+
+.tab .row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 28px 0;
+  gap: 30px;
+}
+.tab .img-card {
+  position: relative;
+  width: 33em;
+  height: 35em;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  box-shadow: var(--tools-box-shadow);
+  transition: all .1s ease;
+}
+.tab .img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.left-column {
+  max-width: 800px;
+}
+.info {
+  width: 36em;
+  height: fit-content;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  color: #000;
+  border-radius: 10px;
+  transition: all .1s ease;
+}
+.info .title,
+.info .desc p {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+.info .title {
+  font-size: 2em;
+  font-family: var(--clean-text);
+  font-weight: 600;
+}
+
+/*========== BMI Calculator ==========*/
+
+.calculator-container {
+  padding: 1em 1.8em;
+  width: 100%;
+  height: 100%;
+}
+.calculator-container form {
+  width: 100%;
+  height: 100%;
+}
+.calculator-container .first-input,
+.fourth-input {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  justify-content: space-between;
+}
+.calculator-container .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0.4em 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-input {
+  height: fit-content;
+  border-radius: 5px;
+  border: 2px solid #d6d6d6;
+  outline: none;
+  width: 16em;
+  background: transparent;
+  transition: border 0.2s ease;
+  padding: 1em;
+  font-size: 0.9em;
+  font-family: var(--styling-text);
+  font-weight: 800;
+  color: #868686;
+}
+.form-input::placeholder {
+  font-size: 1em;
+  font-family: var(--styling-text);
+  font-weight: 800;
+  color: #868686;
+}
+
+.form-input:focus {
+  border: 2px solid #c9b2ff;
+  -webkit-transition: 0.1s;
+  transition: 0.2s ease;
+}
+
+.calculator-container .third-input .vertical-divider {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: space-between;
+}
+.calculator-container .second-input .vertical-divider {
+  gap: 30px;
+  display: flex;
+}
+.calculator-container .height_cm {
+  margin: 5px 0;
+  width: 100%;
+}
+.calculator-container .weight {
+  margin: 5px 0;
+  width: 100%;
+}
+.calculator-container .input-wrapper label {
+  margin: 0.5em 0;
+  font-size: 1em;
+  font-family: var(--styling-text);
+  font-weight: 600;
+  color: #868686;
+}
+
+.calculator-container select {
+  cursor: pointer;
+}
+.calculator-container .btn-wrap {
+  margin: 1.8em 0;
+}
+.calculator-container .btn-wrap .btn {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #dddddd;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+.calculator-container .btn-wrap .btn:hover {
+  border: 1px solid #e3d9fa;
+  background-color: #e3d9fa;
+  box-shadow: 0px 15px 20px #e3d9fa;
+  color: #000;
+  transform: translateY(-7px);
+}
+.calculator-container .btn-wrap .btn:active {
+  transform: translateY(-1px);
+}
+
+.result-statement, .result-statement5 {
+  display: flex;
+  padding: 1em;
+  background-color: #ded2fc;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+.result-statement.show, .result-statement2.show,.result-statement3.show, .result-statement4.show, .result-statement5.show{
+  opacity: 1;
+}
+.result-statement .result {
+  font-family: var(--bold-text);
+  font-size: 1.1em;
+  text-transform: capitalize;
+  font-weight: 200;
+  text-align: center;
+  margin-right: 0.5em;
+  color: var(--tools-title-color);
+}
+.result-statement .result-para, .result-statement5 .result-para5 {
+  font-family: var(--para-text);
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #4e4e4e;
+  word-spacing: 2px;
+  text-align: center;
+}
+
+.result-statement2, .result-statement3 {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  background-color: #dcd1f8;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+.result-statement2 .result2, .result-statement3 .result3 {
+  font-family: var(--bold-text);
+  font-size: 1.2em;
+  text-transform: capitalize;
+  font-weight: 200;
+  text-align: center;
+  margin-right: 0.3em;
+  color: var(--tools-title-color);
+  margin: 0.5em 0;
+}
+.result-statement2 .result-para2, .result-statement3 .result-para3 {
+  font-family: var(--para-text);
+  font-size: 1.15em;
+  font-weight: 500;
+  color: #4e4e4e;
+  word-spacing: 2px;
+  text-align: center;
+  margin: 0.2em 0;
+}
+
+.result-statement4 {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  background-color: #dcd1f8;
+  border-radius: 15px;
+  align-items: flex-start;
+  justify-content: center;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+.result-statement4 .result4 {
+  font-family: var(--bold-text);
+  font-size: 1.16em;
+  font-weight: 200;
+  text-align: left;
+  margin-right: 0.3em;
+  color: var(--tools-title-color);
+  margin: 0.4em 0;
+}
+.result-statement4 .result-para4 {
+  font-family: var(--para-text);
+  font-size: 1.16em;
+  font-weight: 500;
+  color: #4e4e4e;
+  word-spacing: 2px;
+  text-align: left;
+  margin: 0.3em 0;
+}
+.result-statement4 #result4_total, #result4_fat, #result4_carb, #result4_pro {
+  font-family: var(--para-text);
+  font-weight: 500;
+  color: #4e4e4e;
+}
+
+/*========== Media Queries ==========*/
+
+@media screen and (max-width: 1050px) {
+  section {
+    margin: 0 0px;
+  }
+
+  .tab-nav-bar {
+    margin: 65px 20px 40px 25px;
+  }
+
+  .tab {
+    padding: 15px 25px;
+  }
+
+  .tab .row {
+    flex-direction: column;
+  }
+
+  .tab .img-card {
+    width: auto;
+    max-width: 600px;
+  }
+}
+
+/*========== Notify Section ==========*/
+.notify-para {
+  background-color: #e2d6ff;
+  padding: 1.6em;
+  font-family: var(--clean-text);
+  font-size: 1.26em;
+  font-weight: 500;
+  color: #3b3b3b;
+  word-spacing: 1px;
+  width: 100%;
+  border-radius: 10px;
+}

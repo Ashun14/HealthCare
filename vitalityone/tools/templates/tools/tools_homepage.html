@@ -1,0 +1,410 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Achieve Your Goals with VitalityOne's Tools and Resources {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'tools/CSS/_tools.css' %}?now=U">
+{% endblock %}
+
+{% block content %}
+
+<!--========== Herosection defined here ==========-->
+<section class="tools-container">
+
+    <div class="hero-container">
+        <div class="herosection">
+            <h1 class="title">Enhance Your Health and Fitness Journey with Our Essential Tools</h2>
+                <h2 class="subtitle">Discover Our Collection of Helpful Resources: <span class="multitext"></span>
+                </h2>
+        </div>
+    </div>
+
+    <!--========== Tools Menu defined here ==========-->
+    <section class="main-container">
+
+        <div class="tab-nav-bar">
+            <div class="tab-navigation">
+                <i class="ri-arrow-left-s-line left-btn"></i>
+                <i class="ri-arrow-right-s-line right-btn"></i>
+                <ul class="tab-menu">
+                    <li class="tab-btn active">BMI Calculator</li>
+                    <li class="tab-btn">Body Composition</li>
+                    <li class="tab-btn">1RM Calculator</li>
+                    <li class="tab-btn">Calorie and Macro Calculator</li>
+                    <li class="tab-btn">Water Intake Calculations</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab-content">
+            <div class="tab active tab-bmi">
+                <div class="tab-title-container">
+                    <h2 class="tab-title">BMI Calculator</h2>
+                    <p class="tab-para">Calculating your Body Mass Index in just a few clicks is greatly simplified by
+                        the BMI calculator.</p>
+                </div>
+                <div class="row">
+                    <div class="left-column">
+                        <div class="info">
+                            <div class="calculator-container c-1">
+                                <form action="#">
+                                    <div class="first-input">
+                                        <div class="input-wrapper">
+                                            <label for="number">Age*</label>
+                                            <input type="number" id="fc_age1" placeholder="Enter Your Age"
+                                                class="form-input" required="">
+                                        </div>
+                                        <div class="input-wrapper">
+                                            <label for="dropdown">Gender</label>
+                                            <select name="dropdown" id="gender_dropdown1" class="form-input" required="">
+                                                <option value="male" selected="">Male</option>
+                                                <option value="female">Female</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="second-input input-wrapper">
+                                        <label for="number">Height (In CM)*</label>
+                                        <div class="vertical-divider">
+                                        </div>
+                                        <input type="number" id="height_cm1" class="form-input height_cm" placeholder="In cm"
+                                            required="">
+                                    </div>
+                                    <div class="third-input input-wrapper">
+                                        <label for="number">Weight (In KG)*</label>
+                                        <div class="vertical-divider">
+                                            <input type="number" id="weight1" placeholder="In KG" class="form-input weight"
+                                                required="">
+                                        </div>
+                                    </div>
+                                    <div class="btn-wrap">
+                                        <button type="submit" id="calc-submit-bmi" class="btn">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </form>
+                                </form>
+                                <div class="result-statement" id="result-statement1">
+                                    <h3 class="result" id="result1"></h3>
+                                    <p class="result-para" id="result-para1"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-column">
+                        <div class="img-card">
+                            <img src="{% static 'tools/Materials/Images/tools-1.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab">
+                <div class="tab-title-container">
+                    <h2 class="tab-title">Body Composition</h2>
+                    <p class="tab-para">Calculate your body composition easily and quickly with our powerful calculator,
+                        providing insights into your body fat percentage and lean body mass.</p>
+                </div>
+                <div class="row">
+                    <div class="left-column">
+                        <div class="info">
+                            <div class="calculator-container c-2">
+                                <form action="#">
+                                    <div class="first-input">
+                                        <div class="input-wrapper">
+                                            <label for="number">Age*</label>
+                                            <input type="number" id="fc_age2" placeholder="Enter Your Age"
+                                                class="form-input" required="">
+                                        </div>
+                                        <div class="input-wrapper">
+                                            <label for="dropdown">Gender</label>
+                                            <select name="dropdown" id="gender_dropdown2" class="form-input" required="">
+                                                <option value="male" selected="">Male</option>
+                                                <option value="female">Female</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="second-input input-wrapper">
+                                        <label for="number">Height (In CM)*</label>
+                                        <div class="vertical-divider">
+                                        </div>
+                                        <input type="number" id="height_cm2" class="form-input height_cm" placeholder="In cm"
+                                            required="">
+                                    </div>
+                                    <div class="third-input input-wrapper">
+                                        <label for="number">Weight (In KG)*</label>
+                                        <div class="vertical-divider">
+                                            <input type="number" id="weight2" placeholder="In KG" class="form-input weight"
+                                                required="">
+                                        </div>
+                                    </div>
+                                    <div class="fourth-input">
+                                        <div class="input-wrapper">
+                                            <label for="number">Waist (In CM)*</label>
+                                            <div class="vertical-divider">
+                                                <input type="number" id="waist_cm2" class="form-input"
+                                                    placeholder="In cm" required="">
+                                            </div>
+                                        </div>
+                                        <div class="input-wrapper">
+                                            <label for="number">Neck (In CM)*</label>
+                                            <div class="vertical-divider">
+                                                <input type="number" id="neck_cm2" class="form-input"
+                                                    placeholder="In cm" required="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btn-wrap">
+                                        <button type="submit" id="calc-submit-bc" class="btn">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </form>
+                                </form>
+                                <div class="result-statement2" id="result-statement2">
+                                    <h3 class="result2" id="result2"></h3>
+                                    <p class="result-para2" id="result-para2"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-column">
+                        <div class="img-card">
+                            <img src="{% static 'tools/Materials/Images/tools-2.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab">
+                <div class="tab-title-container">
+                    <h2 class="tab-title">1RM Calculator</h2>
+                    <p class="tab-para">Maximize your workout potential with our easy-to-use 1RM calculator, providing
+                        you with your estimated one-rep max in just seconds.</p>
+                </div>
+                <div class="row">
+                    <div class="left-column">
+                        <div class="info">
+                            <div class="calculator-container c-3">
+                                <form action="#">
+                                    <div class="first-input">
+                                    <div class="input-wrapper">
+                                        <label for="dropdown">Select Exercise*</label>
+                                        <select name="dropdown" id="ex3" class="form-input" required="">
+                                            <option value="squats" selected="">Squats</option>
+                                            <option value="deadlift">Deadlift</option>
+                                            <option value="bench_press">Bench Press</option>
+                                            <option value="overhead_press">Overhead Press</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-wrapper">
+                                        <label for="number">Reps*</label>
+                                        <input type="number" id="fc_rep3" placeholder="Enter the Number of Reps"
+                                            class="form-input" required="">
+                                    </div>
+                                </div>
+                                    <div class="input-wrapper">
+                                        <label for="number">Weight (In KG)*</label>
+                                        <div class="vertical-divider">
+                                            <input type="number" id="weight3" placeholder="In KG" class="form-input weight"
+                                                required="">
+                                        </div>
+                                    </div>
+                                    <div class="btn-wrap">
+                                        <button type="submit" id="calc-submit-rm" class="btn">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </form>
+                                </form>
+                                <div class="result-statement3" id="result-statement3">
+                                    <h3 class="result3" id="result3"></h3>
+                                    <p class="result-para3" id="result-para3"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-column">
+                        <div class="img-card">
+                            <img src="{% static 'tools/Materials/Images/tools-3.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab">
+                <div class="tab-title-container">
+                    <h2 class="tab-title">Calorie and Macro Calculator</h2>
+                    <p class="tab-para">Customize your diet with precision using our calorie and macro calculator,
+                        giving you personalized recommendations for your daily caloric and macronutrient intake in an
+                        instant.</p>
+                </div>
+                <div class="row">
+                    <div class="left-column">
+                        <div class="info">
+                            <div class="calculator-container c-4">
+                                <form action="#">
+                                    <div class="first-input">
+                                        <div class="input-wrapper">
+                                            <label for="number">Age*</label>
+                                            <input type="number" id="fc_age4" placeholder="Enter Your Age"
+                                                class="form-input" required="">
+                                        </div>
+                                        <div class="input-wrapper">
+                                            <label for="dropdown">Gender</label>
+                                            <select name="dropdown" id="gender_dropdown4" class="form-input" required="">
+                                                <option value="male" selected="">Male</option>
+                                                <option value="female">Female</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="second-input input-wrapper">
+                                        <label for="number">Height (In CM)*</label>
+                                        <div class="vertical-divider">
+                                        </div>
+                                        <input type="number" id="height_cm4" class="form-input height_cm" placeholder="In cm"
+                                            required="">
+                                    </div>
+                                    <div class="third-input input-wrapper">
+                                        <label for="number">Weight (In KG)*</label>
+                                        <div class="vertical-divider">
+                                            <input type="number" id="weight4" placeholder="In KG" class="form-input weight"
+                                                required="">
+                                        </div>
+                                    </div>
+                                    <div class="fourth-input">
+                                        <div class="input-wrapper">
+                                            <label for="dropdown">Goal</label>
+                                            <select name="dropdown" id="goal_dropdown4" class="form-input" required="">
+                                                <option value="maintain" selected="">Maintain Current Weight</option>
+                                                <option value="lose">Lose Weight</option>
+                                                <option value="gain">Gain Weight</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-wrapper">
+                                            <label for="dropdown">Activity Level</label>
+                                            <select name="dropdown" id="al_dropdown4" class="form-input" required="">
+                                                <option value="sedentary" selected="">Sedentary (Little or no exercise)</option>
+                                                <option value="lightly">Lightly active (Light exercise/sports 3-5 days a week)</option>
+                                                <option value="moderately">Moderately active (Moderate exercise/sports 3-5 days a week)</option>
+                                                <option value="very">Very active (Hard exercise/sports 6-7 days a week)</option>
+                                                <option value="extra">Extra active (Hard exercise/sports 6-7 days a week, plus physical job)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="btn-wrap">
+                                        <button type="submit" id="calc-submit-cm" class="btn">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </form>
+                                </form>
+                                <div class="result-statement4" id="result-statement4">
+                                    <p class="result-para4" id="result-para4"></p>
+                                    <h3 class="result4 pro">Protein: <span id="result4_pro"></span></h3>
+                                    <h3 class="result4 carb" >Carbs: <span id="result4_carb"></span></h3>
+                                    <h3 class="result4 fat" >Fats: <span id="result4_fat"></span></h3>
+                                    <h3 class="result4 total" >Total Calories: <span id="result4_total"></span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-column">
+                        <div class="img-card">
+                            <img src="{% static 'tools/Materials/Images/tools-4.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab">
+                <div class="tab-title-container">
+                    <h2 class="tab-title">Water Intake Calculations</h2>
+                    <p class="tab-para">Calculate the recommended water intake based on your height, weight,
+                        and age using the water intake calculator.</p>
+                </div>
+                <div class="row">
+                    <div class="left-column">
+                        <div class="info">
+                            <div class="calculator-container c-5">
+                                <form action="#">
+                                    <div class="first-input">
+                                        <div class="input-wrapper">
+                                            <label for="number">Age*</label>
+                                            <select name="dropdown" id="age_dropdown5" class="form-input" required="">
+                                                <option value="teenage" selected="">14-18</option>
+                                                <option value="young">19-30</option>
+                                                <option value="adult">31-50</option>
+                                                <option value="elder">50+</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-wrapper">
+                                            <label for="dropdown">Gender</label>
+                                            <select name="dropdown" id="gender_dropdown5" class="form-input" required="">
+                                                <option value="male" selected="">Male</option>
+                                                <option value="female">Female</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="second-input input-wrapper">
+                                        <label for="number">Height (In CM)*</label>
+                                        <div class="vertical-divider">
+                                        </div>
+                                        <input type="number" id="height_cm5" class="form-input height_cm" placeholder="In cm"
+                                            required="">
+                                    </div>
+                                    <div class="third-input input-wrapper">
+                                        <label for="number">Weight (In KG)*</label>
+                                        <div class="vertical-divider">
+                                            <input type="number" id="weight5" placeholder="In KG" class="form-input weight"
+                                                required="">
+                                        </div>
+                                    </div>
+                                    <div class="fourth-input">
+                                        <div class="input-wrapper">
+                                            <label for="dropdown">Season</label>
+                                            <select name="dropdown" id="season_dropdown5" class="form-input" required="">
+                                                <option value="winter" selected="">Winter</option>
+                                                <option value="normal">Normal</option>
+                                                <option value="summer">Summer</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-wrapper">
+                                            <label for="dropdown">Activity Level</label>
+                                            <select name="dropdown" id="al_dropdown5" class="form-input" required="">
+                                                <option value="lightly" selected="">Lightly active</option>
+                                                <option value="moderately">Moderately active</option>
+                                                <option value="very">Very active</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="btn-wrap">
+                                        <button type="submit" id="calc-submit-wi" class="btn">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </form>
+                                </form>
+                                <div class="result-statement5" id="result-statement5">
+                                    <p class="result-para5" id="result-para5"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-column">
+                        <div class="img-card">
+                            <img src="{% static 'tools/Materials/Images/tools-5.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+{% endblock %}
+
+{% block js %}
+<script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
+<script src="{% static 'tools/JS/_tools.js' %}?now=U"></script>
+{% endblock %}

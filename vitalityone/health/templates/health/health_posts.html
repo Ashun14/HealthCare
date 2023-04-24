@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} {{ posts.title }} {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'health/CSS/_posts.css' %}?now=U">
+{% endblock %}
+
+{% block content %}
+
+<article>
+    <div class="article-cover">
+        <p id="date">{{ posts.input_date }} <span class="dot"></span>{{ posts.reading_time }} min read</p>
+        <div class="tags">
+            {% if posts.tags %}
+            {% for tag in posts.tags.all %}
+              <a>{{ tag.get_name_display }}</a>
+            {% endfor %}
+          {% endif %}
+        <a onclick="window.location.href='/health/healthcategories/healthcategorypage/{{ posts.category.cat_url }}';">{{ posts.category.cat_title }}</a>
+        </div>
+
+        <div class="header">
+            <p id="mobile-date">{{ posts.input_date }}<br /><span class="dot"></span>{{ posts.reading_time }} min read</p>
+            <h1 class="article-title">{{ posts.title }}</h1>
+            <img src="{{ posts.img.url }}"
+                alt="{{ posts.title }}" class="hero-image">
+            <a class="caption">Photo by Prazanthy Ramesh for Unsplash</a>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <div class="content">
+            {{ posts.description | safe }}
+        </div>
+    </div>
+
+    <p>Posted By <span class="posted_by">{{ posts.author }}</span></p>
+</article>
+
+<div class="pagination">
+    <div class="prevpost">
+      {% if prevpost %}
+      <p onclick="window.location.href='{{ STATIC_URL }}/health/healthcategories/post/{{ prevpost.post_url }}'">
+        <span>&#171;</span> {{prevpost}}</p>
+      {% else %}
+      <p onclick="window.location.href='/health/'"><span>&#171;</span> Home</p>
+      {% endif %}
+    </div>
+    <div class="nextpost">
+      {% if nextpost %}
+      <p onclick="window.location.href='{{ STATIC_URL }}/health/healthcategories/post/{{ nextpost.post_url }}'">
+        {{nextpost}} <span>&#187;</span></p>
+      {% else %}
+      <p onclick="window.location.href='/health/'">Home <span> &#187;</span></p>
+      {% endif %}
+    </div>
+  </div>
+
+<!--========= The Related Posts Section =========-->
+
+<section class="related-post" id="related-post">
+    <h2 class="title">Related Posts</h2>
+    <div class="rp-container">
+        {% for related_post in related_posts|slice:":4" %}
+        <div class="container" onclick="window.location.href='{{related_post.post_url}}';">
+            <div class="rel-img">
+                <img src="{{ related_post.img.url }}" loading="lazy" alt="">
+            </div>
+            <div class="content">
+                <h1 class="article-title">{{ related_post.title | safe }}</h1>
+                <p class="article-para">{{ related_post.sub_description | truncatewords:14 | safe }}</p>
+            </div>
+        </div>
+       {% endfor %}
+    </div>
+</section>
+
+
+{% endblock %}
+

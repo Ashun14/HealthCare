@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} {{ posts.title }} {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'fitness/CSS/_workout_post.css' %}?now=U">
+{% endblock %}
+
+{% block content %}
+
+<article class="post">
+  <div class="header">
+
+    <h2 class="category_type">
+      <span class="type">{{ posts.workouts.get_workouts_type_display }}</span>
+    </h2>
+    <div class="title">
+      <h1 class="title__name"><span class="type">{{ posts.title }}</span></h1>
+    </div>
+    <div class="description">
+      <h2 class="desc">{{ posts.workouts.description }}</h2>
+    </div>
+    <p class="posted_by">Posted on <span class="posted_on">{{ posts.publish_date }}</span> By <span class="author">{{ posts.author }}</span></p>
+
+  </div>
+
+  <div class="main-container">
+    <div class="img-container">
+      <img src="{{ posts.workouts.img.url }}">
+    </div>
+    <div class="content-container">
+      <div class="content">
+
+        {{ posts.description | safe }}
+
+      </div>
+
+      <aside class="aside-container">
+        <div class="aside-content">
+
+        </div>
+      </aside>
+    </div>
+  </div>
+</article>
+
+<div class="pagination">
+  <div class="prevpost">
+    {% if prevpost %}
+    <p onclick="window.location.href='{{ STATIC_URL }}/fitness/workoutscategories/workouts/posts/{{ prevpost.url }}'">
+      <span>&#171;</span> {{prevpost}}</p>
+    {% else %}
+    <p onclick="window.location.href='/fitness/'"><span>&#171;</span> Home</p>
+    {% endif %}
+  </div>
+  <div class="nextpost">
+    {% if nextpost %}
+    <p onclick="window.location.href='{{ STATIC_URL }}/fitness/workoutscategories/workouts/posts/{{ nextpost.url }}'">
+      {{nextpost}} <span>&#187;</span></p>
+    {% else %}
+    <p onclick="window.location.href='/fitness/'">Home <span>&#187;</span></p>
+    {% endif %}
+  </div>
+</div>
+
+<section class="related-posts">
+  <div class="title-section">
+    <span class="title">Related Posts</span>
+  </div>
+
+  <div class="WorkoutPrograms">
+    {% if related_posts %}
+    {% for post in related_posts %}
+    <div class="program">
+      <div class="programs-card" onclick="window.location.href='{{post.url}}';">
+        <div class="program-img">
+        <img src="{{ post.workouts.img.url }}" alt="">
+      </div>
+      <div class="content">
+        <p class="title">{{ post.workouts.title | safe }}</p>
+        <p class="desc">{{ post.workouts.description | truncatewords:8 | safe }}</p>
+        <p class="time-type"><span class="time">{{ post.workouts.workout_time }} Min</span> <span class="type">&#x2022; {{ post.workouts.get_workouts_type_display }}</span></p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  {% endif %}
+</div>
+</section>
+
+{% endblock %}

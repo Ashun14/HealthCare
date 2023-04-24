@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Maximize Your Workouts with VitalityOne's Exercise Database {% endblock %}
+
+{% block css %} <link rel="stylesheet" href="{% static 'fitness/CSS/_excercise_database.css' %}?now=U"> {% endblock %}
+
+{% block content %}
+
+<!--========== The Excercise Categories Option ==========-->
+
+<section class="exercise_categories">
+    <h1>Workouts</h1>
+    <p>Categorize your Workouts with</p>
+    <div class="cat-selection">
+        <div class="category show-dropdown bodypart">
+            <img src="{% static 'fitness/Materials/Icons/bodyparts.png' %}" alt="">
+            <h2>Body Parts</h2>
+        </div>
+        <div class="category show-dropdown muscles">
+            <img src="{% static 'fitness/Materials/Icons/muscle.png' %}" alt="">
+            <h2>Target Muscles</h2>
+        </div>
+        <div class="category show-dropdown equipments">
+            <img src="{% static 'fitness/Materials/Icons/equipments.png' %}" alt="">
+            <h2>Equipments</h2>
+        </div>
+        <div class="category viewAll">
+            <img src="{% static 'fitness/Materials/Icons/view.png' %}" alt="">
+            <h2>View All</h2>
+        </div>
+    </div>
+
+    <!--========= The Drop-down Option =========-->
+
+    <div class="drop-down_option" id="dropDown">
+        <div class="select-box">
+            <div class="options-container">
+            </div>
+
+            <div class="selected">
+                Select Exercises
+            </div>
+
+            <div class="search-box">
+                <input type="text" placeholder="Start Typing..." />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--=============== Notify Section ===============-->
+
+<div class="updatesection">
+    <div class="notify">
+        <p class="notify-para">"Thank you for your interest in our Exercise Database. We are currently working on developing our Exercise Database and it will be available in the near future. Please check back soon for updates. Thank you for your patience." 🚧</p>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %} <script src="{% static 'fitness/JS/_excercise_database.js' %}?now=U"></script> {% endblock %}
+    

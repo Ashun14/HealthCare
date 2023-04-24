@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Health & Wellness Guide {% endblock %}
+
+{% block css %} 
+    <link rel="stylesheet" href="{% static 'health/CSS/_categories.css' %}?now=U">
+{% endblock %}
+
+{% block content %}
+
+<!-- ========== The Health Categories ========== -->
+
+<section class="health-categories">
+    <div class="title-section">
+        <span class="category-title">Health & Wellness Guide</span>
+    </div>
+    
+    <section class="HealthTopics">
+
+        {% for category in categories %}
+        {% if category.sub_cat %}
+
+        <div class="topics">
+            <div class="topics-card" onclick="window.location.href='healthcategorypage/{{category.cat_url}}'">
+                <div class="topics-img">
+                    <img src="{{ category.img.url }}" alt="">
+                </div>
+                <div class="content">
+                    <h2 class="title">{{ category.cat_title }}</h2>
+                    <p class="desc">{{ category.description }}</p>
+                    <a href="healthcategorypage/{{category.cat_url}}">Go to Topic <i class="ri-arrow-right-line"></i></a>
+                </div>
+            </div>
+        </div>
+
+        {% endif %}
+        {% endfor %}
+    </section>
+
+</section>
+
+{% endblock %}

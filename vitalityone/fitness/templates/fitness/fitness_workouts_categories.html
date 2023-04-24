@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} VitalityOne's Workout Categories: A Path to a Healthier You {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'fitness/CSS/_workouts_categories.css' %}?now=U">
+{% endblock %}
+
+{% block content %}
+
+<!--========== The All Workout section ==========-->
+
+<section class="workout-section">
+    <section class="workout-categories">
+        <h1 class="workouts">Workouts</h1>
+
+        <!--========== The Workout Programs ==========-->
+        {% for category in categories %}
+        {% if category.workouts.all %}
+        <section class="{{ category.heading }} __WorkoutProgram__" id="{{ category.heading }}">
+            <div class="title-section">
+                <span class="workout-title">{{ category.heading }}</span>
+                <a href="workouts/{{ category.url }}">View all {{ category.heading }}<i
+                        class="ri-arrow-right-line"></i></a>
+            </div>
+
+            <div class="{{ category.heading }} __Program__">
+                {% for workout in category.workouts.all|slice:":4" %}
+                <div class="programs-card" onclick="window.location.href='workouts/posts/{{workout.url}}';">
+                    <div class="program-img">
+                        <img src="{{ workout.img.url }}" loading="lazy" alt="">
+                    </div>
+                    <div class="content">
+                        <p class="title">{{ workout.title }}</p>
+                        <p class="desc">{{workout.description | truncatewords:8 | safe}}</p>
+                        <p class="time-type"><span class="time">{{ workout.workout_time }} Min</span> <span
+                                class="type">&#x2022; {{ workout.get_workouts_type_display }}</span></p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+        {% endfor %}
+
+    </section>
+</section>
+
+{% endblock %}

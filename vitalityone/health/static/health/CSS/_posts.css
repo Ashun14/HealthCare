@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap");
+
+*{
+  font-family: "Hind", sans-serif;
+  font-family: "Montserrat", sans-serif;
+}
+
+.article-cover span, .header span {
+  width: 8px;
+  height: 8px;
+  border: 0.1px #c1c8c7 solid;
+  margin: auto 0.5rem;
+  background: #c1c8c7;
+  display: inline-block;
+  border-radius: 100%;
+}
+
+#date {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.tags {
+  margin-right: 0.4rem;
+  margin-top: 1em;
+}
+.tags a {
+  border: 1px #c1c8c7 solid;
+  margin-right: 0.3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition-duration: 0.3s;
+}
+.tags a:hover {
+  background: #c1c8c7;
+  color: #fff;
+}
+
+#mobile-date {
+  font-size: 1rem;
+  display: flex;
+  margin-left: 0.1rem;
+  align-items: center;
+  line-height: 1rem;
+  display: none;
+}
+#mobile-date .dot {
+  width: 2px;
+  height: 2px;
+}
+article {
+  --article-height: 100%;
+  --article-ratio: 1.5;
+  width: calc(var(--article-height) / var(--article-ratio));
+  height: var(--article-height);
+  box-sizing: border-box;
+  padding: 30px 20px;
+  margin: 1em auto;
+  position: relative;
+}
+
+.hero-image {
+  max-width: 100%;
+  height: 32em;
+  object-fit: cover;
+}
+
+.caption {
+  font-size: 0.9rem;
+  text-align: center;
+  margin: auto;
+  padding: 1rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+article h2 {
+  margin: 2rem auto;
+}
+
+article p {
+  font-size: 1.1rem;
+  line-height: 2.2rem;
+  font-family: "Hind", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  text-align: left;
+}
+
+article li, ol, ul{
+  font-family: "Hind", sans-serif;
+  font-family: "Montserrat", sans-serif;
+}
+
+.article-cover {
+  display: flex;
+  background: #fff;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  z-index: -1;
+}
+.article-cover:hover {
+  cursor: pointer;
+}
+.article-cover h1 {
+  text-align: left;
+  color: #252b31;
+  font-weight: 700;
+  font-size: 4rem;
+  margin: 0.8rem 0 2rem 0;
+}
+.article-cover h1:hover {
+  animation: playful-rotation 0.3s alternate 1;
+}
+.article-cover img {
+  border-radius: 20px;
+  width: 100%;
+  transition-duration: 0.5s;
+}
+.header{
+  width: 100%;
+  text-align: center;
+  margin: 1em 0;
+  padding: 0.8em 0;
+}
+.content-container{
+  margin: 2em auto;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.8em;
+}
+.posted_by{
+  font-weight: 600;
+}
+@keyframes playful-rotation {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  35% {
+    transform: rotate(-1deg);
+    -webkit-transform: rotate(-1deg);
+  }
+  75% {
+    transform: rotate(1deg);
+    -webkit-transform: rotate(1deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+}
+@media only screen and (min-width: 1100px) {
+  img[class^="editorial-image"] {
+    max-width: 40%;
+    margin: 2.5rem auto;
+    border-radius: 16px;
+    transition-duration: 0.3s;
+  }
+  img[class^="editorial-image"]:hover {
+    cursor: pointer;
+    filter: drop-shadow(6px 6px 0px rgba(212, 156, 107, 0.5));
+  }
+
+  .editorial-image-left {
+    float: none;
+    display: flex;
+  }
+
+  .editorial-image-right {
+    float: none;
+    display: flex;
+    margin: 1rem auto;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  #decoration-nav a {
+    font-size: 0.9rem;
+  }
+
+  .article-cover p {
+    font-size: 1.1rem;
+  }
+  .article-cover h1 {
+    font-size: 3rem;
+  }
+
+  article p {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width: 750px) {
+  #decoration-nav #logo {
+    margin: auto 2rem;
+    font-size: 1.6rem;
+  }
+  #decoration-nav .left-items,
+  #decoration-nav .right-items {
+    opacity: 0;
+    display: none;
+  }
+
+  .ham {
+    opacity: 100%;
+    display: block;
+  }
+}
+@media only screen and (max-width: 580px) {
+  #date {
+    display: none;
+  }
+
+  #mobile-date {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+  }
+
+  .article-cover h1 {
+    font-size: 2.1rem;
+  }
+
+  article p {
+    font-size: 1.2rem;
+  }
+
+  article {
+    --article-ratio: 1;
+  }
+}
+
+/*============ Pagination Section ============*/
+
+.pagination{
+  width: 86%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 30px;
+  padding: 30px 20px;
+  margin: 1em auto 5em auto;
+}
+.prevpost, .nextpost{
+  width: 50%;
+  height: fit-content;
+  text-align: center;
+}
+.prevpost p, .nextpost p{
+  padding: 0 1em;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.48em;
+  font-family: var(--para-text);
+  font-weight: 600;
+  color: #080808;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.prevpost p span, .nextpost p span{
+  padding: 1em 1.3em;
+  font-size: 1.48em;
+  font-weight: 600;
+  color: #080808;
+}
+.prevpost p:hover, .nextpost p:hover{
+  background-color: #e9e9e9;
+  color: #000000;
+}
+
+/*========= The Related Posts Section =========*/
+
+.related-post {
+  max-width: 100%;
+  margin: 2em 1em 6em 1em;
+}
+.related-post .title {
+  font-size: 1.3em;
+  font-family: var(--bold-text);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 1em;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.8em;
+}
+.rp-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.rp-container .container {
+  display: flex;
+  align-items: center;
+  margin: 1.3em 1em;
+  cursor: pointer;
+}
+.rel-img {
+  max-width: 9em;
+  height: 6em;
+  margin: 0 0.8em;
+}
+.rel-img img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+.rp-container .container .content .article-title {
+  margin: 0.6em 0;
+  font-size: 1.12em;
+  font-family: var(--bold-text);
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.rp-container .container .content .article-para {
+  margin: 0.6em 0;
+  font-size: 1.08em;
+  font-family: var(--para-text);
+  text-align: left;
+  font-weight: 400;
+  color: #777777;
+}
+.rp-container .container:hover {
+  color: var(--health-hover-color);
+  opacity: 0.9;
+}

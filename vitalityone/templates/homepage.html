@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} VitalityOne: Your Key to a Healthy Lifestyle {% endblock %}
+
+{% block css %} <link rel="stylesheet" href="{% static 'CSS/home.css' %}?now=U"> {% endblock %}
+
+{% block content %}
+
+<!--========== The Hero Section is here ==========-->
+
+<section class="herosection">
+    <video id="herobg" autoplay loop muted plays-inline>
+        <source src="{% static 'Materials/Video/Home.mp4' %}" type="video/mp4">
+    </video>
+</section>
+
+<!--========== The Fitness Section is here ==========-->
+
+<section class="fitness">
+    <div class="fitnessSection">
+        <div class="content">
+            <h1 class="title">Fitness</h1>
+            <h2 class="subtitle">Start Your Transformation with Vitality One Fitness</h2>
+            <p class="desc">Welcome to Vitality One Fitness, where we believe that fitness is not just about
+                achieving a certain look or reaching a certain number on the scale. It's about feeling strong,
+                healthy, and confident in your body, and living your best life.</p>
+                <a href="{% url 'fitness:FitnessHome' %}"><button class="fitnessbtn">Explore</button></a>
+        </div>
+        <div class="fitnessBg">
+            <img src="{% static 'Materials/Images/Home/fitness.jpg' %}" loading="lazy" alt="">
+        </div>
+    </div>
+</section>
+
+<!--========== The Nutrition Section is here ==========-->
+
+<section class="nutrition">
+    <div class="nutritionSection">
+        <div class="content">
+            <h1 class="title">Nutrition</h1>
+            <h2 class="subtitle">Nutrition for Vibrant Living: Vitality One</h2>
+            <p class="desc">Welcome to Vitality One Nutrition, where we're passionate about helping you fuel
+                your life with vibrant, nutrient-dense foods. Our registered dietitians and nutrition experts
+                offer personalized plans, ongoing support, and science-based education to help you achieve your
+                goals and feel your best.</p>
+                <a href="{% url 'nutrition:NutritionHome' %}"><button class="nutritionbtn">Explore</button></a>
+        </div>
+        <div class="nutritionBg">
+            <img src="{% static 'Materials/Images/Home/nutrition.jpg' %}" loading="lazy" alt="">
+        </div>
+    </div>
+</section>
+
+<!--========== The Health Section is here ==========-->
+
+<section class="health">
+    <div class="healthSection">
+        <div class="content">
+            <h1 class="title">Health</h1>
+            <h2 class="subtitle">Healthy Living, Elevated: Vitality One Health</h2>
+            <p class="desc">Welcome to Vitality One Health, where we believe that optimal health is the
+                foundation of a fulfilling life. Our comprehensive approach takes into account all aspects of
+                your physical, mental, and emotional well-being. </p>
+        </div>
+        <a href="{% url 'health:HealthHome' %}"><button class="healthbtn">Explore</button></a>
+    </div>
+</section>
+
+<!--========== The Choose Us Section ==========-->
+
+<div class="chooseUs">
+    <h1 class="whyUs">Why Choose Us?</h1>
+    <div class="content">
+        <h1 class="title">Achieve Your Health Goals with Us</h1>
+        <p class="desc">Our comprehensive resources, customized plans, and expert guidance can help you achieve
+            your health and fitness goals faster and easier than ever before. Join our community and start your
+            journey to a healthier you today.</p>
+    </div>
+    <div class="buttons">
+        <a href="{% url 'loginsystem:Login' %}"><button type="button" class="get_started">Get
+                Started</button></a>
+        <a href="{% url 'about:About' %}"><button type="button" class="learn_more">Learn More</button></a>
+    </div>
+</div>
+
+<!--========== The Features Section ==========-->
+
+<section class="features">
+    <div class="f-slantedDiv">
+        <h1 class="f-title">Our comprehensive health plans are perfect for everyone looking to live a healthier
+            lifestyle
+        </h1>
+    </div>
+
+    <div class="features-main">
+        <h2 class="title">What Will You Get.</h2>
+        <p class="subtitle">Make Your Workout Easier And Get Faster Results</p>
+        <div class="features-cards">
+            <div class="card">
+                <div class="card-img">
+                    <img src="{% static 'Materials/Icons/Home/fitness.png' %}" loading="lazy" alt="">
+                </div>
+                <div class="content">
+                    <h3 class="c-title">Fitness Challenges</h3>
+                    <p class="c-desc">Join our fun and exciting fitness challenges to stay motivated and track
+                        your progress with others.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="{% static 'Materials/Icons/Home/article.png' %}" loading="lazy" alt="">
+                </div>
+                <div class="content">
+                    <h3 class="c-title">Comprehensive Article Repository</h3>
+                    <p class="c-desc"> Stay informed and make better choices with our engaging articles on
+                        health, fitness, and nutrition.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="{% static 'Materials/Icons/Home/exercisedb.png' %}" loading="lazy" alt="">
+                </div>
+                <div class="content">
+                    <h3 class="c-title">Extensive Exercise Database</h3>
+                    <p class="c-desc"> Access an extensive library of exercises with step-by-step instructions,
+                        images, and variations to help you create a custom workout plan.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="{% static 'Materials/Icons/Home/tools.png' %}" loading="lazy" alt="">
+                </div>
+                <div class="content">
+                    <h3 class="c-title">Interactive Tools</h3>
+                    <p class="c-desc">Stay on track and achieve your goals with easy-to-use tools like our BMI
+                        and 1-rep max calculators and Many More.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="{% static 'Materials/Icons/Home/nutrition.png' %}" loading="lazy" alt="">
+                </div>
+                <div class="content">
+                    <h3 class="c-title">Nutrition Guides</h3>
+                    <p class="c-desc">Discover healthy eating habits, meal planning, and recipes with our
+                        comprehensive nutrition guides.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="{% static 'Materials/Icons/Home/community.png' %}" loading="lazy" alt="">
+                </div>
+                <div class="content">
+                    <h3 class="c-title">Community Support</h3>
+                    <p class="c-desc"> Join our community of health and fitness enthusiasts for support,
+                        motivation, and advice from others who share your goals.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--========== The Latest Posts Section ==========-->
+
+<section class="latest-posts" id="latest-posts">
+    <div class="intro-section">
+        <h1 class="p-title">Not sure where to start?</h1>
+        <p class="p-desc">Programs offer day-to-day guidance to keep you on track</p>
+    </div>
+
+    <div class="posts">
+
+    {% for workout in workouts %}
+
+        <div class="post-card" onclick="window.location.href='fitness/workoutscategories/workouts/posts/{{workout.url}}';">
+            <span class="card-title">{{ card_titles|slice:forloop.counter|last }}</span>
+            <div class="post-img">
+                <img src=" {{ workout.img.url }}" loading="lazy" alt="">
+            </div>
+            <div class="content">
+                <p class="title">{{workout.title}}</p>
+                <p class="desc">{{workout.description | truncatewords:10 | safe}}</p>
+                <p class="time-type"><span class="time">{{workout.workout_time}} Mins</span> <span class="type">&#x2022; {{ workout.get_workouts_type_display }}</span></p>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+    <a href="{% url 'fitness:WorkoutsCategories' %}"><span>View all Programs</span></a>
+</section>
+
+{% endblock %}

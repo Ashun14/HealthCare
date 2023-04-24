@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} {{ posts.title }} {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'nutrition/CSS/_posts.css' %}?now=U">
+{% endblock %}
+
+{% block content %}
+
+<article>
+    <div class="article-cover">
+        <p id="date">{{ posts.input_date }} <span class="dot"></span>{{ posts.reading_time }} min read</p>
+        <div class="tags">
+            {% if posts.tags %}
+            {% for tag in posts.tags.all %}
+              <a>{{ tag.get_name_display }}</a>
+            {% endfor %}
+          {% endif %}
+            <a onclick="window.location.href='/nutrition/nutritioncategories/nutritioncategorypage/{{ posts.category.cat_url }}';">{{ posts.category.cat_title }}</a>
+        </div>
+
+        <div class="header">
+            <p id="mobile-date">{{ posts.input_date }}<br /><span class="dot"></span>{{ posts.reading_time }} min read</p>
+            <h1 class="article-title">{{ posts.title }}</h1>
+            <img src="{{ posts.img.url }}"
+                alt="{{ posts.title }}" class="hero-image">
+            <a class="caption">Photo by Prazanthy Ramesh for Unsplash</a>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <div class="content">
+            {{ posts.description | safe }}
+        </div>
+    </div>
+
+    <p>Posted By <span class="posted_by">{{ posts.author }}</span></p>
+</article>
+
+{% endblock %}
+

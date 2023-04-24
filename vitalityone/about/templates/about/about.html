@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Discover VitalityOne: Your Partner in Health and Fitness {% endblock %}
+
+{% block css %} <link rel="stylesheet" href="{% static 'about/CSS/_about.css' %}?now=U"> {% endblock %}
+
+{% block content %}
+
+<!--========== The Hero Section ==========-->
+
+<div class="herosection __aboutHero__">
+    <h2 class="title">We are V-One</h2>
+    <p class="subtitle">We believe that knowledge is power, and we're dedicated to empowering people to take
+        control of their health and well-being.</p>
+</div>
+
+<!--========== The About Section ==========-->
+
+<section class="aboutsection" id="aboutsection">
+    <div class="story-container">
+        <img src="{% static 'about/Materials/Images/about-section.jpg' %}" alt="" class="__aboutStoryI__">
+        <div class="content __aboutHeroC__">
+            <h2 class="title">Our Story</h2>
+            <p class="para-1">
+                <span class="span-1"> Welcome to Vitality One, your go-to source for all things related to
+                    health, fitness, and nutrition! Our website was created by a team of three passionate
+                    developers who wanted to provide a platform for people to access valuable information and
+                    resources that would help them improve their overall health and wellness.</span>
+            </p>
+            <p class="para-2">
+                <span class="span-2">
+                    We believe that everyone deserves to live a healthy and happy life, and our mission is to
+                    make that a reality by sharing our knowledge and expertise with our audience. Whether you're
+                    looking to lose weight, build muscle, improve your diet, or simply learn more about living a
+                    healthy lifestyle, you'll find everything you need right here on Vitality One.</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!--========== The Goal Section ==========-->
+
+<section class="goals __aboutGoals__" id="goals">
+    <h2 class="s-title">What We Are About</h2>
+    <div class="goals-card __aboutGoals__">
+        <div class="goal-1">
+            <h2 class="title">Accomplishment</h2>
+            <p class="para">We believe in empowering our users to achieve their health and wellness goals and
+                celebrating their successes along the way.</p>
+        </div>
+        <div class="goal-2">
+            <h2 class="title">Community</h2>
+            <p class="para">We aim to create a welcoming and supportive community that fosters connection and
+                encourages our users to support and uplift each other.</p>
+        </div>
+        <div class="goal-3">
+            <h2 class="title">Creativity</h2>
+            <p class="para">We approach everything we do with a spirit of creativity and innovation, constantly
+                exploring new ways to provide valuable and engaging health and wellness content.</p>
+        </div>
+    </div>
+</section>
+
+<!--========== The Meet The Team Section ==========-->
+
+<section class="team __aboutTeam__" id="team">
+    <div class="team-container">
+        <h2 class="t-title">Meet The Founders</h2>
+        <div class="team-Members __aboutTeam__">
+            <div class="member-1">
+                <div class="img-card">
+                    <img src="{% static 'about/Materials/Illustration/member-1.png' %}" loading="lazy" alt="">
+                </div>
+                <div class="content">
+                    <p class="title">Ashutosh Nayak</p>
+                    <p class="subtitle">Developer</p>
+                </div>
+            </div>
+            <div class="member-2">
+                <div class="img-card">
+                    <img src="{% static 'about/Materials/Illustration/member-2.png' %}" loading="lazy" alt="">
+                </div>
+                <div class="content">
+                    <p class="title">Aman Singh Rajput</p>
+                    <p class="subtitle">Designer</p>
+                </div>
+            </div>
+            <div class="member-3">
+                <div class="img-card">
+                    <img src="{% static 'about/Materials/Illustration/member-3.png' %}" loading="lazy" alt="">
+                </div>
+                <div class="content">
+                    <p class="title">Abhijeet Jadiya</p>
+                    <p class="subtitle">Content Writer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--========== The Contact Us Section ==========-->
+
+<section class="get-in-touch __aboutContact__" id="get-in-touch">
+
+{% if name %}
+<center>
+    <h2 class="sub-msg">Thanks {{ name }}</h2>
+    <p class="sub-msg-para">We recieved your email and will  respond shortly...</p>
+    <br/><br/><br/>
+</center>
+
+{% else %}
+
+    <h1 class="title">Get in touch</h1>
+    <form class="contact-form row" method="POST" action="{% url 'about:About' %}">
+
+        {% csrf_token %}
+
+       <div class="form-field col x-50">
+          <input name="name" id="name" class="input-text js-input" type="text" required>
+          <label class="label" for="name">Name</label>
+       </div>
+       <div class="form-field col x-50">
+          <input name="email" id="email" class="input-text js-input" type="email" required>
+          <label class="label" for="email">E-mail</label>
+       </div>
+       <div class="form-field col x-100">
+        <textarea name="message" class="input-text js-input" id="message" cols="30" rows="10" required></textarea>
+          <label class="label" for="message">Message</label>
+       </div>
+       <div class="form-field col x-100 align-center">
+          <input class="submit-btn" type="submit" value="Submit">
+       </div>
+    </form>
+
+    {% endif %}
+
+ </section>
+
+<div class="get_started">
+    <div class="statement">
+        <h3 class="para">Ready to try a VitalityOne workout?</h3>
+    </div>
+    <div class="gs-link">
+        <a href="{% url 'Home' %}">Get Started Today</a>
+    </div>
+</div>
+
+{% endblock %}

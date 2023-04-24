@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Transform Your Body with {{ workoutsCatUrl.heading }} {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'fitness/CSS/_workouts.css' %}?now=U">
+{% endblock %}
+
+{% block content %}
+
+<!-- ========== The Workouts ========== -->
+<section class="workout-categories">
+
+    <div class="title-section __WorkoutProgram__">
+        <span class="workout-title">{{ workoutsCatUrl.heading }}</span>
+    </div>
+
+    <section class="WorkoutPrograms  __Program__">
+        {% if workouts %}
+        {% for workout in workouts %}
+        <div class="program">
+            <div class="programs-card" onclick="window.location.href='posts/{{workout.url}}';">
+                <div class="program-img">
+                    <img src="{{ workout.img.url }}" alt="">
+                </div>
+                <div class="content">
+                    <p class="title">{{ workout.title }}</p>
+                    <p class="desc">{{ workout.description | truncatewords:8 | safe }}</p>
+                    <p class="time-type"><span class="time">{{ workout.workout_time }} Min</span> <span class="type">&#x2022; {{ workout.get_workouts_type_display }}</span></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p class="no-workout-msg">No workouts found</p>
+        {% endif %}
+    </section>
+
+</section>
+
+{% endblock %}

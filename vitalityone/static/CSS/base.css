@@ -1,0 +1,811 @@
+/*<===================GOOGLE FONTS===================>*/
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,300;1,400;1,500;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&family=Roboto:ital,wght@0,700;0,900;1,700;1,900&family=Suez+One&display=swap");
+
+/*<===================CSS VARIABLES===================>*/
+
+:root {
+  /*<===================COLORS===================>*/
+
+  /*========== Color mode throughout the website ==========*/
+
+  /* Home Page */
+  --primary-color: #ffffff;
+  --text-color: #000000;
+  --home-title-color: #1c6dd0;
+  --home-para-color: #173452;
+  --home-fitness-color: #6b3fa0;
+  --home-nutrition-color: #0b6623;
+  --home-health-color: #0f96c4;
+  --border-color: #d6d6d6;
+
+  /* About Us */
+  --about-title-color: #00235b;
+  --card-title-color: #017cbe;
+
+  /* Fitness */
+  --fitness-hover-color: #0e4cc0;
+  --exerciseDb-dropdown-bg: #ECF2FF;
+  --exerciseDb-cat-bg-hover: #e6e3ff;
+
+  /* Nutrition */
+  --nutrition-hover-color: #058f35;
+
+  /* Health */
+  --health-hover-color: #185bd6;
+
+  
+  /* Tools */
+  --tools-title-color: #1a2d3f;
+  --tools-bg-color: #2e2e41;
+  --tools-tab-btn: #5b85ff;
+  --tools-tab-bg: #434354;
+
+  --tools-box-shadow: 0 5px 25px rgb(2, 2, 2, 0.1);
+  --tools-text-shadow: 0 5px 25px rgb(2, 2, 2, 0.1);
+
+  /*<===================FONTS===================>*/
+
+  /*========== Fonts throughout the website ==========*/
+
+  --heading-text: "Suez One", sans-serif;
+  --styling-text: "Lato", sans-serif;
+  --clean-text: "Poppins", sans-serif;
+  --para-text: "Raleway", sans-serif;
+  --bold-text: "Roboto", sans-serif;
+}
+/*<===================BASE===================>*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  max-width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/*========== Customized Scrollbar ==========*/
+
+html::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+html::-webkit-scrollbar-track {
+  border-radius: 12px;
+  background: #f9f3f3;
+  box-shadow: 0 0 1px 1px #bbb, inset 0 0 7px rgba(0, 0, 0, 0.3);
+}
+html::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background: #dddddd;
+  box-shadow: inset 0 0 1px 1px #8f8f8f;
+}
+html::-webkit-scrollbar-thumb:hover {
+  background: #c8c6c6;
+}
+html::-webkit-scrollbar-thumb:active {
+  background: #9d9d9d;
+}
+
+/*<===================HEADER===================>*/
+
+/*<========== Navigation Bar ==========>*/
+nav {
+  max-width: 100%;
+  height: 18vh;
+}
+.hamburger {
+  width: 2em;
+  height: 2em;
+  position: absolute;
+  top: 3em;
+  right: 3em;
+  z-index: 10000;
+  background: transparent;
+  cursor: pointer;
+}
+.hamburger.is-active .hamburger--container .hamburger--bars {
+  background: #000000;
+}
+.hamburger.is-active .hamburger--container .hamburger--bars:before,
+.hamburger.is-active .hamburger--container .hamburger--bars:after {
+  background: #000000;
+}
+.hamburger.is-active .hamburger--container .hamburger--bars:before {
+  left: 0.25em;
+}
+.hamburger.is-active .hamburger--container .hamburger--bars:after {
+  left: -0.25em;
+}
+.hamburger .hamburger--container {
+  width: 100%;
+  padding: 0.25em;
+  position: relative;
+}
+.hamburger .hamburger--container .hamburger--bars {
+  height: 3px;
+  width: 1.5em;
+  background: #000000;
+  position: absolute;
+  top: 0.9em;
+  transition: 0.3s ease;
+}
+.hamburger .hamburger--container .hamburger--bars:before,
+.hamburger .hamburger--container .hamburger--bars:after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 1.5em;
+  background: inherit;
+  position: absolute;
+  left: 0;
+  transition: 0.3s ease;
+}
+.hamburger .hamburger--container .hamburger--bars:before {
+  top: -0.5em;
+}
+.hamburger .hamburger--container .hamburger--bars:after {
+  top: 0.5em;
+}
+
+.logo {
+  width: 5em;
+  height: 5em;
+  position: absolute;
+  top: 1.5em;
+  left: 3em;
+  z-index: 10000;
+  filter: invert(0);
+}
+.logo img {
+  width: 100%;
+  display: block;
+  transition: 0.3s linear 0.3s;
+}
+.logo.is-active img {
+  filter: invert(0);
+}
+
+.fsmenu {
+  width: 100vw;
+  height: 110vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  overflow: hidden;
+  display: none;
+}
+.fsmenu .fsmenu--container {
+  width: 0;
+  height: 100vh;
+  padding: 8em 3em 3em;
+  background: #f1f1f1;
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+}
+.fsmenu .fsmenu--container .fsmenu--text-block {
+  width: 100%;
+  height: 100%;
+}
+.fsmenu .fsmenu--container .fsmenu--text-block .fsmenu--text-container {
+  width: 100%;
+  height: 100%;
+}
+.fsmenu
+  .fsmenu--container
+  .fsmenu--text-block
+  .fsmenu--text-container
+  .fsmenu--list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.fsmenu
+  .fsmenu--container
+  .fsmenu--text-block
+  .fsmenu--text-container
+  .fsmenu--list
+  .fsmenu--list-element {
+  width: 100%;
+  height: 20%;
+  list-style-type: none;
+  text-align: right;
+}
+.fsmenu
+  .fsmenu--container
+  .fsmenu--text-block
+  .fsmenu--text-container
+  .fsmenu--list
+  .fsmenu--list-element
+  a {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #393e46;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  transition: 0.2s ease;
+}
+.fsmenu
+  .fsmenu--container
+  .fsmenu--text-block
+  .fsmenu--text-container
+  .fsmenu--list
+  .fsmenu--list-element
+  a:hover {
+  color: #e63946;
+}
+.fsmenu
+  .fsmenu--container
+  .fsmenu--text-block
+  .fsmenu--text-container
+  .fsmenu--list
+  .fsmenu--list-element
+  a
+  span {
+  font-size: 5em;
+  font-weight: 700;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  line-height: 1;
+  height: 1em;
+  display: inline-block;
+  position: relative;
+  z-index: 1002;
+  font-family: serif;
+}
+.fsmenu
+  .fsmenu--container
+  .fsmenu--text-block
+  .fsmenu--text-container
+  .fsmenu--list
+  .fsmenu--list-element
+  a
+  span:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  z-index: 1003;
+}
+.fsmenu
+  .fsmenu--container
+  .fsmenu--text-block
+  .fsmenu--text-container
+  .fsmenu--list
+  .fsmenu--list-element
+  .fsmenu--scrolling-text {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transform: translate(-20%, -100%);
+  opacity: 0;
+  pointer-events: none;
+}
+.fsmenu
+  .fsmenu--container
+  .fsmenu--text-block
+  .fsmenu--text-container
+  .fsmenu--list
+  .fsmenu--list-element
+  .fsmenu--scrolling-text
+  span {
+  height: 1em;
+  font-size: 7em;
+  font-weight: 900;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #cacaca;
+  display: inline-block;
+  margin-right: 1em;
+}
+.fsmenu
+  .fsmenu--container
+  .fsmenu--text-block
+  .fsmenu--text-container
+  .fsmenu--list
+  .fsmenu--list-element:hover
+  .fsmenu--scrolling-text {
+  opacity: 1;
+  -webkit-animation: animScrollingContactTextLeft 9s linear 0s infinite;
+  animation: animScrollingContactTextLeft 9s linear 0s infinite;
+}
+.fsmenu
+  .fsmenu--container
+  .fsmenu--text-block
+  .fsmenu--text-container
+  .fsmenu--list
+  .fsmenu--list-element
+  .fsmenu--link-img {
+  width: 0px;
+  height: 100vh;
+  padding: 8em 3em 3em;
+  position: absolute;
+  top: 0;
+  right: calc(100vw - 720px);
+  z-index: 1001;
+  font-size: 16px;
+  pointer-events: none;
+}
+.fsmenu
+  .fsmenu--container
+  .fsmenu--text-block
+  .fsmenu--text-container
+  .fsmenu--list
+  .fsmenu--list-element
+  .fsmenu--link-img
+  .fsmenu--img-container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.fsmenu
+  .fsmenu--container
+  .fsmenu--text-block
+  .fsmenu--text-container
+  .fsmenu--list
+  .fsmenu--list-element
+  .fsmenu--link-img
+  .fsmenu--img-container
+  img {
+  width: 624px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.fsmenu
+  .fsmenu--container
+  .fsmenu--text-block
+  .fsmenu--text-container
+  .fsmenu--list
+  .fsmenu--list-element.open
+  .fsmenu--link-img {
+  left: auto;
+  right: calc(100vw - 720px);
+  -webkit-animation: animMenuRevealImg 0.4s ease 0s forwards;
+  animation: animMenuRevealImg 0.4s ease 0s forwards;
+}
+.fsmenu
+  .fsmenu--container
+  .fsmenu--text-block
+  .fsmenu--text-container
+  .fsmenu--list
+  .fsmenu--list-element.open
+  .fsmenu--link-img
+  .fsmenu--img-container
+  img {
+  right: 0;
+  left: auto;
+}
+.fsmenu
+  .fsmenu--container
+  .fsmenu--text-block
+  .fsmenu--text-container
+  .fsmenu--list
+  .fsmenu--list-element.is-closing
+  .fsmenu--link-img {
+  left: 0;
+  right: auto;
+  -webkit-animation: animMenuCloseImg 0.4s ease 0s forwards;
+  animation: animMenuCloseImg 0.4s ease 0s forwards;
+}
+.fsmenu
+  .fsmenu--container
+  .fsmenu--text-block
+  .fsmenu--text-container
+  .fsmenu--list
+  .fsmenu--list-element.is-closing
+  .fsmenu--link-img
+  .fsmenu--img-container
+  img {
+  left: 0;
+  right: auto;
+}
+.fsmenu.is-active {
+  display: block;
+}
+.fsmenu.is-active .fsmenu--container {
+  -webkit-animation: animMenuReveal 0.4s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0s
+    forwards;
+  animation: animMenuReveal 0.4s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0s
+    forwards;
+}
+.fsmenu.is-active
+  .fsmenu--container
+  .fsmenu--text-container
+  .fsmenu--list
+  .fsmenu--list-element
+  a
+  span:before {
+  -webkit-animation: animMenuRevealLinks 0.3s
+    cubic-bezier(0.13, 0.13, 0.02, 1.07) 0.3s forwards;
+  animation: animMenuRevealLinks 0.3s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0.3s
+    forwards;
+}
+.fsmenu.close-menu {
+  display: contents;
+}
+.fsmenu.close-menu .fsmenu--container {
+  width: 100vw;
+  right: auto;
+  left: 0;
+  -webkit-animation: animMenuClose 0.4s cubic-bezier(0.13, 0.13, 0.02, 1.07)
+    0.15s forwards;
+  animation: animMenuClose 0.4s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0.15s
+    forwards;
+}
+.fsmenu.close-menu
+  .fsmenu--container
+  .fsmenu--text-container
+  .fsmenu--list
+  .fsmenu--list-element
+  a
+  span:before {
+  left: auto;
+  right: 0;
+  background: #dddddd;
+  -webkit-animation: animMenuCloseLinks 0.3s
+    cubic-bezier(0.13, 0.13, 0.02, 1.07) 0s forwards;
+  animation: animMenuCloseLinks 0.3s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0s
+    forwards;
+}
+
+@-webkit-keyframes animMenuReveal {
+  0% {
+    width: 0vw;
+  }
+  100% {
+    width: 100vw;
+  }
+}
+
+@keyframes animMenuReveal {
+  0% {
+    width: 0vw;
+  }
+  100% {
+    width: 100vw;
+  }
+}
+@-webkit-keyframes animMenuRevealLinks {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+@keyframes animMenuRevealLinks {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+@-webkit-keyframes animMenuClose {
+  0% {
+    width: 100vw;
+    padding: 8em 3em 3em;
+  }
+  100% {
+    width: 0vw;
+    padding: 8em 0 0;
+  }
+}
+@keyframes animMenuClose {
+  0% {
+    width: 100vw;
+    padding: 8em 3em 3em;
+  }
+  100% {
+    width: 0vw;
+    padding: 8em 0 0;
+  }
+}
+@-webkit-keyframes animMenuCloseLinks {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 110%;
+  }
+}
+@keyframes animMenuCloseLinks {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 110%;
+  }
+}
+@-webkit-keyframes animMenuRevealImg {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 720px;
+  }
+}
+@keyframes animMenuRevealImg {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 720px;
+  }
+}
+@-webkit-keyframes animMenuCloseImg {
+  0% {
+    width: 720px;
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes animMenuCloseImg {
+  0% {
+    width: 720px;
+  }
+  100% {
+    width: 0;
+  }
+}
+@-webkit-keyframes animScrollingContactTextLeft {
+  0% {
+    transform: translate(-20%, -100%);
+  }
+  100% {
+    transform: translate(-40%, -100%);
+  }
+}
+@keyframes animScrollingContactTextLeft {
+  0% {
+    transform: translate(-20%, -100%);
+  }
+  100% {
+    transform: translate(-40%, -100%);
+  }
+}
+
+
+/*================= FOOTER =================*/
+
+footer {
+  margin-top: 2em;
+  max-width: 100%;
+  min-height: 50vh;
+  padding: 1.7em 2.8em;
+}
+
+/*========= The Logo and the footer links =========*/
+
+.footer-links-container {
+  height: 26em;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 1.1em;
+}
+.footer-links-container .logo-email {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-basis: 50%;
+  max-width: 100%;
+  height: 100%;
+}
+.logo-email .logo-container {
+  text-align: center;
+  max-width: 15%;
+}
+.logo-email .logo-container img {
+  width: 100%;
+}
+
+/*========= The Email form =========*/
+
+.logo-email .email {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  margin-top: 0.8em;
+}
+.email .email-card h3 {
+  font-family: var(--bold-text);
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  text-align: left;
+  line-height: 26px;
+  letter-spacing: 1px;
+  -webkit-text-stroke-width: 0.6px;
+  cursor: default;
+}
+.email-card form input[type="email"] {
+  display: inline-block;
+  width: 68%;
+  padding: 11px 16px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  height: 52px;
+  margin-top: 18px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.06);
+  background-color: #e6e6e6;
+  transition: 0.2s ease;
+}
+.email-card form input:focus {
+  outline: 1px solid #666666;
+}
+.email-card form input,
+.email-card form input::-webkit-input-placeholder {
+  font-size: 16px;
+  line-height: 3;
+  font-family: var(--clean-text);
+}
+.email-card form .bt {
+  margin-left: -61px;
+  font-size: 18px;
+  display: inline-block;
+  font-weight: 600;
+  padding: 12px 13px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+  background-color: #e6e6e6;
+}
+.email-card form .bt:hover {
+  color: #1d1c1c;
+}
+
+/*========= The Footer links =========*/
+
+.footer-links {
+  width: 75%;
+  max-height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.footer-links ul {
+  width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin: 0 1.2em;
+}
+.footer-links ul li {
+  list-style: none;
+  margin: 0.7em 0;
+  max-width: 100%;
+}
+.footer-links ul li a {
+  text-decoration: none;
+  font-family: var(--para-text);
+  font-size: 0.98em;
+  font-weight: 500;
+  color: #5c5c5c;
+  word-spacing: 1px;
+  transition: 0.1s ease;
+}
+.footer-links ul li .title {
+  color: #1f1f1f;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+.footer-links ul li a:hover {
+  color: #272727;
+}
+.footer-links ul li .title:hover {
+  color: #000000;
+}
+
+/*========= The Copyright and Social-media =========*/
+
+.copyright-socialMedia {
+  max-width: 100%;
+  height: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.copyright-socialMedia .copyright {
+  text-align: center;
+}
+.copyright {
+  margin: 1em 0 0.9em 0.8em;
+}
+.copyright a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.copyright a .sp {
+  cursor: pointer;
+  font-size: 0.95em;
+}
+.copyright a .sp:hover {
+  color: #494949;
+}
+.copyright span {
+  margin: 0.2em 0.5em 0 0.5em;
+  font-family: var(--clean-text);
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: 1em;
+  text-align: left;
+  cursor: default;
+  line-height: 25px;
+}
+.social-media {
+  margin: 1em 1.8em 1em 0;
+  display: flex;
+  align-items: center;
+  padding-top: 0.8em;
+}
+.social-media a {
+  text-decoration: none;
+}
+.social-media a i {
+  margin: 0 0.6em 0 0.4em;
+  color: var(--text-color);
+  font-size: 2em;
+  cursor: pointer;
+}
+.social-media a .fb:hover {
+  color: #3b5998;
+}
+.social-media a .insta:hover {
+  color: #d62976;
+}
+.social-media a .tw:hover {
+  color: #00acee;
+}
+
+/*========= The ScrollUp =========*/
+
+.scrollup {
+  position: fixed;
+  right: 2.2rem;
+  bottom: -30%;
+  background-color: #d3d3d3;
+  display: inline-flex;
+  padding: 0.35rem;
+  color: var(--text-color);
+  font-size: 1.25rem;
+  z-index: 100;
+  transition: 0.3s;
+  text-decoration: none;
+}
+.scrollup:hover {
+  transform: translateY(-0.25rem);
+}
+
+/* Show ScrollUp */
+.show-scroll {
+  bottom: 3rem;
+}

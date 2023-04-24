@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Nurtition Guide {% endblock %}
+
+{% block css %} 
+    <link rel="stylesheet" href="{% static 'nutrition/CSS/_categories.css' %}?now=U">
+{% endblock %}
+
+{% block content %}
+
+<!-- ========== The Nutrition Categories ========== -->
+
+<section class="nutrition-categories">
+    <div class="title-section">
+        <span class="category-title">Nurtition Guide</span>
+    </div>
+    
+    <section class="NurtitionTopics">
+
+        {% for category in categories %}
+        {% if category.sub_cat %}
+
+        <div class="topics">
+            <div class="topics-card" onclick="window.location.href='nutritioncategorypage/{{category.cat_url}}'">
+                <div class="topics-img">
+                    <img src="{{ category.img.url }}" alt="">
+                </div>
+                <div class="content">
+                    <h2 class="title">{{ category.cat_title }}</h2>
+                    <p class="desc">{{ category.description }}</p>
+                    <a href="nutritioncategorypage/{{category.cat_url}}">Go to Topic <i class="ri-arrow-right-line"></i></a>
+                </div>
+            </div>
+        </div>
+
+        {% endif %}
+        {% endfor %}
+    </section>
+
+</section>
+
+{% endblock %}

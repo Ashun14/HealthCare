@@ -1,0 +1,102 @@
+/*<===================BODY===================>*/
+
+/* ========== The Nutrition section ========== */
+
+.nutrition-categories {
+  max-width: 100%;
+  min-height: 90vh;
+  padding: 2em 3em;
+}
+.title-section {
+  width: 100%;
+  height: 4em;
+  text-align: center;
+  margin: 0.8em 0 1em 0;
+  padding-bottom: 1.5em;
+}
+.title-section .category-title {
+  font-size: 2.6em;
+  font-family: var(--bold-text);
+  font-weight: 700;
+  text-transform: capitalize;
+  margin: 1em 0;
+  text-align: center;
+}
+.NurtitionTopics {
+  max-width: 100%;
+  min-height: 100%;
+  padding: 2em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 20px;
+}
+.topics {
+  max-width: 100%;
+  height: 25em;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.topics-card {
+  width: 90%;
+  height: 25em;
+  margin: 1.2em 0.8em;
+  background-color: #ffffff;
+  padding: 0.8em;
+  cursor: pointer;
+}
+.topics-card .topics-img {
+  width: 100%;
+  height: 50%;
+}
+.topics-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.2s ease-in-out;
+}
+.topics-card .content {
+  width: 100%;
+  min-height: 7em;
+  cursor: pointer;
+  margin-top: 0.8em;
+}
+.topics-card .content .title {
+  margin: 1.2em 0 0.6em 0;
+  font-size: 1.8em;
+  font-family: var(--para-text);
+  text-align: left;
+  font-weight: 600;
+}
+.topics-card .content .desc {
+  margin: 0.2em 0 2.1em 0;
+  font-size: 1.03em;
+  font-family: var(--clean-text);
+  text-align: left;
+  font-weight: 300;
+  line-height: 22px;
+}
+.topics-card .content a {
+  font-size: 1.02em;
+  font-family: var(--clean-text);
+  text-align: left;
+  font-weight: 500;
+  color: #2c8af5;;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+.topics-card .content a i {
+  font-size: 1.2em;
+  margin-top: 1.4em;
+  object-fit: contain;
+  position: relative;
+  top: 5px;
+}
+.topics-card .content a:hover {
+    color: var(--health-hover-color);
+}
+.topics-card:hover img {
+    opacity: 0.8;
+  }

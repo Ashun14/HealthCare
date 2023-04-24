@@ -1,0 +1,278 @@
+/*<===================BODY===================>*/
+
+/*========== The Hero Section ==========*/
+
+.herosection {
+  max-width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em 0 2em 0;
+}
+.main-section {
+  max-width: 100%;
+  max-height: 25em;
+  margin: 4em 0 2em 2em;
+  padding-left: 1em;
+}
+.main-section .title {
+  margin: 0.8em 0;
+  font-family: var(--bold-text);
+  font-size: 1.26em;
+  text-transform: uppercase;
+  font-weight: 200;
+  width: 20%;
+  text-align: left;
+  color: var(--title-color);
+}
+.main-section .subtitle {
+  margin: 0.5em 0 2.8em 0;
+  font-family: var(--heading-text);
+  font-size: 2.3em;
+  font-weight: 200;
+  width: 75%;
+  text-align: left;
+  color: var(--title-color);
+  line-height: 48px;
+  word-spacing: 4px;
+}
+.imgBg {
+  margin: 4em 2.2em 2em 0;
+  width: 60%;
+  height: fit-content;
+  background: url("/static/fitness/Materials/Images/beam-orange-background-circle.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.imgBg img {
+  width: 100%;
+}
+
+/* ========== The Workout section ========== */
+
+.workout-section {
+  max-width: 100%;
+  min-height: 80vh;
+  margin: 1em 0;
+}
+.workouts {
+  margin: 1em 0;
+  font-family: var(--bold-text);
+  font-size: 3em;
+  text-transform: uppercase;
+  font-weight: 800;
+  max-width: 28%;
+  text-align: left;
+  color: var(--title-color);
+}
+/* ========== All Workout Categories section ========== */
+
+.workout-categories {
+  max-width: 100%;
+  min-height: 90vh;
+  padding: 2em 3em;
+}
+.__WorkoutProgram__ {
+  max-width: 100%;
+  min-height: 100%;
+  padding: 2em;
+  background: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.__WorkoutProgram__:nth-child(2n) {
+  background: #f7f7f7;
+}
+.title-section {
+  width: 100%;
+  height: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.8em 0 1em 0;
+  padding-bottom: 1.5em;
+  border-bottom: 2px solid #d6d6d6;
+}
+.title-section .workout-title {
+  font-size: 1.9em;
+  font-family: var(--clean-text);
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 1em 0;
+  text-align: center;
+}
+.title-section a {
+  color: #7286d3;
+  font-size: 1em;
+  font-family: var(--clean-text);
+  font-weight: 500;
+  text-transform: capitalize;
+  text-decoration: none;
+  margin: 0 1em;
+  display: block;
+  transition: all 0.1s ease-in-out;
+}
+.title-section a:hover {
+  color: var(--fitness-hover-color);
+}
+.title-section a i {
+  font-size: 1.2em;
+  margin: 1.4em 0 0 0.2em;
+  object-fit: contain;
+  position: relative;
+  top: 5px;
+}
+.__Program__ {
+  max-width: 100%;
+  height: 25em;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.programs-card {
+  width: 25%;
+  height: 22em;
+  margin: 1.2em 0.8em;
+  background-color: #ffffff;
+  padding: 0.8em;
+  cursor: pointer;
+}
+.programs-card .program-img {
+  width: 100%;
+  height: 50%;
+  cursor: pointer;
+}
+.program-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.programs-card .content {
+  width: 100%;
+  min-height: 7em;
+  cursor: pointer;
+  margin-top: 0.8em;
+}
+.programs-card .content .title {
+  margin: 0.1em 0 0 0;
+  font-size: 1em;
+  font-family: var(--clean-text);
+  text-align: left;
+  font-weight: 400;
+}
+.programs-card .content .desc {
+  margin: 0 0 0.4em 0;
+  font-size: 0.95em;
+  font-family: var(--clean-text);
+  text-align: left;
+  font-weight: 300;
+  line-height: 22px;
+}
+.programs-card .content .time-type {
+  margin: 0 0 0.6em 0;
+  font-size: 0.87em;
+  font-family: var(--clean-text);
+  text-align: left;
+  font-weight: 300;
+  color: #7286d3;
+}
+.programs-card:hover {
+  opacity: 0.9;
+}
+
+/* Explore button */
+
+.explore {
+  text-align: start;
+  text-decoration: none;
+  margin: 0 0 0 1em;
+}
+.explore button {
+  width: 9.3em;
+  height: 3.2em;
+  border: none;
+  outline: none;
+  background: #3876e9;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 0.95em;
+  font-family: var(--clean-text);
+  transition: all 0.2s;
+}
+.explore button:hover {
+  background: var(--fitness-hover-color);
+}
+
+/* ========== The Excercise DB mentiom ========== */
+
+.exercise-db {
+  margin: 0em 0 3em 0;
+  max-width: 100%;
+  min-height: 20vh;
+  padding: 2em;
+  border-bottom: 2px solid var(--border-color);
+}
+.exercise-db .db-title {
+  margin: 0.3em 1em;
+  font-family: var(--bold-text);
+  font-size: 3em;
+  text-transform: uppercase;
+  font-weight: 800;
+  width: 40%;
+  text-align: left;
+  color: var(--title-color);
+}
+.exercise-db .container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1.8em;
+}
+.exercise-db .container .content {
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container .content .title {
+  font-family: var(--bold-text);
+  font-size: 2.1em;
+  text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+  word-spacing: 1px;
+  margin-bottom: 0.6em;
+}
+.container .content .para {
+  font-family: var(--para-text);
+  font-size: 1.07em;
+  text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+  word-spacing: 1px;
+  margin-bottom: 1.2em;
+}
+.container .content button {
+  text-decoration: none;
+  text-align: center;
+  width: 9.3em;
+  height: 3em;
+  border: 2px solid #c7c7c7;
+  background: #000000;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  font-family: var(--clean-text);
+  transition: all 0.2s ease-in-out;
+}
+.container .content button:hover {
+  background-color: #ffffff;
+  color: #000000;
+}

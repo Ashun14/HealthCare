@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Revitalize Your Health with VitalityOne {% endblock %}
+
+{% block css %} 
+    <link rel="stylesheet" href="{% static 'health/CSS/_health.css' %}?now=U"> 
+{% endblock %}
+
+{% block content %}
+
+<!--========= The Top-Articles Section =========-->
+
+<section class="top-Articles" id="top-Articles">
+
+    {% for homepost in top_articles %}
+    <div class="container c-1 __healthArticles__" onclick="window.location.href='healthcategories/post/{{homepost.post_url}}';">
+        <img src="{{ homepost.img.url }}" alt="">
+        <div class="card">
+            <h1 class="card-title">{{ homepost.title | truncatewords:6 | safe }}</h1>
+            <p class="card-para">{{ homepost.sub_description | truncatewords:14 | safe }}</p>
+        </div>
+    </div>
+    {% endfor %}
+
+</section>
+
+
+<!--========= The Explore Section Through Fields =========-->
+
+
+<section class="explore-container __healthExplore__" id="explore-container">
+    <div class="explore">
+        <span class="explore_by">Explore By</span>
+        <a href="{% url 'health:HealthCategories' %}?subcategory=ex">View all <i class="ri-arrow-right-line"></i></a>
+    </div>
+    <div class="container __healthExplore__">
+        {% for healthex in explore.all|slice:":5" %}
+        <div class="{{ healthex.cat_title }} explore-cat" onclick="window.location.href='healthcategories/healthcategorypage/{{healthex.cat_url}}';">
+            <div class="cat-img">
+                <img src="{{ healthex.img.url }}" loading="lazy" alt="">
+            </div>
+            <h3 class="cat-title">{{ healthex.cat_title }}</h3>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!--========= The Top Reads Section =========-->
+
+<section class="top-read __healthRead__" id="top-read">
+    <h2 class="title">Top Reads</h2>
+    <div class="tr-container __healthRead__">
+        {% for homepost in top_reads %}
+            <div class="container" onclick="window.location.href='healthcategories/post/{{homepost.post_url}}';">
+                <div class="tread-img">
+                    <img src="{{ homepost.img.url }}" loading="lazy" alt="">
+                </div>
+                <div class="content">
+                    <h1 class="article-title">{{ homepost.title | safe }}</h1>
+                    <p class="article-para">{{ homepost.sub_description | truncatewords:14 | safe }}</p>
+                </div>
+            </div>
+       {% endfor %}
+    </div>
+</section>
+
+<!--========= The Trending Topics Section =========-->
+
+<section class="trending __healthTrending__" id="trending">
+    <h2 class="title">Trending Topics</h2>
+    <div class="trend-btn __healthTrending__">
+        <div class="trends">
+            <span class="trend-topic"><a href="https://www.google.com/search?q=Mental+Health" target="_blank">Mental Health</a></span>
+        </div>
+        <div class="trends">
+            <span class="trend-topic"><a href="https://www.google.com/search?q=Plant-Based+Diets" target="_blank">Plant-Based Diets</a></span>
+        </div>
+        <div class="trends">
+            <span class="trend-topic"><a href="https://www.google.com/search?q=Gut+Health" target="_blank">Gut Health</a></span>
+        </div>
+        <div class="trends">
+            <span class="trend-topic"><a href="https://www.google.com/search?q=Epigenetics" target="_blank">Epigenetics</a></span>
+        </div>
+        <div class="trends">
+            <span class="trend-topic"><a href="https://www.google.com/search?q=Integrative+Medicine" target="_blank">Integrative Medicine</a></span>
+        </div>
+        <div class="trends">
+            <span class="trend-topic"><a href="https://www.google.com/search?q=Infectious+Diseases" target="_blank">Infectious Diseases</a></span>
+        </div>
+        <div class="trends">
+            <span class="trend-topic"><a href="https://www.google.com/search?q=Digital+Health" target="_blank">Digital Health</a></span>
+        </div>
+        <div class="trends">
+            <span class="trend-topic"><a href="https://www.google.com/search?q=Precision+Medicine" target="_blank">Precision Medicine</a></span>
+        </div>
+        <div class="trends">
+            <span class="trend-topic"><a href="https://www.google.com/search?q=Healthy+Aging" target="_blank">Healthy Aging</a></span>
+        </div>
+        <div class="trends">
+            <span class="trend-topic"><a href="https://www.google.com/search?q=Metabolic+Health" target="_blank">Metabolic Health</a></span>
+        </div>
+        <div class="trends">
+            <span class="trend-topic"><a href="https://www.google.com/search?q=Genetic+Testing" target="_blank">Genetic Testing</a></span>
+        </div>
+        <div class="trends">
+            <span class="trend-topic"><a href="https://www.google.com/search?q=Artificial+Skin" target="_blank">Artificial Skin</a></span>
+        </div>
+    </div>
+</section>
+
+<!--========= The Health Conditions Section  =========-->
+
+<section class="health-conditions __healthConditions__" id="health-conditions">
+    <div class="healthco">
+        <span class="h_condition-title">Health Conditions</span>
+        <a href="{% url 'health:HealthCategories' %}?subcategory=hc">View all <i class="ri-arrow-right-line"></i></a>
+    </div>
+    <div class="container __healthConditions__">
+        {% for healthcon in healthcondition.all|slice:":5" %}
+        <div class="{{ healthcon.cat_title }} cat-condition" onclick="window.location.href='healthcategories/healthcategorypage/{{healthcon.cat_url}}';">
+            <div class="cat-img">
+                <img src="{{ healthcon.img.url }}" loading="lazy" alt="">
+            </div>
+            <h3 class="cat-title">{{ healthcon.cat_title }}</h3>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!--========= The Latest News And Updates Section  =========-->
+
+<section class="latest-news __healthNews__" id="latest-news">
+    <h2 class="title">Healthy Headlines</h2>
+    <div class="news-container __healthNews__">
+        {% for homepost in latest_news %}
+            <div class="container" onclick="window.location.href='healthcategories/post/{{homepost.post_url}}';">
+                <img src="{{ homepost.img.url }}" loading="lazy" alt="">
+                <span class="news-title">{{ homepost.title| truncatewords:8 | safe }}</span>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

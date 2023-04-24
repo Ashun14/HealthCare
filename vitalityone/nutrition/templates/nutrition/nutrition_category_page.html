@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Revitalize Your Health with VitalityOne {% endblock %}
+
+{% block css %} 
+    <link rel="stylesheet" href="{% static 'nutrition/CSS/_categories_page.css' %}?now=U"> 
+{% endblock %}
+
+{% block content %}
+
+<!--========= The Heading Section =========-->
+<div class="Heading">
+    <h1 class="card-title">{{ category.cat_title  | safe }}</h1>
+    <p class="card-para">{{ category.description  | truncatewords:14 | safe }}</p>
+</div>
+
+<!--========= The Featured Section =========-->
+{% if featured_posts %}
+<section class="featured" id="featured">
+    <h2 class="title">Featured</h2>
+    <div class="f-container">
+        {% for post in featured_posts %}
+        <div class="container" onclick="window.location.href='/nutrition/nutritioncategories/post/{{ post.post_url }}';">
+            <div class="f-img">
+                <img src="{{ post.img.url }}" loading="lazy" alt="">
+            </div>
+            <div class="content">
+                <h1 class="article-title">{{ post.title | safe }}</h1>
+                <p class="article-para">{{ post.sub_description | truncatewords:14 | safe }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<!--========= The Best Of Section =========-->
+
+{% if best_in_posts %}
+<section class="best" id="best">
+    <h2 class="title">Best In {{ category.heading }}</h2>
+    <div class="b-container">
+        {% for post in best_in_posts %}
+        <div class="container" onclick="window.location.href='/nutrition/nutritioncategories/post/{{ post.post_url }}';">
+            <div class="b-img">
+                <img src="{{ post.img.url }}" loading="lazy" alt="">
+            </div>
+            <div class="content">
+                <h1 class="article-title">{{ post.title | safe }}</h1>
+                <p class="article-para">{{ post.sub_description | truncatewords:14 | safe }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<!--========= The More Section =========-->
+
+{% if more_in_posts %}
+<section class="more" id="more">
+    <h2 class="title">More In {{ category.title }}</h2>
+    <div class="m-container">
+        {% for post in more_in_posts %}
+        <div class="container" onclick="window.location.href='/nutrition/nutritioncategories/post/{{ post.post_url }}';">
+            <div class="m-img">
+                <img src="{{ post.img.url }}" loading="lazy" alt="">
+            </div>
+            <div class="content">
+                <h1 class="article-title">{{ post.title | safe }}</h1>
+                <p class="article-para">{{ post.sub_description | truncatewords:14 | safe }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+{% endblock %}

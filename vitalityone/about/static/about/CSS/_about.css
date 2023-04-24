@@ -1,0 +1,381 @@
+/*<===================BODY===================>*/
+
+/*========== The Hero Section ==========*/
+.herosection {
+  max-width: 100%;
+  max-height: 90vh;
+  margin: 2em 0 2em 5em;
+  padding-left: 1em;
+}
+.herosection .title {
+  margin: 0.8em 0;
+  font-family: var(--bold-text);
+  font-size: 1.26em;
+  text-transform: uppercase;
+  font-weight: 200;
+  width: 20%;
+  text-align: left;
+  color: var(--about-title-color);
+}
+.herosection .subtitle {
+  margin: 0.5em 0 2.8em 0;
+  font-family: var(--heading-text);
+  font-size: 3.2em;
+  font-weight: 200;
+  width: 70%;
+  text-align: left;
+  color: var(--about-title-color);
+  line-height: 58px;
+  word-spacing: 5px;
+}
+
+/*========== The About Section ==========*/
+
+.aboutsection {
+  max-width: 100%;
+  min-height: 50vh;
+}
+.story-container {
+  max-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #c1e4f8;
+}
+.story-container img {
+  width: 40%;
+}
+.story-container .content {
+  margin: 2em 6em;
+  max-width: 100%;
+}
+.story-container .content .title {
+  margin: 0.9em 0;
+  font-family: var(--heading-text);
+  font-size: 2.1em;
+  font-weight: 500;
+  width: 80%;
+  text-align: center;
+  color: var(--about-title-color);
+  word-spacing: 5px;
+}
+.story-container .content .para-1,
+.para-2 {
+  margin: 25px 0;
+  width: 85%;
+}
+.story-container .content .span-1,
+.span-2 {
+  margin: 0.5em 0;
+  font-family: var(--para-text);
+  font-size: 1.2em;
+  font-weight: 500;
+  text-align: left;
+  color: var(--about-title-color);
+  line-height: 28px;
+}
+
+/*========== The Goal Section ==========*/
+
+.goals {
+  max-width: 100%;
+  min-height: 50vh;
+  background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),url("/static/about/Materials/Images/goalbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding-top: 7em;
+  padding-bottom: 6em;
+}
+.goals .s-title {
+  font-family: var(--heading-text);
+  font-size: 2.6em;
+  font-weight: 200;
+  width: 100%;
+  text-align: center;
+  color: var(--about-title-color);
+  line-height: 40px;
+  word-spacing: 5px;
+  margin-bottom: 2em;
+}
+.goals-card {
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.goals-card .goal-1,
+.goal-2,
+.goal-3 {
+  max-width: 32%;
+  height: 14em;
+  margin: 1em 2em;
+  box-shadow: 1px 4px 10px 2px rgba(138, 138, 138, 0.8);
+  border-radius: 16px;
+  padding: 1em 2.2em;
+  background-color: #f3f3f3;
+}
+.goals-card .goal-3 {
+  max-width: 65%;
+  height: 12em;
+}
+.goal-1 .title,
+.goal-2 .title,
+.goal-3 .title {
+  font-family: var(--heading-text);
+  font-size: 2.3em;
+  font-weight: 200;
+  text-align: left;
+  color: var(--card-title-color);
+  margin-bottom: 0.5em;
+}
+.goal-1 .para,
+.goal-2 .para,
+.goal-3 .para {
+  font-family: var(--para-text);
+  font-size: 1.17em;
+  font-weight: 500;
+  text-align: left;
+  color: #1a2a3a;
+}
+
+/*========== The Meet The Team Section ==========*/
+
+.team {
+  max-width: 100%;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 4em;
+  background: url("/static/about/Materials/Images/circle-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.team .team-container {
+  width: 82%;
+  min-height: 30em;
+  background-color: var(--about-bg);
+  padding-top: 6em;
+  padding-bottom: 4em;
+}
+.team-container .t-title {
+  font-family: var(--heading-text);
+  font-size: 2.6em;
+  font-weight: 200;
+  text-align: left;
+  color: var(--about-title-color);
+  margin-bottom: 0.5em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+.team-Members {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.team-Members .member-1,
+.member-2,
+.member-3 {
+  margin: 1em 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.team-Members .img-card {
+  width: 15em;
+  border-radius: 25px;
+  height: 18em;
+  background-color: #e0ebf7;
+  margin: 1em 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+.img-card img {
+  transition: all 0.6s ease-in-out;
+}
+.img-card img:hover {
+  transform: scale(1.1);
+  background-color: #c6d6e9;
+}
+.member-1 .content .title,
+.member-2 .content .title,
+.member-3 .content .title {
+  font-family: var(--bold-text);
+  font-size: 1.2em;
+  font-weight: 600;
+  text-align: center;
+  color: var(--card-title-color);
+  margin-top: 0.8em;
+}
+.member-1 .content .subtitle,
+.member-2 .content .subtitle,
+.member-3 .content .subtitle {
+  font-family: var(--clean-text);
+  font-size: 1.2em;
+  font-weight: 500;
+  text-align: center;
+  color: #05466b;
+  margin-top: 0.4em;
+}
+
+/*========== The Contact Section ==========*/
+
+.align-center {
+  text-align: center;
+}
+
+.row {
+  margin: -20px 0;
+}
+.row .col {
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.row .col.x-50 {
+  width: 50%;
+}
+.row .col.x-100 {
+  width: 100%;
+}
+
+.content-wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+.get-in-touch {
+  max-width: 650px;
+  margin: 1em auto;
+  padding: 2em 0;
+}
+.get-in-touch .title {
+  text-align: center;
+  font-family: var(--para-text);
+  font-weight: 300;
+  text-transform: uppercase;
+  color: var(--about-title-color);
+  letter-spacing: 3px;
+  font-size: 36px;
+  line-height: 48px;
+  padding-bottom: 48px;
+}
+
+.contact-form .form-field {
+  position: relative;
+  margin: 40px 0;
+}
+.contact-form .input-text {
+  display: block;
+  width: 100%;
+  height: 36px;
+  border-width: 0 0 2px 0;
+  border-color: var(--about-title-color);
+  font-family: Lusitana, serif;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+}
+.contact-form .input-text:focus {
+  outline: none;
+}
+.contact-form .input-text:focus + .label, .contact-form .input-text.not-empty + .label {
+  transform: translateY(-20px);
+}
+.contact-form .label {
+  position: absolute;
+  top: -14px;
+  left: 20px;
+  bottom: 11px;
+  font-family: var(--styling-text);
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #888;
+  cursor: text;
+  transition: transform 0.2s ease-in-out;
+}
+.contact-form .submit-btn {
+  display: inline-block;
+  background-color: #4ebbf7;
+  color: #000;
+  font-family: var(--para-text);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border: 2px solid #77c1e9;
+  transition: background-color .3s ease;
+}
+
+.contact-form .submit-btn:hover{
+  background-color: #6ccdfd;
+  color: #000;
+}
+
+.sub-msg{
+  font-family: var(--bold-text);
+  font-size: 1.2em;
+  font-weight: 600;
+  text-align: center;
+  color: var(--card-title-color);
+  margin-top: 0.8em;
+}
+.sub-msg-para{
+  font-family: var(--clean-text);
+  font-size: 1.2em;
+  font-weight: 500;
+  text-align: center;
+  color: #05466b;
+  margin-top: 0.4em;
+}
+
+/*================= Get Started =================*/
+
+.get_started{
+    max-width: 100%;
+    height: 10em;
+    background-color: #B4E4FF;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 2em;
+}
+.get_started .statement, .gs-link{
+    max-width: 100%;
+}
+.statement .para{
+    font-family: var(--styling-text);
+    font-size: 1.9em;
+    font-weight: 700;
+    text-align: center;
+    word-spacing: 1px;
+    color: var(--text-color);
+}
+.gs-link a{
+    font-family: var(--para-text);
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center;
+    word-spacing: 1px;
+    text-decoration: none;
+    padding: 1em 2em;
+    outline: none;
+    border: none;
+    background-color: #5BC0F8;
+    color: var(--text-color);
+    text-transform: uppercase;
+    transition: .1s ease;
+}
+.gs-link a:hover{
+    background-color: #43bcfd;
+}

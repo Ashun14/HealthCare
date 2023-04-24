@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Nourish Your Body, Feed Your Soul {% endblock %}
+
+{% block css %} 
+    <link rel="stylesheet" href="{% static 'nutrition/CSS/_nutrition.css' %}?now=U"> 
+{% endblock %}
+
+{% block content %}
+
+<!--========= The Top-Articles Section =========-->
+
+<section class="top-Articles" id="top-Articles">
+
+    {% for homepost in top_articles %}
+    <div class="container c-1 __nutritionArticles__" onclick="window.location.href='nutritioncategories/post/{{homepost.post_url}}';">
+        <img src="{{ homepost.img.url }}" alt="">
+        <div class="card">
+            <h1 class="card-title">{{ homepost.title | truncatewords:6 | safe }}</h1>
+            <p class="card-para">{{ homepost.sub_description | truncatewords:14 | safe }}</p>
+        </div>
+    </div>
+    {% endfor %}
+
+</section>
+
+
+<!--========= The Explore Section Through Fields =========-->
+
+
+<section class="explore-container __nutritionExplore__" id="explore-container">
+    <div class="explore">
+        <span class="explore_by">Explore By</span>
+        <a href="{% url 'nutrition:NutritionCategories' %}?subcategory=ex">View all <i class="ri-arrow-right-line"></i></a>
+    </div>
+    <div class="container __nutritionExplore__">
+        {% for nutritionex in explore.all|slice:":5" %}
+        <div class="{{ nutritionex.cat_title }} explore-cat" onclick="window.location.href='nutritioncategories/nutritioncategorypage/{{nutritionex.cat_url}}';">
+            <div class="cat-img">
+                <img src="{{ nutritionex.img.url }}" loading="lazy" alt="">
+            </div>
+            <h3 class="cat-title">{{ nutritionex.cat_title }}</h3>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!--========= The Top Reads Section =========-->
+
+<section class="top-read __nutritionRead__" id="top-read">
+    <h2 class="title">Top Reads</h2>
+    <div class="tr-container __nutritionRead__">
+        {% for homepost in top_reads %}
+        <div class="container" onclick="window.location.href='nutritioncategories/post/{{homepost.post_url}}';">
+            <div class="tread-img">
+                <img src="{{ homepost.img.url }}" loading="lazy" alt="">
+            </div>
+            <div class="content">
+                <h1 class="article-title">{{ homepost.title | safe }}</h1>
+                <p class="article-para">{{ homepost.sub_description | truncatewords:14 | safe }}</p>
+            </div>
+        </div>
+       {% endfor %}
+    </div>
+</section>
+
+<!--========= The Trending Topics Section =========-->
+
+<section class="trending __nutritionTrending__" id="trending">
+    <h2 class="title">Trending Topics</h2>
+    <div class="trend-btn __nutritionTrending__">
+        <div class="trends">
+            <a href="https://www.google.com/search?q=Intermittent+fasting" target="_blank"><span class="trend-topic">Intermittent fasting</span></a>
+        </div>
+        <div class="trends">
+            <a href="https://www.google.com/search?q=Keto+diet" target="_blank"><span class="trend-topic">Keto diet</span></a>
+        </div>
+        <div class="trends">
+            <a href="https://www.google.com/search?q=Gut+Health" target="_blank"><span class="trend-topic">Gut Health</span></a>
+        </div>
+        <div class="trends">
+            <a href="https://www.google.com/search?q=Superfoods" target="_blank"><span class="trend-topic">Superfoods</span></a>
+        </div>
+        <div class="trends">
+            <a href="https://www.google.com/search?q=Low-carb+diet" target="_blank"><span class="trend-topic">Low-carb</span></a>
+        </div>
+        <div class="trends">
+            <a href="https://www.google.com/search?q=Paleo+diet" target="_blank"><span class="trend-topic">Paleo diet</span></a>
+        </div>
+        <div class="trends">
+            <a href="https://www.google.com/search?q=Functional+foods" target="_blank"><span class="trend-topic">Functional foods</span></a>
+        </div>
+        <div class="trends">
+            <a href="https://www.google.com/search?q=Flexitarian+diet" target="_blank"><span class="trend-topic">Flexitarian diet</span></a>
+        </div>
+        <div class="trends">
+            <a href="https://www.google.com/search?q=Hydration" target="_blank"><span class="trend-topic">Hydration</span></a>
+        </div>
+        <div class="trends">
+            <a href="https://www.google.com/search?q=Food+as+medicine" target="_blank"><span class="trend-topic">Food as medicine</span></a>
+        </div>
+    </div>
+</section>
+
+<!--========= The Living Healthy Section  =========-->
+
+<section class="nutrition-conditions __nutritionConditions__" id="nutrition-conditions">
+    <div class="nutritionliving">
+        <span class="living_healthy-title">Living Healthy</span>
+        <a href="{% url 'nutrition:NutritionCategories' %}?subcategory=lh">View all <i class="ri-arrow-right-line"></i></a>
+    </div>
+    <div class="container __nutritionConditions__">
+        {% for nutritionliving in livinghealthy.all|slice:":5" %}
+        <div class="{{ nutritionliving.cat_title }} cat-condition" onclick="window.location.href='nutritioncategories/nutritioncategorypage/{{nutritionliving.cat_url}}';">
+            <div class="cat-img">
+                <img src="{{ nutritionliving.img.url }}" loading="lazy" alt="">
+            </div>
+            <h3 class="cat-title">{{ nutritionliving.cat_title }}</h3>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!--========= The Latest News And Updates Section  =========-->
+
+<section class="latest-news __nutritionNews__" id="latest-news">
+    <h2 class="title">Nutrition News</h2>
+    <div class="news-container __nutritionNews__">
+        {% for homepost in latest_news %}
+        <div class="container" onclick="window.location.href='nutritioncategories/post/{{homepost.post_url}}';">
+            <img src="{{ homepost.img.url }}" loading="lazy" alt="">
+            <span class="news-title">{{ homepost.title| truncatewords:8 | safe }}</span>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+
+{% endblock %}

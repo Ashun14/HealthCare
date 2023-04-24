@@ -1,0 +1,101 @@
+/*<===================BODY===================>*/
+
+/* ========== The Workout section ========== */
+
+.workout-categories {
+  max-width: 100%;
+  min-height: 90vh;
+  padding: 2em 3em;
+}
+.title-section {
+  width: 100%;
+  height: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.8em 0 1em 0;
+  padding-bottom: 1.5em;
+  border-bottom: 2px solid #d6d6d6;
+}
+.title-section .workout-title {
+  font-size: 1.9em;
+  font-family: var(--clean-text);
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 1em 0;
+  text-align: center;
+}
+.WorkoutPrograms {
+  max-width: 100%;
+  min-height: 100%;
+  padding: 2em;
+  background: #f1f1f1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 20px;
+}
+.program {
+  max-width: 100%;
+  height: 25em;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.programs-card {
+  width: 90%;
+  height: 23em;
+  margin: 1.2em 0.8em;
+  padding: 0.8em;
+  cursor: pointer;
+}
+.programs-card .program-img {
+  width: 100%;
+  height: 50%;
+  cursor: pointer;
+}
+.program-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.programs-card .content {
+  width: 100%;
+  min-height: 7em;
+  cursor: pointer;
+  margin-top: 0.8em;
+}
+.programs-card .content .title {
+  margin: 0.1em 0 0 0;
+  font-size: 1em;
+  font-family: var(--clean-text);
+  text-align: left;
+  font-weight: 400;
+}
+.programs-card .content .desc {
+  margin: 0 0 0.4em 0;
+  font-size: 0.95em;
+  font-family: var(--clean-text);
+  text-align: left;
+  font-weight: 300;
+  line-height: 22px;
+}
+.programs-card .content .time-type {
+  margin: 0 0 0.6em 0;
+  font-size: 0.87em;
+  font-family: var(--clean-text);
+  text-align: left;
+  font-weight: 300;
+  color: #7286d3;
+}
+.programs-card:hover {
+  opacity: 0.9;
+}
+.no-workout-msg{
+  font-size: 1.8em;
+  text-transform: capitalize;
+  font-family: var(--styling-text);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: left;
+}
