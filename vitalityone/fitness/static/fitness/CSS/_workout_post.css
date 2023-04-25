@@ -78,14 +78,21 @@ article{
 
 .main-container h1,
 .main-container h2,
+.main-container span {
+  font-family: "Barlow Condensed",sans-serif;
+  margin: 1.2em auto;
+  line-height: 1.6em;
+}
 .main-container h3,
 .main-container h4,
 .main-container h5,
-.main-container h6 {
-  font-family: "Barlow Condensed",sans-serif;
-  margin: 0.6em 0px;
+.main-container h6{
+  font-family: var(--para-text);
+  margin: 1em auto;
+  line-height: 1.2em;
+  font-weight: 600;
 }
-.main-container p {
+.main-container p, a {
   font-size: 18px;
   line-height: 26px;
   color: #2a2a2a;
@@ -95,7 +102,6 @@ article{
   letter-spacing: -.25px;
   margin: 0.5em 0;
 }
-
 
 .main-container img{
   width: 100%;
@@ -125,12 +131,20 @@ article{
 }
 .main-container li,.main-container ul,.main-container ol{
   font-family: "Work Sans",sans-serif;
-  margin: 0.5em 0.3em;
+  line-height: 1.8em;
+  text-transform: capitalize;
+  font-size: 1.02em;
 }
-.main-container p, .main-container span{
+.main-container p, .main-container a{
   font-family: "Work Sans",sans-serif;
 }
 
+.main-container strong{
+  font-family: "Work Sans",sans-serif;
+  text-transform: capitalize;
+  font-size: 1.05em;
+  line-height: 1.5em;
+}
 /*============ Pagination Section ============*/
 
 .pagination{

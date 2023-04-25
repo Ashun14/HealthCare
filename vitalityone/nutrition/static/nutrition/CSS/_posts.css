@@ -76,21 +76,34 @@ article {
   color: rgba(0, 0, 0, 0.8);
 }
 
-h2 {
-  margin: 2rem auto;
-}
-
-p {
+p, a {
   font-size: 1.1rem;
   line-height: 2.2rem;
-  font-family: "Hind", sans-serif;
   font-family: "Montserrat", sans-serif;
   text-align: left;
 }
 
+span, h1, h2, h3, h4, h5, h6{
+  margin: 1em auto;
+  line-height: 1.2em;
+}
+
 li, ol, ul{
-  font-family: "Hind", sans-serif;
   font-family: "Montserrat", sans-serif;
+  text-transform: capitalize;
+  font-weight: 500;
+  text-align: left;
+  line-height: 1.8em;
+  font-size: 1.02em;
+}
+
+strong{
+  text-transform: capitalize;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 1.05em;
+  text-align: left;
+  line-height: 1.5em;
 }
 
 .article-cover {

@@ -70,7 +70,7 @@ class NutritionPost(models.Model):
     img = models.ImageField(upload_to='nutrition/posts')
     input_date = models.DateField(default=timezone.now)
     reading_time = models.IntegerField(default=10)
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(Tag, blank=True)
     category = models.ForeignKey(NutritionCategory, on_delete=models.CASCADE, related_name='category')
     views = models.PositiveIntegerField(default=0)
 
