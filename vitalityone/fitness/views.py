@@ -56,11 +56,16 @@ def posts(request, url):
     related_posts = WorkoutPost.objects.filter(category=category).exclude(id=posts.id)
 
     # If there are not enough related posts for the current category, find additional related posts from other categories
+    
     num_related_posts = 3
-    if len(related_posts) < num_related_posts:
-        num_missing_posts = num_related_posts - len(related_posts)
-        missing_posts = WorkoutPost.objects.exclude(id=posts.id).exclude(category=category)[:num_missing_posts]
-        related_posts = related_posts.union(missing_posts)
+
+    if related_posts.count() > num_related_posts:
+        related_posts = related_posts.order_by('-publish_date')[:num_related_posts]
+    else:
+    # not enough related posts in the same category, so include additional posts from other categories
+        remaining_posts = num_related_posts - related_posts.count()
+        additional_posts = WorkoutPost.objects.exclude(category=category).order_by('-publish_date')[:remaining_posts]
+        related_posts = list(related_posts) + list(additional_posts)
         random.shuffle(related_posts)
 
     context = {

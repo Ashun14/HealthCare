@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %} {{ posts.title }} {% endblock %}
+{% block title %} {{ posts.workouts }} {% endblock %}
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'fitness/CSS/_workout_post.css' %}?now=U">
@@ -17,7 +17,7 @@
       <span class="type">{{ posts.workouts.get_workouts_type_display }}</span>
     </h2>
     <div class="title">
-      <h1 class="title__name"><span class="type">{{ posts.title }}</span></h1>
+      <h1 class="title__name"><span class="type">{{ posts.workouts }}</span></h1>
     </div>
     <div class="description">
       <h2 class="desc">{{ posts.workouts.description }}</h2>

@@ -69,27 +69,18 @@ def auto_delete_file_on_delete(sender, instance, **kwargs):
 # Show the whole workout in an article form
 class WorkoutPost(models.Model):
     post_id = models.AutoField
-    title = models.CharField(max_length=200)
+    workouts = models.ForeignKey(Workout, on_delete=models.CASCADE, related_name= 'workouts')
     description = RichTextField()
     url = models.SlugField(max_length=100, blank=True)
     author = models.CharField(max_length=100, default='Admin')
-    reading_time = models.IntegerField(default=10)
     publish_date = models.DateField(default=timezone.now)
     category = models.ForeignKey(WorkoutCategory, on_delete=models.CASCADE, default='', null=True, related_name= 'category')
-    workouts = models.ForeignKey(Workout, on_delete=models.CASCADE, default='', null=True, blank=True,related_name= 'workouts')
 
     def save(self, *args, **kwargs):
         if not self.url:
-            self.url = slugify(self.title)
+            self.url = slugify(self.workouts)
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return self.title
+        return f"{self.workouts}"
 
-
-# class Exercise(models.Model):
-#     title = models.CharField(max_length=200)
-#     url = models.URLField()
-
-#     def __str__(self):
-#         return self.title
