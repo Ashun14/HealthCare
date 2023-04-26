@@ -137,7 +137,7 @@
         {% for homepost in latest_news %}
             <div class="container" onclick="window.location.href='healthcategories/post/{{homepost.post_url}}';">
                 <img src="{{ homepost.img.url }}" loading="lazy" alt="">
-                <span class="news-title">{{ homepost.title| truncatewords:8 | safe }}</span>
+                <span class="news-title">{{ homepost.title| truncatewords:6 | safe }}</span>
             </div>
         {% endfor %}
     </div>

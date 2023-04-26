@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %} Revitalize Your Health with VitalityOne {% endblock %}
+{% block title %} {{ category.cat_title | safe }} {% endblock %}
 
 {% block css %} 
     <link rel="stylesheet" href="{% static 'nutrition/CSS/_categories_page.css' %}?now=U"> 
@@ -12,8 +12,8 @@
 
 <!--========= The Heading Section =========-->
 <div class="Heading">
-    <h1 class="card-title">{{ category.cat_title  | safe }}</h1>
-    <p class="card-para">{{ category.description  | truncatewords:14 | safe }}</p>
+    <h1 class="card-title">{{ category.cat_title | safe }}</h1>
+    <p class="card-para">{{ category.description | truncatewords:14 | safe }}</p>
 </div>
 
 <!--========= The Featured Section =========-->

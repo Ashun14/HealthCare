@@ -77,7 +77,7 @@ def nutritionpost(request, post_url):
 
     category = posts.category
 
-    related_posts_same_category = NutritionPost.objects.filter(category=category).exclude(post_url=posts.post_url)
+    related_posts_same_category = NutritionPost.objects.filter(category=category).exclude(post_url=posts.post_url).order_by('-input_date')
     related_posts_other_categories = NutritionPost.objects.exclude(category=category)
     related_posts = list(related_posts_same_category) + list(related_posts_other_categories)
     random.shuffle(related_posts)
@@ -88,9 +88,4 @@ def nutritionpost(request, post_url):
         'prevpost': prevpost,
         'related_posts':related_posts
     }
-    
-    context = {
-        'posts': posts,
-    }
-
     return render(request, "nutrition/nutrition_posts.html", context)

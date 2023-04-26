@@ -4,6 +4,8 @@ from django.utils.html import format_html
 from ckeditor.fields import RichTextField
 from django.utils.text import slugify
 import os
+from PIL import Image
+import math
 
 # Create your models here.
 
@@ -51,10 +53,25 @@ class NutritionCategory(models.Model):
     def save(self, *args, **kwargs):
         if not self.cat_url:
             self.cat_url = slugify(self.cat_title)
+
+        if self.pk is not None:  # object has already been saved to db
+            old_self = NutritionCategory.objects.get(pk=self.pk)
+            if old_self.img != self.img:  # img field has changed
+                if os.path.exists(old_self.img.path):
+                    os.remove(old_self.img.path)
+        
         super().save(*args, **kwargs)
+    
+        if self.img:
+            if os.path.exists(self.img.path):
+                img = Image.open(self.img.path)
+                max_size = (800, 800)
+                img.thumbnail(max_size)
+                img.save(self.img.path, format='JPEG', optimize=True, quality=80)
 
     def delete(self, *args, **kwargs):
-        os.remove(self.img.path)
+        if self.img and os.path.exists(self.img.path):
+            os.remove(self.img.path)
         super().delete(*args, **kwargs)
 
 # Nutrition Post based on Categories
@@ -89,8 +106,26 @@ class NutritionPost(models.Model):
     def save(self, *args, **kwargs):
         if not self.post_url:
             self.post_url = slugify(self.title)
+        
+        if self.pk is not None:  # object has already been saved to db
+            old_self = NutritionPost.objects.get(pk=self.pk)
+            if old_self.img != self.img:  # img field has changed
+                if os.path.exists(old_self.img.path):
+                    os.remove(old_self.img.path)
+        
+        words_per_minute =  183
+        word_count = len(self.description.split())
+        self.reading_time = math.ceil(word_count / words_per_minute)
         super().save(*args, **kwargs)
 
+        if self.img:
+            if os.path.exists(self.img.path):
+                img = Image.open(self.img.path)
+                max_size = (1280, 720)
+                img.thumbnail(max_size)
+                img.save(self.img.path, format='JPEG', optimize=True, quality= 80)
+
     def delete(self, *args, **kwargs):
-        os.remove(self.img.path)
+        if self.img and os.path.exists(self.img.path):
+            os.remove(self.img.path)
         super().delete(*args, **kwargs)

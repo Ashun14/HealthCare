@@ -92,7 +92,7 @@ article{
   line-height: 1.2em;
   font-weight: 600;
 }
-.main-container p, a {
+.main-container p,.main-container a {
   font-size: 18px;
   line-height: 26px;
   color: #2a2a2a;

@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %} Revitalize Your Health with VitalityOne {% endblock %}
+{% block title %} {{ category.cat_title | safe }} {% endblock %}
 
 {% block css %} 
     <link rel="stylesheet" href="{% static 'health/CSS/_categories_page.css' %}?now=U"> 

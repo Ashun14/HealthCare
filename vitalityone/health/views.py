@@ -84,7 +84,7 @@ def healthpost(request, post_url):
 
     category = posts.category
 
-    related_posts_same_category = HealthPost.objects.filter(category=category).exclude(post_url=posts.post_url)
+    related_posts_same_category = HealthPost.objects.filter(category=category).exclude(post_url=posts.post_url).order_by('-input_date')
     related_posts_other_categories = HealthPost.objects.exclude(category=category)
     related_posts = list(related_posts_same_category) + list(related_posts_other_categories)
     random.shuffle(related_posts)
