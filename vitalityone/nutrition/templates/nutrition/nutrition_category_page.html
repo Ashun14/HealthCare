@@ -24,7 +24,7 @@
         {% for post in featured_posts %}
         <div class="container" onclick="window.location.href='/nutrition/nutritioncategories/post/{{ post.post_url }}';">
             <div class="f-img">
-                <img src="{{ post.img.url }}" loading="lazy" alt="">
+                <img src="{{ post.img.url }}" loading="lazy" alt="{{ post.title | safe }}">
             </div>
             <div class="content">
                 <h1 class="article-title">{{ post.title | safe }}</h1>

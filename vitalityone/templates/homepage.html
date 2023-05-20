@@ -79,8 +79,10 @@
             journey to a healthier you today.</p>
     </div>
     <div class="buttons">
-        <a href="{% url 'loginsystem:Login' %}"><button type="button" class="get_started">Get
+        {% if not user.is_authenticated %} <!-- For Now until the new homepage is not designed -->
+        <a href="{% url 'loginsystem:Register' %}"><button type="button" class="get_started">Get
                 Started</button></a>
+        {% endif %}
         <a href="{% url 'about:About' %}"><button type="button" class="learn_more">Learn More</button></a>
     </div>
 </div>

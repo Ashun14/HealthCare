@@ -24,6 +24,7 @@
 
     {% endblock %}
     <link rel="stylesheet" href="{% static 'CSS/base.css' %}?now=U">
+    <link rel="stylesheet" href="{% static 'CSS/modal.css' %}?now=U">
     {% block css %} {% endblock %}
 
 </head>
@@ -157,26 +158,44 @@
                 <ul>
                     <li><a href="{% url 'fitness:FitnessHome' %}" class="title">Fitness</a></li>
                     <li><a href="{% url 'fitness:WorkoutsCategories' %}">Workout plans</a></li>
-                    <li><a href="{% url 'fitness:WorkoutsCategories' %}workouts/beginner-training">Beginner Training Workouts</a></li>
-                    <li><a href="{% url 'fitness:WorkoutsCategories' %}workouts/strength-training">Strength Training Workouts</a></li>
-                    <li><a href="{% url 'fitness:WorkoutsCategories' %}workouts/cardiovascular-training">Cardio Workouts</a></li>
-                    <li><a href="{% url 'fitness:WorkoutsCategories' %}workouts/yoga-and-pilates">Yoga & Pilates Workouts</a></li>
+                    <li><a href="{% url 'fitness:WorkoutsCategories' %}workouts/beginner-training">Beginner Training
+                            Workouts</a></li>
+                    <li><a href="{% url 'fitness:WorkoutsCategories' %}workouts/strength-training">Strength Training
+                            Workouts</a></li>
+                    <li><a href="{% url 'fitness:WorkoutsCategories' %}workouts/cardiovascular-training">Cardio
+                            Workouts</a></li>
+                    <li><a href="{% url 'fitness:WorkoutsCategories' %}workouts/yoga-and-pilates">Yoga & Pilates
+                            Workouts</a></li>
                     <li><a href="{% url 'fitness:ExerciseDb' %}">Exercise Database</a></li>
                 </ul>
                 <ul>
                     <li><a href="{% url 'nutrition:NutritionHome' %}" class="title">Nutrition</a></li>
-                    <li><a href="{% url 'nutrition:NutritionHome' %}nutritioncategories/nutritioncategorypage/healthy-recipes">Healthy Recipes</a></li>
-                    <li><a href="{% url 'nutrition:NutritionHome' %}nutritioncategories/nutritioncategorypage/special-diets">Special Diets</a></li>
-                    <li><a href="{% url 'nutrition:NutritionHome' %}nutritioncategories/nutritioncategorypage/nutrition-studies">Nutrition Studies</a></li>
-                    <li><a href="{% url 'nutrition:NutritionHome' %}nutritioncategories/nutritioncategorypage/food-and-culture">Food & Culture</a></li>
-                    <li><a href="{% url 'nutrition:NutritionHome' %}nutritioncategories/nutritioncategorypage/fad-diets">Fad Diets</a></li>
+                    <li><a
+                            href="{% url 'nutrition:NutritionHome' %}nutritioncategories/nutritioncategorypage/healthy-recipes">Healthy
+                            Recipes</a></li>
+                    <li><a
+                            href="{% url 'nutrition:NutritionHome' %}nutritioncategories/nutritioncategorypage/special-diets">Special
+                            Diets</a></li>
+                    <li><a
+                            href="{% url 'nutrition:NutritionHome' %}nutritioncategories/nutritioncategorypage/nutrition-studies">Nutrition
+                            Studies</a></li>
+                    <li><a
+                            href="{% url 'nutrition:NutritionHome' %}nutritioncategories/nutritioncategorypage/food-and-culture">Food
+                            & Culture</a></li>
+                    <li><a
+                            href="{% url 'nutrition:NutritionHome' %}nutritioncategories/nutritioncategorypage/fad-diets">Fad
+                            Diets</a></li>
                 </ul>
                 <ul>
                     <li><a href="{% url 'health:HealthHome' %}" class="title">Health</a></li>
-                    <li><a href="{% url 'health:HealthHome' %}healthcategories/healthcategorypage/mental-health">Mental Health & Wellness</a></li>
-                    <li><a href="{% url 'health:HealthHome' %}healthcategories/healthcategorypage/physical-health">Physical Health & Awareness</a></li>
-                    <li><a href="{% url 'health:HealthHome' %}healthcategories/healthcategorypage/allergy-relief">Allergy Relief</a></li>
-                    <li><a href="{% url 'health:HealthHome' %}healthcategories/healthcategorypage/cancer-care">Cancer Care</a></li>
+                    <li><a href="{% url 'health:HealthHome' %}healthcategories/healthcategorypage/mental-health">Mental
+                            Health & Wellness</a></li>
+                    <li><a href="{% url 'health:HealthHome' %}healthcategories/healthcategorypage/physical-health">Physical
+                            Health & Awareness</a></li>
+                    <li><a href="{% url 'health:HealthHome' %}healthcategories/healthcategorypage/allergy-relief">Allergy
+                            Relief</a></li>
+                    <li><a href="{% url 'health:HealthHome' %}healthcategories/healthcategorypage/cancer-care">Cancer
+                            Care</a></li>
                     <li><a href="{% url 'tools:ToolsHome' %}">Health Tools</a></li>
                 </ul>
                 <ul>
@@ -198,8 +217,8 @@
 
             <div class="copyright">
                 <span>Copyright &#169; 2023 Fitness Blender. All rights reserved. </span>
-                <a href="#"><span class="sp">Terms and Conditions </span></a>
-                <a href="#"><span class="sp">Privacy Policy </span></a>
+                <a href="{% url 'termsCondition' %}"><span class="sp">Terms and Conditions </span></a>
+                <a href="{% url 'Policy' %}"><span class="sp">Privacy Policy </span></a>
             </div>
 
             <div class="social-media">
@@ -222,6 +241,23 @@
 
     <script src="{% static 'JS/scrollreveal.min.js' %}?now=U"></script>
     <script src="{% static 'JS/main.js' %}?now=U"></script>
+
+    {% if not user.is_authenticated %}
+
+    <!--========= Modal Popup HTML =========-->
+    <div class="modal-container" id="cookiesPopup">
+        <div class="cookiesContent">
+            <button class="close">✖</button>
+            <img src="{% static 'Materials/Icons/Modal/register.png' %}" alt="img" />
+            <p>Join us now for an enhanced experience. Register today and explore more!</p>
+            <button class="accept" onclick="window.location.href=`{% url 'loginsystem:Register' %}`;">Register</button>
+        </div>
+    </div>
+    <!--========= Modal Popup JS =========-->
+    <script src="{% static 'JS/modal.js' %}?now=U"></script>
+
+    {% endif %}
+
     {% block js %} {% endblock %}
 </body>
 

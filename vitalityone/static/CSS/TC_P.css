@@ -1,0 +1,49 @@
+/*<=================== BODY ===================>*/
+main {
+  margin-left: 4em;
+  margin-right: 4em;
+}
+
+/*=============== Heading start ===============*/
+.heading {
+  padding: 1.2em;
+  margin: 1.5em 0;
+  text-align: center;
+}
+
+.heading .card-title {
+  font-family: var(--clean-text);
+  font-size: 1.9em;
+  font-weight: 600;
+  text-align: center;
+  margin: 0.4em 0.6em;
+  line-height: 1.3em;
+  text-transform: uppercase;
+}
+
+.main-para {
+  font-size: 1.2rem;
+  line-height: 1.9rem;
+  font-family: "Montserrat", sans-serif;
+  text-align: left;
+}
+.para {
+  font-family: var(--clean-text);
+  line-height: 2rem;
+  font-weight: 300;
+  font-size: 1.1em;
+  text-align: left;
+  margin: 1.3em 0;
+}
+.para .num {
+  font-size: 1.7em;
+  margin: 10px 6px;
+}
+
+.para .sub-head {
+  text-align: left;
+  color: #252b31;
+  font-weight: 700;
+  font-size: 1.2em;
+  margin: 0.8rem 0.23rem;
+}

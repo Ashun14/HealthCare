@@ -2,8 +2,6 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from .forms import CreateUserForm
 from django.contrib.auth import authenticate, login, logout
-
-
 from django.contrib import messages
 
 # Create your views here.
@@ -49,4 +47,4 @@ def loginPage(request):
 
 def logoutUser(request):
     logout(request)
-    return redirect('loginsystem:Login')
+    return redirect('Home')
