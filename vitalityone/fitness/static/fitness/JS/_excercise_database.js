@@ -14,6 +14,96 @@ function clearDropdown() {
   dropDownItems.innerHTML = "";
 }
 
+const categoryFetch = async (index) => {
+  const url = "https://wger.de/api/v2/exercise/";
+  const headers = {
+    "Authorization": `Token ${config('API_KEY')}`,  // Replace with your API key
+  };
+  const params = {
+    "language": 2,  // Language code for English
+    "category": category,
+    "subcategory": subCategory
+  };
+
+  try {
+    const response = await fetch(url, { headers, params });
+    if (response.ok) {
+      const data = await response.json();
+      const exercises = data.results;
+
+      console.log(exercises)
+      if (index == 0) {
+        await fetch(
+          "api/v2/exercise/?muscles=1&equipment=3"
+        )
+          .then((response) => response.json())
+          .then((category) => {
+            let data = "";
+            for (items in category) {
+              let catName = capitalize(category[items]);
+              data += `
+          <div class="option">
+            <input type="radio" class="radio" id="${catName}" name="category" />
+            <label for="${catName}">${catName}</label>
+          </div>
+          `;
+            }
+            dropDownItems.innerHTML += data;
+          })
+          .catch((err) => console.error(err));
+      }
+
+      if (index == 1) {
+        await fetch(
+          "https://exercisedb.p.rapidapi.com/exercises/targetList",
+          options
+        )
+          .then((response) => response.json())
+          .then((category) => {
+            let data = "";
+            for (items in category) {
+              let catName = capitalize(category[items]);
+              data += `
+            <div class="option">
+              <input type="radio" class="radio" id="${catName}" name="category" />
+              <label for="${catName}">${catName}</label>
+            </div>
+            `;
+            }
+            dropDownItems.innerHTML += data;
+          })
+          .catch((err) => console.error(err));
+      }
+
+      if (index == 2) {
+        await fetch(
+          "https://exercisedb.p.rapidapi.com/exercises/equipmentList",
+          options
+        )
+          .then((response) => response.json())
+          .then((category) => {
+            let data = "";
+            for (items in category) {
+              let catName = capitalize(category[items]);
+              data += `
+            <div class="option">
+              <input type="radio" class="radio" id="${catName}" name="category" />
+              <label for="${catName}">${catName}</label>
+            </div>
+            `;
+            }
+            dropDownItems.innerHTML += data;
+          })
+          .catch((err) => console.error(err));
+      }
+
+      SearchFunctionality();
+    }
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 //<=========  Creating Active Effect and Hide & Show the drop-down when clicked on categories =========>
 
 const categoriesBtn = document.querySelectorAll(".category");
@@ -37,6 +127,18 @@ categoriesBtn.forEach((cat, index) => {
 
     // Clear the dropdown options
     clearDropdown();
+
+    //  Fetching Types based on Categories
+
+    if (cat.classList.contains("bodypart")) {
+      categoryFetch(0);
+    }
+    if (cat.classList.contains("muscles")) {
+      categoryFetch(1);
+    }
+    if (cat.classList.contains("equipments")) {
+      categoryFetch(2);
+    }
 
   });
 });
@@ -62,15 +164,9 @@ const SearchFunctionality = async () => {
   });
 
   optionsList.forEach((o) => {
-    o.addEventListener("click", async () => {
+    o.addEventListener("click", () => {
       selected.innerHTML = o.querySelector("label").innerHTML;
       optionsContainer.classList.remove("active");
-
-      const category = o.dataset.category;
-      const subCategory = o.dataset.subcategory;
-      
-      // Fetch exercises based on selected category and subcategory
-      await fetchExercises(category, subCategory);
     });
   });
 
@@ -91,49 +187,3 @@ const SearchFunctionality = async () => {
     });
   };
 };
-
-// Function to fetch exercises based on selected category and subcategory
-async function fetchExercises(category, subCategory) {
-  const url = "https://wger.de/api/v2/exercise/";
-  const api_key = "{{ api_key }}";
-  const headers = {
-    "Authorization": `Token ${api_key}`,  // Replace with your API key
-  };
-  const params = {
-    "language": 2,  // Language code for English
-    "category": category,
-    "subcategory": subCategory
-  };
-
-  try {
-    const response = await fetch(url, { headers, params });
-    if (response.ok) {
-      const data = await response.json();
-      const exercises = data.results;
-      
-      // Process the fetched exercises and update the UI
-      displayExercises(exercises);
-    } else {
-      console.error("Failed to fetch exercises:", response.status);
-    }
-  } catch (error) {
-    console.error("Error fetching exercises:", error);
-  }
-}
-
-// Function to display the fetched exercises in the UI
-function displayExercises(exercises) {
-  // Update the exercise display on the page
-  // Replace the code below with your implementation to render exercises in the desired format
-  const exerciseContainer = document.querySelector(".exercise-container");
-  exerciseContainer.innerHTML = ""; // Clear previous exercises
-  
-  exercises.forEach((exercise) => {
-    const exerciseElement = document.createElement("div");
-    exerciseElement.textContent = exercise.name;
-    exerciseContainer.appendChild(exerciseElement);
-  });
-}
-
-// Call the SearchFunctionality function when the page is loaded
-window.addEventListener("load", SearchFunctionality);
