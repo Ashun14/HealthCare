@@ -2,12 +2,13 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap");
 
-*{
+* {
   font-family: "Hind", sans-serif;
   font-family: "Montserrat", sans-serif;
 }
 
-.article-cover span, .header span {
+.article-cover span,
+.header span {
   width: 8px;
   height: 8px;
   border: 0.1px #c1c8c7 solid;
@@ -76,19 +77,28 @@ article {
   color: rgba(0, 0, 0, 0.8);
 }
 
-article p,article a {
+article p,
+article a {
   font-size: 1.1rem;
   line-height: 2.2rem;
   font-family: "Montserrat", sans-serif;
   text-align: left;
 }
 
-article span,article h1,article h2,article h3,article h4,article h5,article h6{
+article span,
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
   margin: 1em auto;
   line-height: 1.2em;
 }
 
-article li,article ol,article ul{
+article li,
+article ol,
+article ul {
   font-family: "Montserrat", sans-serif;
   text-transform: capitalize;
   font-weight: 500;
@@ -97,9 +107,10 @@ article li,article ol,article ul{
   font-size: 1.02em;
 }
 
-article strong, article u{
+article strong,
+article u {
   text-transform: capitalize;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: 600;
   font-size: 1.05em;
   text-align: left;
@@ -133,18 +144,21 @@ article strong, article u{
   width: 100%;
   transition-duration: 0.5s;
 }
-.header{
+.header {
   width: 100%;
   text-align: center;
   margin: 1em 0;
   padding: 0.8em 0;
 }
-.content-container{
+.content-container {
   margin: 2em auto;
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 1.8em;
 }
-.posted_by{
+.content img{
+  max-width: 90%;
+}
+.posted_by {
   font-weight: 600;
 }
 @keyframes playful-rotation {
@@ -165,91 +179,10 @@ article strong, article u{
     -webkit-transform: rotate(0deg);
   }
 }
-@media only screen and (min-width: 1100px) {
-  img[class^="editorial-image"] {
-    max-width: 40%;
-    margin: 2.5rem auto;
-    border-radius: 16px;
-    transition-duration: 0.3s;
-  }
-  img[class^="editorial-image"]:hover {
-    cursor: pointer;
-    filter: drop-shadow(6px 6px 0px rgba(212, 156, 107, 0.5));
-  }
-
-  .editorial-image-left {
-    float: none;
-    display: flex;
-  }
-
-  .editorial-image-right {
-    float: none;
-    display: flex;
-    margin: 1rem auto;
-  }
-}
-@media only screen and (max-width: 1000px) {
-  #decoration-nav a {
-    font-size: 0.9rem;
-  }
-
-  .article-cover p {
-    font-size: 1.1rem;
-  }
-  .article-cover h1 {
-    font-size: 3rem;
-  }
-
-  p {
-    font-size: 1.2rem;
-  }
-}
-@media only screen and (max-width: 750px) {
-  #decoration-nav #logo {
-    margin: auto 2rem;
-    font-size: 1.6rem;
-  }
-  #decoration-nav .left-items,
-  #decoration-nav .right-items {
-    opacity: 0;
-    display: none;
-  }
-
-  .ham {
-    opacity: 100%;
-    display: block;
-  }
-}
-@media only screen and (max-width: 580px) {
-  #date {
-    display: none;
-  }
-
-  #mobile-date {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-  }
-
-  .article-cover h1 {
-    font-size: 2.1rem;
-  }
-
-  p {
-    font-size: 1.2rem;
-  }
-
-  article {
-    --article-ratio: 1;
-  }
-}
-
 
 /*============ Pagination Section ============*/
 
-.pagination{
+.pagination {
   width: 86%;
   height: fit-content;
   display: flex;
@@ -259,12 +192,14 @@ article strong, article u{
   padding: 30px 20px;
   margin: 1em auto 5em auto;
 }
-.prevpost, .nextpost{
+.prevpost,
+.nextpost {
   width: 50%;
   height: fit-content;
   text-align: center;
 }
-.prevpost p, .nextpost p{
+.prevpost p,
+.nextpost p {
   padding: 0 1em;
   display: flex;
   align-items: center;
@@ -276,13 +211,15 @@ article strong, article u{
   cursor: pointer;
   transition: all 0.2s ease;
 }
-.prevpost p span, .nextpost p span{
+.prevpost p span,
+.nextpost p span {
   padding: 1em 1.3em;
   font-size: 1.48em;
   font-weight: 600;
   color: #080808;
 }
-.prevpost p:hover, .nextpost p:hover{
+.prevpost p:hover,
+.nextpost p:hover {
   background-color: #e9e9e9;
   color: #000000;
 }
@@ -341,4 +278,101 @@ article strong, article u{
 .rp-container .container:hover {
   color: var(--health-hover-color);
   opacity: 0.9;
+}
+
+/*========= Responsiveness =========*/
+
+@media only screen and (min-width: 1100px) {
+  img[class^="editorial-image"] {
+    max-width: 40%;
+    margin: 2.5rem auto;
+    border-radius: 16px;
+    transition-duration: 0.3s;
+  }
+  img[class^="editorial-image"]:hover {
+    cursor: pointer;
+    filter: drop-shadow(6px 6px 0px rgba(212, 156, 107, 0.5));
+  }
+
+  .editorial-image-left {
+    float: none;
+    display: flex;
+  }
+
+  .editorial-image-right {
+    float: none;
+    display: flex;
+    margin: 1rem auto;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  #decoration-nav a {
+    font-size: 0.9rem;
+  }
+
+  .article-cover p {
+    font-size: 1.1rem;
+  }
+  .article-cover h1 {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width: 865px) {
+  .rp-container {
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (max-width: 750px) {
+  #decoration-nav #logo {
+    margin: auto 2rem;
+    font-size: 1.6rem;
+  }
+  #decoration-nav .left-items,
+  #decoration-nav .right-items {
+    opacity: 0;
+    display: none;
+  }
+
+  .ham {
+    opacity: 100%;
+    display: block;
+  }
+
+  .pagination {
+    width: 90%;
+  }
+  .prevpost p,
+  .nextpost p {
+    padding: 0;
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 580px) {
+  #date {
+    display: none;
+  }
+
+  #mobile-date {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+  }
+
+  .article-cover h1 {
+    font-size: 2.1rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  article {
+    --article-ratio: 1;
+  }
 }

@@ -25,7 +25,7 @@
 
   /* Fitness */
   --fitness-hover-color: #0e4cc0;
-  --exerciseDb-dropdown-bg: #ECF2FF;
+  --exerciseDb-dropdown-bg: #ecf2ff;
   --exerciseDb-cat-bg-hover: #e6e3ff;
 
   /* Nutrition */
@@ -34,7 +34,6 @@
   /* Health */
   --health-hover-color: #185bd6;
 
-  
   /* Tools */
   --tools-title-color: #1a2d3f;
   --tools-bg-color: #2e2e41;
@@ -96,9 +95,9 @@ html::-webkit-scrollbar-thumb:active {
 /*<===================HEADER===================>*/
 
 /*<========== Navigation Bar ==========>*/
-nav {
+.nav-header {
   max-width: 100%;
-  height: 18vh;
+  margin-bottom: 10em;
 }
 .hamburger {
   width: 2em;
@@ -585,7 +584,6 @@ nav {
   }
 }
 
-
 /*================= FOOTER =================*/
 
 footer {
@@ -598,7 +596,7 @@ footer {
 /*========= The Logo and the footer links =========*/
 
 .footer-links-container {
-  height: 26em;
+  height: fit-content;
   max-width: 100%;
   display: flex;
   justify-content: space-between;
@@ -729,7 +727,7 @@ footer {
 
 .copyright-socialMedia {
   max-width: 100%;
-  height: 2em;
+  height: fit-content;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -752,7 +750,7 @@ footer {
   color: #494949;
 }
 .copyright span {
-  margin: 0.2em 0.5em 0 0.5em;
+  margin: 0.2em 0.7em 0 0;
   font-family: var(--clean-text);
   color: var(--text-color);
   font-weight: 400;
@@ -808,4 +806,246 @@ footer {
 /* Show ScrollUp */
 .show-scroll {
   bottom: 3rem;
+}
+
+/*========= Responsive Navbar =========*/
+
+@media only screen and (max-width: 1310px) {
+  .fsmenu
+    .fsmenu--container
+    .fsmenu--text-block
+    .fsmenu--text-container
+    .fsmenu--list
+    .fsmenu--list-element
+    .fsmenu--link-img {
+    padding: 8em 1em 3em;
+  }
+  .fsmenu
+    .fsmenu--container
+    .fsmenu--text-block
+    .fsmenu--text-container
+    .fsmenu--list
+    .fsmenu--list-element
+    .fsmenu--link-img
+    .fsmenu--img-container {
+    height: 85%;
+    width: 85%;
+  }
+  .fsmenu
+    .fsmenu--container
+    .fsmenu--text-block
+    .fsmenu--text-container
+    .fsmenu--list
+    .fsmenu--list-element
+    .fsmenu--link-img
+    .fsmenu--img-container
+    img {
+    width: 550px;
+  }
+  .fsmenu
+    .fsmenu--container
+    .fsmenu--text-block
+    .fsmenu--text-container
+    .fsmenu--list
+    .fsmenu--list-element
+    .fsmenu--scrolling-text
+    span {
+    font-size: 6em;
+  }
+  .fsmenu
+    .fsmenu--container
+    .fsmenu--text-block
+    .fsmenu--text-container
+    .fsmenu--list
+    .fsmenu--list-element
+    a
+    span {
+    font-size: 4em;
+  }
+  .fsmenu
+    .fsmenu--container
+    .fsmenu--text-block
+    .fsmenu--text-container
+    .fsmenu--list
+    .fsmenu--list-element {
+    height: 18%;
+  }
+}
+@media only screen and (max-width: 1125px) {
+  .fsmenu
+    .fsmenu--container
+    .fsmenu--text-block
+    .fsmenu--text-container
+    .fsmenu--list
+    .fsmenu--list-element.open
+    .fsmenu--link-img {
+    display: none;
+    opacity: 0;
+  }
+  .fsmenu
+    .fsmenu--container
+    .fsmenu--text-block
+    .fsmenu--text-container
+    .fsmenu--list
+    .fsmenu--list-element.open
+    .fsmenu--link-img
+    .fsmenu--img-container
+    img {
+    display: none;
+    opacity: 0;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .fsmenu
+    .fsmenu--container
+    .fsmenu--text-block
+    .fsmenu--text-container
+    .fsmenu--list
+    .fsmenu--list-element
+    .fsmenu--scrolling-text
+    span {
+    font-size: 5em;
+  }
+  .fsmenu
+    .fsmenu--container
+    .fsmenu--text-block
+    .fsmenu--text-container
+    .fsmenu--list
+    .fsmenu--list-element
+    a
+    span {
+    font-size: 3em;
+  }
+  .fsmenu
+    .fsmenu--container
+    .fsmenu--text-block
+    .fsmenu--text-container
+    .fsmenu--list
+    .fsmenu--list-element {
+    height: 15%;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .fsmenu
+    .fsmenu--container
+    .fsmenu--text-block
+    .fsmenu--text-container
+    .fsmenu--list
+    .fsmenu--list-element
+    .fsmenu--scrolling-text
+    span {
+    font-size: 2.5em;
+    letter-spacing: 8px;
+  }
+  .fsmenu
+    .fsmenu--container
+    .fsmenu--text-block
+    .fsmenu--text-container
+    .fsmenu--list
+    .fsmenu--list-element
+    a
+    span {
+    font-size: 2.2em;
+    letter-spacing: 8px;
+  }
+  .fsmenu
+    .fsmenu--container
+    .fsmenu--text-block
+    .fsmenu--text-container
+    .fsmenu--list
+    .fsmenu--list-element {
+    height: 14%;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .fsmenu
+    .fsmenu--container
+    .fsmenu--text-block
+    .fsmenu--text-container
+    .fsmenu--list
+    .fsmenu--list-element
+    .fsmenu--scrolling-text
+    span {
+    font-size: 2.2em;
+    letter-spacing: 7px;
+  }
+  .fsmenu
+    .fsmenu--container
+    .fsmenu--text-block
+    .fsmenu--text-container
+    .fsmenu--list
+    .fsmenu--list-element
+    a
+    span {
+    font-size: 1.5em;
+    letter-spacing: 7px;
+  }
+  .fsmenu
+    .fsmenu--container
+    .fsmenu--text-block
+    .fsmenu--text-container
+    .fsmenu--list
+    .fsmenu--list-element {
+    height: 12%;
+  }
+}
+
+/*========= Responsive Footer =========*/
+
+@media only screen and (max-width: 1193px) {
+  .footer-links-container {
+    flex-direction: column;
+  }
+  .footer-links-container .logo-email {
+    padding: 1em 0;
+  }
+  .email-card form input[type="email"] {
+    width: 70%;
+  }
+  .logo-email .logo-container img {
+    width: 60%;
+    padding: 0.9em 0;
+  }
+  .footer-links {
+    width: 100%;
+  }
+  .copyright-socialMedia {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .copyright-socialMedia .copyright {
+    text-align: left;
+  }
+  .copyright {
+    margin: 1em 0 0.2em 0.8em;
+  }
+  .social-media {
+    margin: 0.2em 1.8em 1em 0;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .copyright-socialMedia {
+    flex-direction: column-reverse;
+  }
+  .copyright {
+    margin: 0.2em 0 1em 0.8em;
+  }
+  .social-media {
+    margin: 0.5em 1.8em 0.6em 0;
+  }
+}
+@media only screen and (max-width: 765px) {
+  footer {
+    padding: 1.7em 1.8em;
+  }
+  .email-card form input[type="email"] {
+    width: 20em;
+  }
+  .footer-links {
+    display: block;
+  }
+  .footer-links ul:not(:last-child) {
+    border-bottom: 1px solid #7a7a7a;
+    padding: 0.3em 0;
+  }
 }

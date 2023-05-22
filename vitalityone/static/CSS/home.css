@@ -1,7 +1,8 @@
 /*========== Navbar ==========*/
-nav {
+.nav-header {
   max-width: 100%;
   height: auto;
+  margin-bottom: 0;
 }
 .hamburger .hamburger--container .hamburger--bars {
   background: #ffffff;
@@ -12,7 +13,6 @@ nav {
 .logo.is-active img {
   filter: invert(100%);
 }
-
 /*<===================BODY===================>*/
 
 /* --------------The herosection----------- */

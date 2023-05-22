@@ -99,3 +99,29 @@
   letter-spacing: 1px;
   text-align: left;
 }
+
+/* ========== Responsiveness ========== */
+
+@media only screen and (max-width: 1055px) {
+  .WorkoutPrograms {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 810px) {
+  .WorkoutPrograms {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .programs-card .program-img {
+    height: 62%;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .program {
+    padding: 1em 0;
+    height: fit-content;
+  }
+.workout-categories {
+  padding: 1.8em;
+}
+}

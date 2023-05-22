@@ -1,134 +1,268 @@
 /* ========== The Workout section ========== */
 
 .workout-section {
-    max-width: 100%;
-    min-height: 80vh;
-    margin: 1em 0;
-  }
-  .workouts {
-    margin: 1em 0;
-    font-family: var(--bold-text);
-    font-size: 3em;
-    text-transform: uppercase;
-    font-weight: 800;
-    max-width: 28%;
-    text-align: left;
-    color: var(--title-color);
-  }
-  
-  /* ========== All Workout Categories section ========== */
-  
-  .workout-categories {
-    max-width: 100%;
-    min-height: 90vh;
-    padding: 2em 3em;
-  }
-  .__WorkoutProgram__ {
-    max-width: 100%;
-    min-height: 100%;
-    padding: 2em;
-    background: #f1f1f1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .__WorkoutProgram__:nth-child(2n) {
-    background: #f7f7f7;
-  }
-  .title-section {
-    width: 100%;
-    height: 4em;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0.8em 0 1em 0;
-    padding-bottom: 1.5em;
-    border-bottom: 2px solid #d6d6d6;
-  }
-  .title-section .workout-title {
-    font-size: 1.9em;
-    font-family: var(--clean-text);
-    font-weight: 400;
-    text-transform: uppercase;
-    margin: 1em 0;
-    text-align: center;
-  }
-  .title-section a {
-    color: #7286d3;
-    font-size: 1em;
-    font-family: var(--clean-text);
-    font-weight: 500;
-    text-transform: capitalize;
-    text-decoration: none;
-    margin: 0 1em;
-    display: block;
-    transition: all 0.1s ease-in-out;
-  }
-  .title-section a:hover {
-    color: var(--fitness-hover-color);
-  }
-  .title-section a i {
-    font-size: 1.2em;
-    margin: 1.4em 0 0 0.2em;
-    object-fit: contain;
-    position: relative;
-    top: 5px;
-  }
+  max-width: 100%;
+  min-height: 80vh;
+  margin: 1em 0;
+}
+.workouts {
+  margin: 1em 0;
+  font-family: var(--bold-text);
+  font-size: 3em;
+  text-transform: uppercase;
+  font-weight: 800;
+  max-width: 90%;
+  text-align: left;
+  color: var(--title-color);
+}
+
+/* ========== All Workout Categories section ========== */
+
+.workout-categories {
+  max-width: 100%;
+  min-height: 90vh;
+  padding: 2em 3em;
+}
+.__WorkoutProgram__ {
+  max-width: 100%;
+  min-height: 100%;
+  padding: 2em;
+  background: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.__WorkoutProgram__:nth-child(2n) {
+  background: #f7f7f7;
+}
+.title-section {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.8em 0 0.8em 0;
+  padding-bottom: 1.5em;
+  border-bottom: 2px solid #d6d6d6;
+}
+.title-section .workout-title {
+  font-size: 1.9em;
+  font-family: var(--clean-text);
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 1em 0;
+  text-align: center;
+}
+.title-section a {
+  color: #7286d3;
+  font-size: 1em;
+  font-family: var(--clean-text);
+  font-weight: 500;
+  text-transform: capitalize;
+  text-decoration: none;
+  margin: 0 1em 0 0;
+  display: block;
+  transition: all 0.1s ease-in-out;
+}
+.title-section a:hover {
+  color: var(--fitness-hover-color);
+}
+.title-section a i {
+  font-size: 1.2em;
+  margin: 1.4em 0 0 0.2em;
+  object-fit: contain;
+  position: relative;
+  top: 5px;
+}
+.__Program__ {
+  max-width: 100%;
+  height: 25em;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+.programs-card {
+  width: 25%;
+  height: 22em;
+  margin: 1.2em 0;
+  background-color: #ffffff;
+  padding: 0.8em;
+  cursor: pointer;
+}
+.programs-card .program-img {
+  width: 100%;
+  height: 50%;
+  cursor: pointer;
+}
+.program-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.programs-card .content {
+  width: 100%;
+  min-height: 7em;
+  cursor: pointer;
+  margin-top: 0.8em;
+}
+.programs-card .content .title {
+  margin: 0.1em 0 0 0;
+  font-size: 1em;
+  font-family: var(--clean-text);
+  text-align: left;
+  font-weight: 400;
+}
+.programs-card .content .desc {
+  margin: 0 0 0.4em 0;
+  font-size: 0.95em;
+  font-family: var(--clean-text);
+  text-align: left;
+  font-weight: 300;
+  line-height: 22px;
+}
+.programs-card .content .time-type {
+  margin: 0 0 0.6em 0;
+  font-size: 0.87em;
+  font-family: var(--clean-text);
+  text-align: left;
+  font-weight: 300;
+  color: #7286d3;
+}
+.programs-card:hover {
+  opacity: 0.9;
+}
+
+/* ========== Responsiveness ========== */
+
+@media only screen and (max-width: 1230px) {
   .__Program__ {
-    max-width: 100%;
-    height: 25em;
-    display: flex;
-    align-items: center;
-    justify-content: start;
+    height: fit-content;
   }
   .programs-card {
-    width: 25%;
+    width: 30%;
+  }
+}
+@media only screen and (max-width: 1055px) {
+  .main-section {
+    max-width: 65%;
+  }
+  .main-section .title {
+    font-size: 1.3em;
+  }
+  .main-section .subtitle {
+    width: 90%;
+    font-size: 2em;
+    line-height: 40px;
+  }
+  .__Program__ {
+    justify-content: space-between;
+  }
+  .programs-card {
+    height: 26em;
+    width: 49%;
+  }
+  .exercise-db .container {
+    flex-direction: column;
+  }
+  .exercise-db .container img {
+    width: 55%;
+  }
+  .exercise-db .container .content {
+    padding: 1.8em 0;
+  }
+  .container .content .title {
+    width: 150%;
+  }
+  .container .content .para {
+    width: 160%;
+  }
+}
+@media only screen and (max-width: 945px) {
+  .title-section {
+    padding-bottom: 0.6em;
+    flex-wrap: wrap;
+  }
+  .title-section .workout-title {
+    font-size: 1.5em;
+    margin: 0.4em 0.8em 0.4em 0;
+  }
+}
+@media only screen and (max-width: 945px) {
+  .herosection {
+    margin: 1em 0;
+    height: fit-content;
+    flex-direction: column-reverse;
+  }
+  .imgBg img {
+    width: 70%;
+  }
+  .main-section {
+    max-width: 80%;
+    margin: 0 0 2em 2em;
+  }
+  .main-section .subtitle {
+    margin: 0;
+  }
+  .workouts {
+    margin: 0.5em 0;
+    font-size: 2.5em;
+  }
+  .exercise-db .db-title {
+    font-size: 2.5em;
+  }
+}
+@media only screen and (max-width: 760px) {
+  .__Program__ {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .programs-card {
+    width: 90%;
     height: 22em;
-    margin: 1.2em 0.8em;
-    background-color: #ffffff;
-    padding: 0.8em;
-    cursor: pointer;
   }
   .programs-card .program-img {
-    width: 100%;
-    height: 50%;
-    cursor: pointer;
+    height: 65%;
   }
-  .program-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+}
+@media only screen and (max-width: 510px) {
+  .main-section .subtitle {
+    width: 90%;
+    font-size: 1.5em;
+    line-height: 34px;
   }
-  .programs-card .content {
-    width: 100%;
-    min-height: 7em;
-    cursor: pointer;
-    margin-top: 0.8em;
+  .workouts {
+    font-size: 2em;
   }
-  .programs-card .content .title {
-    margin: 0.1em 0 0 0;
+  .__WorkoutProgram__ {
+    padding: 1em;
+  }
+  .title-section .workout-title {
+    font-size: 1.2em;
+  }
+  .explore button {
+    width: 8.8em;
+  }
+  .exercise-db .db-title {
+    font-size: 1.8em;
+  }
+  .container .content .title {
+    font-size: 1.7em;
+  }
+  .container .content .para {
     font-size: 1em;
-    font-family: var(--clean-text);
+    line-height: 24px;
+  }
+  .container .content button {
+    width: 8em;
+    height: 2.6em;
+  }
+  .title-section .workout-title {
     text-align: left;
-    font-weight: 400;
   }
-  .programs-card .content .desc {
-    margin: 0 0 0.4em 0;
-    font-size: 0.95em;
-    font-family: var(--clean-text);
-    text-align: left;
-    font-weight: 300;
-    line-height: 22px;
+}
+@media only screen and (max-width: 420px) {
+  .workout-categories {
+    padding: 1.8em;
   }
-  .programs-card .content .time-type {
-    margin: 0 0 0.6em 0;
-    font-size: 0.87em;
-    font-family: var(--clean-text);
-    text-align: left;
-    font-weight: 300;
-    color: #7286d3;
-  }
-  .programs-card:hover {
-    opacity: 0.9;
-  }
-  
+}

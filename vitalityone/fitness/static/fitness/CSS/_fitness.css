@@ -4,7 +4,7 @@
 
 .herosection {
   max-width: 100%;
-  height: 60vh;
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,7 +13,7 @@
 .main-section {
   max-width: 100%;
   max-height: 25em;
-  margin: 4em 0 2em 2em;
+  margin: 1em 0 2em 2em;
   padding-left: 1em;
 }
 .main-section .title {
@@ -22,7 +22,7 @@
   font-size: 1.26em;
   text-transform: uppercase;
   font-weight: 200;
-  width: 20%;
+  width: 90%;
   text-align: left;
   color: var(--title-color);
 }
@@ -45,6 +45,9 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .imgBg img {
   width: 100%;
@@ -63,7 +66,7 @@
   font-size: 3em;
   text-transform: uppercase;
   font-weight: 800;
-  max-width: 28%;
+  max-width: 90%;
   text-align: left;
   color: var(--title-color);
 }
@@ -88,11 +91,11 @@
 }
 .title-section {
   width: 100%;
-  height: 4em;
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0.8em 0 1em 0;
+  margin: 0.8em 0 0.8em 0;
   padding-bottom: 1.5em;
   border-bottom: 2px solid #d6d6d6;
 }
@@ -111,7 +114,7 @@
   font-weight: 500;
   text-transform: capitalize;
   text-decoration: none;
-  margin: 0 1em;
+  margin: 0 1em 0 0;
   display: block;
   transition: all 0.1s ease-in-out;
 }
@@ -131,11 +134,12 @@
   display: flex;
   align-items: center;
   justify-content: start;
+  flex-wrap: wrap;
 }
 .programs-card {
   width: 25%;
   height: 22em;
-  margin: 1.2em 0.8em;
+  margin: 1.2em 0;
   background-color: #ffffff;
   padding: 0.8em;
   cursor: pointer;
@@ -222,7 +226,7 @@
   font-size: 3em;
   text-transform: uppercase;
   font-weight: 800;
-  width: 40%;
+  width: 90%;
   text-align: left;
   color: var(--title-color);
 }
@@ -275,4 +279,136 @@
 .container .content button:hover {
   background-color: #ffffff;
   color: #000000;
+}
+
+/* ========== Responsiveness========== */
+
+@media only screen and (max-width: 1230px){
+  .__Program__{
+    height: fit-content
+  }
+  .programs-card{
+    width: 30%;
+  }
+}
+@media only screen and (max-width: 1055px) {
+  .main-section{
+    max-width: 65%;
+  }
+  .main-section .title {
+    font-size: 1.3em;
+  }
+  .main-section .subtitle {
+    width: 90%;
+    font-size: 2em;
+    line-height: 40px;
+  }
+  .__Program__ {
+    justify-content: space-between;
+  }
+  .programs-card {
+    height: 26em;
+    width: 49%;
+  }
+  .exercise-db .container{
+    flex-direction: column;
+  }
+  .exercise-db .container img{
+    width: 55%;
+  }
+  .exercise-db .container .content{
+    padding: 1.8em 0;
+  }
+  .container .content .title{
+    width: 150%;
+  }
+  .container .content .para{
+    width: 160%;
+  }
+}
+@media only screen and (max-width: 945px) {
+  .title-section{
+    padding-bottom: 0.6em;
+    flex-wrap: wrap;
+  }
+  .title-section .workout-title{
+    font-size: 1.5em;
+    margin: 0.4em 0.8em 0.4em 0;
+  }
+}
+@media only screen and (max-width: 945px) {
+  .herosection{
+    flex-direction: column-reverse;
+  }
+  .imgBg img {
+    width: 70%;
+  }
+  .main-section{
+    max-width: 80%;
+    margin: 0 0 2em 2em;
+  }
+  .main-section .subtitle{
+    margin: 0;
+  }
+  .workouts {
+    margin: 0.5em 0;
+    font-size: 2.5em;
+  }
+  .exercise-db .db-title {
+    font-size: 2.5em;
+  }
+}
+@media only screen and (max-width: 760px) {
+  .__Program__ {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .programs-card {
+    width: 90%;
+    height: 22em;
+  }
+  .programs-card .program-img{
+    height: 65%;
+  }
+}
+@media only screen and (max-width: 510px) {
+  .main-section .subtitle {
+    width: 90%;
+    font-size: 1.5em;
+    line-height: 34px;
+  }
+  .workouts {
+    font-size: 2em;
+  }
+  .__WorkoutProgram__ {
+    padding: 1em;
+  }
+  .title-section .workout-title {
+    font-size: 1.2em;
+  }
+  .explore button {
+    width: 8.8em;
+  }
+  .exercise-db .db-title {
+    font-size: 1.8em;
+  }
+  .container .content .title {
+    font-size: 1.7em;
+  }
+  .container .content .para {
+    font-size: 1em;
+    line-height: 24px;
+  }
+  .container .content button {
+    width: 8em;
+    height: 2.6em;
+  }
+  .title-section .workout-title {
+    text-align: left;
+  }
+}
+@media only screen and (max-width: 420px) {
+.workout-categories {
+  padding: 1.8em;
+}
 }
