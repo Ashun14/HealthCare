@@ -15,12 +15,12 @@ def registerPage(request):
         if request.method == "POST":
             form = CreateUserForm(request.POST)
             if form.is_valid():
-                form.save()
-                user = form.cleaned_data.get('username')
-                messages.success(request, 'Account was created for ' +  user)
+                user = form.save()
+                username  = form.cleaned_data.get('username')
+                messages.success(request, 'Account was created for ' +  username)
+                login(request, user)
 
-
-                return redirect('loginsystem:Login')
+                return redirect('Home')
 
 
         context = {'form': form}
