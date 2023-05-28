@@ -104,9 +104,9 @@
 
 <section class="get-in-touch __aboutContact__" id="get-in-touch">
 
-{% if name %}
-<center>
-    <h2 class="sub-msg">Thanks {{ name }}</h2>
+{% if success_message %}
+<center class="success-msg">
+    <h2 class="sub-msg">{{ success_message }}</h2>
     <p class="sub-msg-para">We recieved your email and will  respond shortly...</p>
     <br/><br/><br/>
 </center>
@@ -130,6 +130,13 @@
         <textarea name="message" class="input-text js-input" id="message" cols="30" rows="10" required></textarea>
           <label class="label" for="message">Message</label>
        </div>
+
+       {% if messages %}
+    {% for message in messages %}
+        <div class="error-message">{{ message }}</div>
+    {% endfor %}
+{% endif %}
+
        <div class="form-field col x-100 align-center">
           <input class="submit-btn" type="submit" value="Submit">
        </div>

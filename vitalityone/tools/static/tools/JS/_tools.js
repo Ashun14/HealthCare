@@ -384,33 +384,33 @@ form_wi.addEventListener('submit', function(event) {
   // Calculate daily water intake
   let dailyWaterIntake = 0;
   if (gender === 'male') {
-    dailyWaterIntake = (weight * 35) / 1000;
+    dailyWaterIntake = 3.7 * weight;
   } else if (gender === 'female') {
-    dailyWaterIntake = (weight * 31) / 1000;
+    dailyWaterIntake = 2.7 * weight;
   }
 
   if (activityLevel === 'lightly') {
-    dailyWaterIntake += 0.4 * weight;
+    dailyWaterIntake += 300;
   } else if (activityLevel === 'moderately') {
-    dailyWaterIntake += 0.6 * weight;
+    dailyWaterIntake += 600;
   } else if (activityLevel === 'very') {
-    dailyWaterIntake += 0.8 * weight;
+    dailyWaterIntake += 900;
   }
 
   if (season === 'winter') {
     dailyWaterIntake += 200;
   } else if (season === 'summer') {
-    dailyWaterIntake += 500;
+    dailyWaterIntake += 400;
   }
 
   if (age === 'teenage') {
-    dailyWaterIntake += 500;
+    dailyWaterIntake += 300;
   } else if (age === 'young') {
-    dailyWaterIntake += 1000;
+    dailyWaterIntake += 400;
   } else if (age === 'adult') {
-    dailyWaterIntake += 1500;
+    dailyWaterIntake += 300;
   } else if (age === 'elder') {
-    dailyWaterIntake += 1200;
+    dailyWaterIntake += 300;
   }
 
   const litersWI = dailyWaterIntake / 1000;

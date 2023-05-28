@@ -107,7 +107,7 @@ article{
 
 .main-container img{
   width: 100%;
-  height: 40em;
+  height: auto;
   border-radius: 8px;
   transition: 0.4s;
   margin: 0 0 2em 0;

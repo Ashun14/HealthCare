@@ -220,3 +220,31 @@
   text-align: center;
   word-spacing: 1px;
 }
+
+/*<============== Responsiveness ==============>*/
+
+@media only screen and (max-width: 890px) {
+  .exercise_categories h1 {
+    font-size: 1.8em;
+  }
+  .cat-selection {
+    flex-wrap: wrap;
+  }
+  .cat-selection .category {
+    width: 28%;
+  }
+  .cat-selection .category img {
+    width: 60%;
+  }
+  .exercise_categories p {
+    font-size: 1em;
+  }
+  .updatesection .notify {
+    padding: 1.7em;
+    width: 100%;
+  }
+.updatesection {
+  margin: 1.8em 1.2em;
+  padding: 1.2em 1.3em;
+}
+}

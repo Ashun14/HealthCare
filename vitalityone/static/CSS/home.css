@@ -19,20 +19,22 @@
 
 .herosection {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #555555;
-  margin: 0 0 4em 0;
+  position: relative;
+  overflow: hidden;
 }
 
 /* --------------The background video----------- */
 
 #herobg {
-  max-width: 100%;
-  height: fit-content;
+  width: 100%;
+  height: 100%;
   position: absolute;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  object-position: center;
   opacity: 0.8;
 }
 
@@ -59,7 +61,7 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-  max-width: 80%;
+  max-width: 100%;
 }
 .fitnessSection .content .title,
 .nutritionSection .content .title,
@@ -81,7 +83,7 @@
   font-size: 1.9em;
   text-transform: uppercase;
   font-weight: 500;
-  max-width: 70%;
+  max-width: 80%;
   text-align: left;
   line-height: 35px;
   color: var(--home-fitness-color);
@@ -116,7 +118,7 @@
 }
 .fitnessSection a .fitnessbtn,
 .nutritionSection a .nutritionbtn,
-.healthSection a .healthbtn{
+.healthSection a .healthbtn {
   text-decoration: none;
 }
 .fitnessbtn:hover,
@@ -129,6 +131,7 @@
 .fitnessSection .fitnessBg {
   max-width: 48%;
   max-height: 25em;
+  overflow: hidden;
 }
 .fitnessBg img {
   max-width: 100%;
@@ -138,14 +141,17 @@
 
 /* --------------The Nutrition Section----------- */
 
-.nutrition {
+.nutrition,
+.health {
   margin: 2em 0 4em 0;
 }
-.nutritionSection {
+.nutritionSection,
+.healthSection {
   width: 100%;
   min-height: 60vh;
 }
-.nutritionSection .content {
+.nutritionSection .content,
+.healthSection .content {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -155,7 +161,8 @@
   color: var(--home-nutrition-color);
   max-width: 80%;
 }
-.nutritionSection .content .desc {
+.nutritionSection .content .desc,
+.healthSection .content .desc {
   max-width: 67%;
 }
 .nutritionSection .nutritionbtn {
@@ -163,63 +170,35 @@
   background-color: #167e32;
   border: 2px solid #167e32;
 }
-.nutritionbtn:hover {
-  background-color: #ffffff;
+.nutritionbtn:hover,
+.healthbtn:hover {
+  background: #ffffff;
 }
-.nutritionSection .nutritionBg {
+.nutritionSection .nutritionBg,
+.healthSection .healthBg {
   max-width: 100%;
   height: 35em;
 }
-.nutritionBg img {
+.nutritionBg img,
+.healthBg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  box-shadow: 5px 1px 19px -4px rgba(0, 0, 0, 0.8)
+  box-shadow: 5px 1px 19px -4px rgba(0, 0, 0, 0.8);
 }
 /* --------------The Health Section----------- */
 
-.health {
-  max-width: 100%;
-  height: 39em;
-  background: url("/static/Materials/Images/Home/health.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  padding: 1.6em;
-  margin: 1em 0 2em 0;
-  transform: scaleX(-1);
-  box-shadow: 3px 8px 19px -13px rgba(0, 0, 0, 0.8);
-}
-.healthSection {
-  max-width: 100%;
-  height: 39em;
-  margin-bottom: 5em;
-  transform: scaleX(-1);
-}
-.healthSection .content {
-  width: 100%;
-}
-.healthSection .content .title {
-  margin: 0 1em 0.7em 0.6em;
-  color: var(--text-color);
-}
 .healthSection .content .subtitle {
-  margin: 0 1em 0.3em 0.5em;
-  width: 52%;
-  text-align: left;
+  max-width: 80%;
   color: var(--home-health-color);
 }
-.healthSection .content .desc {
-  margin: 0.5em 1em 1.2em 0.8em;
-  width: 58%;
-}
 .healthSection .healthbtn {
-  margin: 0.5em 0 3.8em 0.7em;
+  margin: 0.8em 0 0.8em 2.3em;
   background-color: #129fce;
   border: 2px solid #129fce;
 }
-.healthbtn:hover {
-  background: #ffffff;
+.healthBg img {
+  transform: scaleX(-1);
 }
 
 /*========= The Choose Us Section =========*/
@@ -267,7 +246,7 @@
   margin: 0.5em 0 1.2em 0;
   color: #505050;
   text-align: center;
-  max-width: 70%;
+  max-width: 100%;
   line-height: 28px;
 }
 .chooseUs .buttons {
@@ -324,7 +303,7 @@
 .f-slantedDiv .f-title {
   width: 85%;
   position: absolute;
-  top: 35%;
+  top: 44%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: var(--styling-text);
@@ -419,7 +398,7 @@
 }
 .intro-section {
   width: 100%;
-  min-height: 4em;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -443,14 +422,15 @@
 }
 .posts {
   max-width: 100%;
-  height: 25em;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .post-card {
-  width: 25%;
-  height: 22em;
+  width: 22%;
+  height: auto;
   margin: 1.2em 0.8em;
   padding: 0.8em;
   cursor: pointer;
@@ -471,6 +451,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  aspect-ratio: 5/4;
 }
 .post-card .content {
   width: 100%;
@@ -516,4 +497,91 @@
 }
 .latest-posts a span:hover {
   color: #1c6dd0;
+}
+
+/*========= Responsive Navbar =========*/
+@media only screen and (max-width: 1080px) {
+  .post-card {
+    width: 27%;
+  }
+}
+@media only screen and (max-width: 1050px) {
+  .features-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media only screen and (max-width: 820px) {
+  .herosection {
+    min-height: 60vh;
+  }
+  .posts {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .post-card {
+    width: 90%;
+    height: 35%;
+  }
+  .post-card .post-img {
+    height: 15em;
+  }
+  .intro-section .p-title {
+    font-size: 1.8em;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .nutritionSection .nutritionBg,
+  .healthSection .healthBg {
+    height: auto;
+  }
+  .nutritionBg img,
+  .healthBg img {
+    object-fit: fill;
+  }
+}
+@media only screen and (max-width: 680px) {
+  .fitnessSection {
+    align-items: center;
+    flex-direction: column;
+  }
+  .features-cards {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .fitnessSection .fitnessBg {
+    max-width: 95%;
+  }
+  .chooseUs .whyUs,
+  .features-main .subtitle {
+    font-size: 1em;
+    letter-spacing: 5px;
+  }
+  .chooseUs .content .title,
+  .features-main .title {
+    font-size: 2.8em;
+  }
+  .f-slantedDiv .f-title {
+    font-size: 2.4em;
+  }
+}
+@media only screen and (max-width: 440px) {
+  .herosection {
+    min-height: 45vh;
+  }
+  #herobg {
+    object-fit: fill;
+  }
+  .post-card .post-img {
+    height: 50%;
+  }
+  .f-slantedDiv {
+    height: 382px;
+  }
+  .f-slantedDiv .f-title {
+    font-size: 1.8em;
+  }
+  .fitnessSection .content .subtitle,
+  .nutritionSection .content .subtitle,
+  .healthSection .content .subtitle {
+    word-break: break-all;
+  }
 }

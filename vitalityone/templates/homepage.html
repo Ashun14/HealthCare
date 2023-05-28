@@ -63,8 +63,11 @@
             <p class="desc">Welcome to Vitality One Health, where we believe that optimal health is the
                 foundation of a fulfilling life. Our comprehensive approach takes into account all aspects of
                 your physical, mental, and emotional well-being. </p>
+                <a href="{% url 'health:HealthHome' %}"><button class="healthbtn">Explore</button></a>
         </div>
-        <a href="{% url 'health:HealthHome' %}"><button class="healthbtn">Explore</button></a>
+        <div class="healthBg">
+            <img src="{% static 'Materials/Images/Home/health.jpg' %}" loading="lazy" alt="">
+        </div>
     </div>
 </section>
 

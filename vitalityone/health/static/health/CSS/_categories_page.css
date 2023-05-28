@@ -44,7 +44,7 @@ section {
   text-transform: uppercase;
   margin: 0 1em;
   border-bottom: 2px solid var(--border-color);
-  padding-bottom: 1.8em;
+  padding-bottom: 1em;
 }
 .f-container,.b-container,.m-container{
   display: grid;
@@ -58,7 +58,7 @@ section {
 }
 .f-img, .b-img, .m-img{
   max-width: 9em;
-  height: 6em;
+  height: auto;
   margin: 0 0.8em;
 }
 .f-img img, .b-img img, .m-img img{
@@ -85,4 +85,17 @@ section {
 .f-container .container:hover, .b-container .container:hover, .m-container .container:hover {
   color: var(--health-hover-color);
   opacity: 0.9;
+}
+
+  /*========= Responsiveness =========*/
+
+  @media only screen and (max-width: 1100px) {
+  .f-container, .b-container, .m-container {
+      grid-template-columns: repeat(1, 1fr);
+  }
+}
+  @media only screen and (max-width: 600px) {
+    .f-container .container, .b-container .container, .m-container .container{
+      display: block;
+    }
 }

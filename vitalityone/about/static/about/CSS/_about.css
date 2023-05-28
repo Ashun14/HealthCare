@@ -3,7 +3,6 @@
 /*========== The Hero Section ==========*/
 .herosection {
   max-width: 100%;
-  max-height: 90vh;
   margin: 2em 0 2em 5em;
   padding-left: 1em;
 }
@@ -13,7 +12,7 @@
   font-size: 1.26em;
   text-transform: uppercase;
   font-weight: 200;
-  width: 20%;
+  width: 60%;
   text-align: left;
   color: var(--about-title-color);
 }
@@ -34,6 +33,7 @@
 .aboutsection {
   max-width: 100%;
   min-height: 50vh;
+  margin-bottom: 1.8em;
 }
 .story-container {
   max-width: 100%;
@@ -80,7 +80,11 @@
 .goals {
   max-width: 100%;
   min-height: 50vh;
-  background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),url("/static/about/Materials/Images/goalbg.jpg");
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("/static/about/Materials/Images/goalbg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -109,8 +113,8 @@
 .goals-card .goal-1,
 .goal-2,
 .goal-3 {
-  max-width: 32%;
-  height: 14em;
+  max-width: 40%;
+  height: auto;
   margin: 1em 2em;
   box-shadow: 1px 4px 10px 2px rgba(138, 138, 138, 0.8);
   border-radius: 16px;
@@ -119,7 +123,7 @@
 }
 .goals-card .goal-3 {
   max-width: 65%;
-  height: 12em;
+  height: auto;
 }
 .goal-1 .title,
 .goal-2 .title,
@@ -130,6 +134,7 @@
   text-align: left;
   color: var(--card-title-color);
   margin-bottom: 0.5em;
+  width: 100%;
 }
 .goal-1 .para,
 .goal-2 .para,
@@ -157,8 +162,8 @@
   background-attachment: fixed;
 }
 .team .team-container {
-  width: 82%;
-  min-height: 30em;
+  width: 90%;
+  height: auto;
   background-color: var(--about-bg);
   padding-top: 6em;
   padding-bottom: 4em;
@@ -189,7 +194,7 @@
 .team-Members .img-card {
   width: 15em;
   border-radius: 25px;
-  height: 18em;
+  height: auto;
   background-color: #e0ebf7;
   margin: 1em 0;
   cursor: pointer;
@@ -283,7 +288,8 @@
 .contact-form .input-text:focus {
   outline: none;
 }
-.contact-form .input-text:focus + .label, .contact-form .input-text.not-empty + .label {
+.contact-form .input-text:focus + .label,
+.contact-form .input-text.not-empty + .label {
   transform: translateY(-20px);
 }
 .contact-form .label {
@@ -314,15 +320,15 @@
   border: none;
   cursor: pointer;
   border: 2px solid #77c1e9;
-  transition: background-color .3s ease;
+  transition: background-color 0.3s ease;
 }
 
-.contact-form .submit-btn:hover{
+.contact-form .submit-btn:hover {
   background-color: #6ccdfd;
   color: #000;
 }
 
-.sub-msg{
+.sub-msg {
   font-family: var(--bold-text);
   font-size: 1.2em;
   font-weight: 600;
@@ -330,7 +336,8 @@
   color: var(--card-title-color);
   margin-top: 0.8em;
 }
-.sub-msg-para{
+.sub-msg-para,
+.error-message {
   font-family: var(--clean-text);
   font-size: 1.2em;
   font-weight: 500;
@@ -338,44 +345,153 @@
   color: #05466b;
   margin-top: 0.4em;
 }
+.error-message {
+  color: #a30000;
+}
 
 /*================= Get Started =================*/
 
-.get_started{
-    max-width: 100%;
-    height: 10em;
-    background-color: #B4E4FF;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: 2em;
+.get_started {
+  max-width: 100%;
+  height: auto;
+  background-color: #b4e4ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 2em;
+  padding: 2.8em 0.8em;
+  flex-wrap: wrap;
 }
-.get_started .statement, .gs-link{
-    max-width: 100%;
+.get_started .statement,
+.gs-link {
+  max-width: 100%;
+  margin: 1em 0;
 }
-.statement .para{
-    font-family: var(--styling-text);
-    font-size: 1.9em;
-    font-weight: 700;
-    text-align: center;
-    word-spacing: 1px;
-    color: var(--text-color);
+.statement .para {
+  font-family: var(--styling-text);
+  font-size: 1.9em;
+  font-weight: 700;
+  text-align: center;
+  word-spacing: 1px;
+  color: var(--text-color);
 }
-.gs-link a{
-    font-family: var(--para-text);
-    font-size: 1.2em;
-    font-weight: 600;
-    text-align: center;
-    word-spacing: 1px;
-    text-decoration: none;
-    padding: 1em 2em;
-    outline: none;
-    border: none;
-    background-color: #5BC0F8;
-    color: var(--text-color);
-    text-transform: uppercase;
-    transition: .1s ease;
+.gs-link a {
+  font-family: var(--para-text);
+  font-size: 1.2em;
+  font-weight: 600;
+  text-align: center;
+  word-spacing: 1px;
+  text-decoration: none;
+  padding: 1em 2em;
+  outline: none;
+  border: none;
+  background-color: #5bc0f8;
+  color: var(--text-color);
+  text-transform: uppercase;
+  transition: 0.1s ease;
+  display: block;
 }
-.gs-link a:hover{
-    background-color: #43bcfd;
+.gs-link a:hover {
+  background-color: #43bcfd;
+}
+
+/*<============== Responsiveness ==============>*/
+
+@media only screen and (max-width: 1140px) {
+  .herosection .subtitle {
+    font-size: 2.8em;
+    line-height: 54px;
+  }
+  .story-container {
+    flex-direction: column;
+  }
+  .story-container img {
+    width: 100%;
+    height: 35em;
+    object-fit: cover;
+    object-position: top;
+  }
+  .story-container .content .title {
+    font-size: 2em;
+    width: 100%;
+  }
+  .story-container .content .para-1,
+  .para-2 {
+    margin: 25px;
+    width: 95%;
+  }
+  .team-Members {
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 890px) {
+  .herosection .subtitle {
+    font-size: 2.2em;
+    line-height: 48px;
+  }
+  .goals .s-title {
+    font-size: 2em;
+    line-height: 35px;
+    word-spacing: 4px;
+  }
+  .goals-card {
+    flex-direction: column;
+  }
+  .goals-card .goal-1,
+  .goal-2,
+  .goals-card .goal-3 {
+    max-width: 90%;
+  }
+  .goals {
+    padding-top: 3.6em;
+    padding-bottom: 4.5em;
+  }
+  .goal-1 .title,
+  .goal-2 .title,
+  .goal-3 .title {
+    font-size: 2em;
+  }
+  .team-container .t-title {
+    font-size: 2.2em;
+  }
+  .get-in-touch .title {
+    font-size: 28px;
+  }
+  .get_started {
+    padding: 2.5em 0.8em;
+  }
+  .statement .para {
+    font-size: 1.5em;
+  }
+  .gs-link a {
+    font-size: 1em;
+    padding: 0.9em 1.7em;
+  }
+  .team {
+    padding-bottom: 2.6em;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .herosection {
+    margin: 2em 0 2em 3em;
+    padding-left: 0.6em;
+  }
+  .herosection .subtitle {
+    width: 90%;
+    font-size: 2em;
+    line-height: 45px;
+  }
+  .goal-1 .title,
+  .goal-2 .title,
+  .goal-3 .title {
+    font-size: 1.8em;
+    word-break: break-all;
+  }
+  .story-container .content {
+    margin: 2em 1.5em;
+  }
+  .story-container .content .para-1,
+.para-2 {
+  margin: 15px 0;
+}
 }

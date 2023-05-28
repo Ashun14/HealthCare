@@ -421,9 +421,9 @@ html::-webkit-scrollbar-thumb:active {
   display: block;
 }
 .fsmenu.is-active .fsmenu--container {
-  -webkit-animation: animMenuReveal 0.4s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0s
+  -webkit-animation: animMenuReveal 0.6s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0s
     forwards;
-  animation: animMenuReveal 0.4s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0s
+  animation: animMenuReveal 0.6s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0s
     forwards;
 }
 .fsmenu.is-active
@@ -433,9 +433,9 @@ html::-webkit-scrollbar-thumb:active {
   .fsmenu--list-element
   a
   span:before {
-  -webkit-animation: animMenuRevealLinks 0.3s
-    cubic-bezier(0.13, 0.13, 0.02, 1.07) 0.3s forwards;
-  animation: animMenuRevealLinks 0.3s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0.3s
+  -webkit-animation: animMenuRevealLinks 0.4s
+    cubic-bezier(0.13, 0.13, 0.02, 1.07) 0.4s forwards;
+  animation: animMenuRevealLinks 0.4s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0.4s
     forwards;
 }
 .fsmenu.close-menu {
@@ -445,9 +445,9 @@ html::-webkit-scrollbar-thumb:active {
   width: 100vw;
   right: auto;
   left: 0;
-  -webkit-animation: animMenuClose 0.4s cubic-bezier(0.13, 0.13, 0.02, 1.07)
-    0.15s forwards;
-  animation: animMenuClose 0.4s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0.15s
+  -webkit-animation: animMenuClose 0.6s cubic-bezier(0.13, 0.13, 0.02, 1.07)
+    0.2s forwards;
+  animation: animMenuClose 0.6s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0.2s
     forwards;
 }
 .fsmenu.close-menu
@@ -460,9 +460,9 @@ html::-webkit-scrollbar-thumb:active {
   left: auto;
   right: 0;
   background: #dddddd;
-  -webkit-animation: animMenuCloseLinks 0.3s
+  -webkit-animation: animMenuCloseLinks 0.4s
     cubic-bezier(0.13, 0.13, 0.02, 1.07) 0s forwards;
-  animation: animMenuCloseLinks 0.3s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0s
+  animation: animMenuCloseLinks 0.4s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0s
     forwards;
 }
 
@@ -603,7 +603,7 @@ footer {
   border-bottom: 2px solid var(--border-color);
   padding-bottom: 1.1em;
 }
-.footer-links-container .logo-email {
+.footer-links-container .footer-logo {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -611,75 +611,22 @@ footer {
   max-width: 100%;
   height: 100%;
 }
-.logo-email .logo-container {
+.footer-logo .logo-container {
   text-align: center;
   max-width: 15%;
 }
-.logo-email .logo-container img {
+.footer-logo .logo-container img {
   width: 100%;
 }
-
-/*========= The Email form =========*/
-
-.logo-email .email {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  position: relative;
-  margin-top: 0.8em;
-}
-.email .email-card h3 {
-  font-family: var(--bold-text);
-  color: var(--text-color);
-  font-weight: 600;
-  font-size: 1.2em;
+.footer-logo .brand-name{
+  font-size: 1.5em;
+  text-align: center;
+  font-family: var(--para-text);
+  margin-top: 0.6em;
+  font-weight: 500;
+  color: #5f5f5f;
   text-transform: uppercase;
-  text-align: left;
-  line-height: 26px;
-  letter-spacing: 1px;
-  -webkit-text-stroke-width: 0.6px;
-  cursor: default;
 }
-.email-card form input[type="email"] {
-  display: inline-block;
-  width: 68%;
-  padding: 11px 16px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  height: 52px;
-  margin-top: 18px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.06);
-  background-color: #e6e6e6;
-  transition: 0.2s ease;
-}
-.email-card form input:focus {
-  outline: 1px solid #666666;
-}
-.email-card form input,
-.email-card form input::-webkit-input-placeholder {
-  font-size: 16px;
-  line-height: 3;
-  font-family: var(--clean-text);
-}
-.email-card form .bt {
-  margin-left: -61px;
-  font-size: 18px;
-  display: inline-block;
-  font-weight: 600;
-  padding: 12px 13px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  color: var(--text-color);
-  background-color: #e6e6e6;
-}
-.email-card form .bt:hover {
-  color: #1d1c1c;
-}
-
 /*========= The Footer links =========*/
 
 .footer-links {
@@ -893,6 +840,19 @@ footer {
     img {
     display: none;
     opacity: 0;
+    width: 0;
+  }
+  .fsmenu
+    .fsmenu--container
+    .fsmenu--text-block
+    .fsmenu--text-container
+    .fsmenu--list
+    .fsmenu--list-element
+    .fsmenu--link-img
+    .fsmenu--img-container {
+      display: none;
+      width: 0;
+      height: 0;
   }
 }
 @media only screen and (max-width: 650px) {
@@ -947,6 +907,7 @@ footer {
     span {
     font-size: 2.2em;
     letter-spacing: 8px;
+    line-height: 2;
   }
   .fsmenu
     .fsmenu--container
@@ -993,16 +954,19 @@ footer {
 /*========= Responsive Footer =========*/
 
 @media only screen and (max-width: 1193px) {
+  .footer-logo .brand-name{
+    padding: 0 1.4em;
+  }
   .footer-links-container {
     flex-direction: column;
   }
-  .footer-links-container .logo-email {
+  .footer-links-container .footer-logo {
     padding: 1em 0;
   }
   .email-card form input[type="email"] {
     width: 70%;
   }
-  .logo-email .logo-container img {
+  .footer-logo .logo-container img {
     width: 60%;
     padding: 0.9em 0;
   }
@@ -1024,6 +988,9 @@ footer {
   }
 }
 @media only screen and (max-width: 850px) {
+  .footer-logo .brand-name{
+    padding: 0 0.8em;
+  }
   .copyright-socialMedia {
     flex-direction: column-reverse;
   }
@@ -1035,6 +1002,10 @@ footer {
   }
 }
 @media only screen and (max-width: 765px) {
+  .footer-logo .brand-name{
+    font-size: 1em;
+    padding: 0;
+  }
   footer {
     padding: 1.7em 1.8em;
   }

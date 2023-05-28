@@ -10,13 +10,13 @@
 .hero-container {
   position: relative;
   max-width: 100%;
-  height: 30vh;
+  height: auto;
   transition: 0.5s ease;
   margin: 1em 0;
 }
 .herosection {
   max-width: 100%;
-  height: 12em;
+  height: auto;
   margin: 2em 0 2em 5em;
   padding-left: 1em;
 }
@@ -216,13 +216,14 @@
 }
 .tab .img-card {
   position: relative;
-  width: 33em;
+  max-width: 33em;
+  width: 100%;
   height: 35em;
   border-radius: 20px;
   overflow: hidden;
   display: flex;
   box-shadow: var(--tools-box-shadow);
-  transition: all .1s ease;
+  transition: all 0.1s ease;
 }
 .tab .img-card img {
   width: 100%;
@@ -230,7 +231,7 @@
   object-fit: cover;
 }
 .left-column {
-  max-width: 800px;
+  max-width: 100%;
 }
 .info {
   width: 36em;
@@ -242,7 +243,7 @@
   background: #fff;
   color: #000;
   border-radius: 10px;
-  transition: all .1s ease;
+  transition: all 0.1s ease;
 }
 .info .title,
 .info .desc p {
@@ -255,7 +256,7 @@
   font-weight: 600;
 }
 
-/*========== BMI Calculator ==========*/
+/*========== Calculators ==========*/
 
 .calculator-container {
   padding: 1em 1.8em;
@@ -370,7 +371,8 @@ input[type="number"]::-webkit-outer-spin-button {
   transform: translateY(-1px);
 }
 
-.result-statement, .result-statement5 {
+.result-statement,
+.result-statement5 {
   display: flex;
   padding: 1em;
   background-color: #ded2fc;
@@ -380,7 +382,11 @@ input[type="number"]::-webkit-outer-spin-button {
   transition: opacity 0.3s ease-in-out;
   opacity: 0;
 }
-.result-statement.show, .result-statement2.show,.result-statement3.show, .result-statement4.show, .result-statement5.show{
+.result-statement.show,
+.result-statement2.show,
+.result-statement3.show,
+.result-statement4.show,
+.result-statement5.show {
   opacity: 1;
 }
 .result-statement .result {
@@ -392,7 +398,8 @@ input[type="number"]::-webkit-outer-spin-button {
   margin-right: 0.5em;
   color: var(--tools-title-color);
 }
-.result-statement .result-para, .result-statement5 .result-para5 {
+.result-statement .result-para,
+.result-statement5 .result-para5 {
   font-family: var(--para-text);
   font-size: 1.2em;
   font-weight: 500;
@@ -401,7 +408,8 @@ input[type="number"]::-webkit-outer-spin-button {
   text-align: center;
 }
 
-.result-statement2, .result-statement3 {
+.result-statement2,
+.result-statement3 {
   display: flex;
   flex-direction: column;
   padding: 1em;
@@ -412,7 +420,8 @@ input[type="number"]::-webkit-outer-spin-button {
   transition: opacity 0.3s ease-in-out;
   opacity: 0;
 }
-.result-statement2 .result2, .result-statement3 .result3 {
+.result-statement2 .result2,
+.result-statement3 .result3 {
   font-family: var(--bold-text);
   font-size: 1.2em;
   text-transform: capitalize;
@@ -422,7 +431,8 @@ input[type="number"]::-webkit-outer-spin-button {
   color: var(--tools-title-color);
   margin: 0.5em 0;
 }
-.result-statement2 .result-para2, .result-statement3 .result-para3 {
+.result-statement2 .result-para2,
+.result-statement3 .result-para3 {
   font-family: var(--para-text);
   font-size: 1.15em;
   font-weight: 500;
@@ -461,35 +471,13 @@ input[type="number"]::-webkit-outer-spin-button {
   text-align: left;
   margin: 0.3em 0;
 }
-.result-statement4 #result4_total, #result4_fat, #result4_carb, #result4_pro {
+.result-statement4 #result4_total,
+#result4_fat,
+#result4_carb,
+#result4_pro {
   font-family: var(--para-text);
   font-weight: 500;
   color: #4e4e4e;
-}
-
-/*========== Media Queries ==========*/
-
-@media screen and (max-width: 1050px) {
-  section {
-    margin: 0 0px;
-  }
-
-  .tab-nav-bar {
-    margin: 65px 20px 40px 25px;
-  }
-
-  .tab {
-    padding: 15px 25px;
-  }
-
-  .tab .row {
-    flex-direction: column;
-  }
-
-  .tab .img-card {
-    width: auto;
-    max-width: 600px;
-  }
 }
 
 /*========== Notify Section ==========*/
@@ -503,4 +491,61 @@ input[type="number"]::-webkit-outer-spin-button {
   word-spacing: 1px;
   width: 100%;
   border-radius: 10px;
+}
+
+/*========== Responsiveness ==========*/
+
+@media screen and (max-width: 1050px) {
+  .herosection .subtitle {
+    width: 100%;
+  }
+  section {
+    margin: 0 0px;
+  }
+
+  .tab-nav-bar {
+    margin: 65px 20px 40px 25px;
+  }
+
+  .tab {
+    padding: 0;
+  }
+
+  .tab .row {
+    flex-direction: column;
+  }
+
+}
+@media only screen and (max-width: 900px) {
+  .herosection .title {
+    width: 80%;
+  }
+  .herosection .subtitle {
+    font-size: 2em;
+    line-height: 40px;
+    word-spacing: 4px;
+    margin: 0.3em 0 2.2em 0;
+  }
+  .herosection {
+    margin: 2em 0 2em 2.6em;
+  }
+  .subtitle .multitext {
+    font-size: 1em;
+    line-height: 40px;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .calculator-container .first-input,
+  .fourth-input {
+    flex-direction: column;
+  }
+  .left-column {
+    width: 100%;
+  }
+  .calculator-container {
+    width: auto;
+  }
+  .tab .img-card{
+    max-width: 20em;
+  }
 }
