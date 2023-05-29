@@ -1,11 +1,5 @@
 /vitalityone/media
 /vitalityone/db.sqlite3
-/vitalityone/static/Materials
-/vitalityone/about/static/about/Materials
-/vitalityone/fitness/static/fitness/Materials
-/vitalityone/health/static/health/Materials
-/vitalityone/nutrition/static/nutrition/Materials
-/vitalityone/tools/static/tools/Materials
 Superuser.txt
 /vitalityone/.env
 .vscode
