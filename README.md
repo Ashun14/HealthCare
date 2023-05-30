@@ -6,7 +6,7 @@ VitalityOne is a comprehensive health and fitness website powered by Django, off
 ## Live Demo - https://vitalityone.pythonanywhere.com/
 
 
-![Image of Vitalityone]([url=https://ibb.co/rt6SVXL][img]https://i.ibb.co/hMWjSTn/vone-3.png[/img][/url])
+![Image of VitalityOne](https://github.com/Ashun14/VitalityOne/assets/115565557/ee77bc34-0b29-41bc-b7e7-6b5ffd203d98)
 
 ## Setup
 
