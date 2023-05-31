@@ -1,16 +1,23 @@
+import random
 from django.shortcuts import render
 from django.http import HttpResponse
-from fitness.models import Workout
+from fitness.models import Workout, WorkoutCategory
 
 # Create your views here.
 def home(request):
-    workouts = Workout.objects.all()[:4]
+    workouts = []
+    category_set = set()
 
-    card_titles = ['Perfect for Sports-Specific', 'No Equipment Necessary', 'Short on Time?', 'Perfect for Beginners']
+    while len(workouts) < 4:
+        workout = random.choice(Workout.objects.all())
+        category = workout.category
+
+        if category not in category_set:
+            workouts.append(workout)
+            category_set.add(category)
     
     context = {
         'workouts': workouts,
-        'card_titles': card_titles,
     }
 
     return render(request, "homepage.html", context)

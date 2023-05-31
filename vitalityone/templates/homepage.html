@@ -171,8 +171,8 @@
 
 <section class="latest-posts" id="latest-posts">
     <div class="intro-section">
-        <h1 class="p-title">Not sure where to start?</h1>
-        <p class="p-desc">Programs offer day-to-day guidance to keep you on track</p>
+        <h1 class="p-title">Find Your Beginning</h1>
+        <p class="p-desc">Navigating the Path: Unleashing the Potential Within</p>
     </div>
 
     <div class="posts">
@@ -180,7 +180,7 @@
     {% for workout in workouts %}
 
         <div class="post-card" onclick="window.location.href='fitness/workoutscategories/workouts/posts/{{workout.url}}';">
-            <span class="card-title">{{ card_titles|slice:forloop.counter|last }}</span>
+            <span class="card-title">{{ workout.category.heading }}</span>
             <div class="post-img">
                 <img src=" {{ workout.img.url }}" loading="lazy" alt="">
             </div>

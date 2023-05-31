@@ -670,16 +670,13 @@ footer {
   color: #000000;
 }
 
-/*========= The Copyright and Social-media =========*/
+/*========= The Copyright =========*/
 
-.copyright-socialMedia {
+.copyright-container {
   max-width: 100%;
   height: fit-content;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
-.copyright-socialMedia .copyright {
+.copyright-container .copyright {
   text-align: center;
 }
 .copyright {
@@ -706,31 +703,6 @@ footer {
   cursor: default;
   line-height: 25px;
 }
-.social-media {
-  margin: 1em 1.8em 1em 0;
-  display: flex;
-  align-items: center;
-  padding-top: 0.8em;
-}
-.social-media a {
-  text-decoration: none;
-}
-.social-media a i {
-  margin: 0 0.6em 0 0.4em;
-  color: var(--text-color);
-  font-size: 2em;
-  cursor: pointer;
-}
-.social-media a .fb:hover {
-  color: #3b5998;
-}
-.social-media a .insta:hover {
-  color: #d62976;
-}
-.social-media a .tw:hover {
-  color: #00acee;
-}
-
 /*========= The ScrollUp =========*/
 
 .scrollup {
@@ -973,32 +945,19 @@ footer {
   .footer-links {
     width: 100%;
   }
-  .copyright-socialMedia {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .copyright-socialMedia .copyright {
+  .copyright-container .copyright {
     text-align: left;
   }
   .copyright {
     margin: 1em 0 0.2em 0.8em;
-  }
-  .social-media {
-    margin: 0.2em 1.8em 1em 0;
   }
 }
 @media only screen and (max-width: 850px) {
   .footer-logo .brand-name{
     padding: 0 0.8em;
   }
-  .copyright-socialMedia {
-    flex-direction: column-reverse;
-  }
   .copyright {
     margin: 0.2em 0 1em 0.8em;
-  }
-  .social-media {
-    margin: 0.5em 1.8em 0.6em 0;
   }
 }
 @media only screen and (max-width: 765px) {
