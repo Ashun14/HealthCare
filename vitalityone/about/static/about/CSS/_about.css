@@ -485,7 +485,7 @@
   .goal-2 .title,
   .goal-3 .title {
     font-size: 1.8em;
-    word-break: break-all;
+    word-break: break-word;
   }
   .story-container .content {
     margin: 2em 1.5em;

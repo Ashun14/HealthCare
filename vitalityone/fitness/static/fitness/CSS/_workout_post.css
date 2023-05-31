@@ -117,24 +117,18 @@ article{
 
 .content-container{
   display: flex;
-  justify-content: space-between;
-  gap: 25px;
+  justify-content: flex-start;
 }
 .content{
   margin: 1em 0.5em;
-  max-width: 65%;
-  margin: 0 1em 1em 0;
+  max-width: 58%;
+  margin: 0 1em 1em 2em;
+  text-align: left;
 }
 .content img{
   width: 100% !important;
   height: auto !important;
   object-fit: contain;
-}
-.aside-container{
-  width: 35%;
-}
-.aside-container .aside-content{
-  margin: 0.6em;
 }
 .main-container li,.main-container ul,.main-container ol{
   font-family: "Work Sans",sans-serif;
@@ -325,9 +319,13 @@ article{
   .posted_by {
     font-size: 1em;
   }
+  .content{
+    max-width: 100%;
+    margin: 0 1em 1em 1em;
+    text-align: justify;
+  }
 }
 
-/* Media query for screens 900px or lower */
 @media only screen and (max-width: 900px) {
   .title__name {
     font-size: 3em;

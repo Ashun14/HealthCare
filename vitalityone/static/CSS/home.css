@@ -582,6 +582,6 @@
   .fitnessSection .content .subtitle,
   .nutritionSection .content .subtitle,
   .healthSection .content .subtitle {
-    word-break: break-all;
+    word-break: break-word;
   }
 }

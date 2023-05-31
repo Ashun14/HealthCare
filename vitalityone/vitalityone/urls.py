@@ -20,6 +20,10 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
+    # Admin page honeypot
+    # path('admin/', include('admin_honeypot.urls')),
+
+    # Our actual admin page
     path('admin/', admin.site.urls),
     path('', views.home, name='Home'),
     path('termsCondition/', views.termsCondition, name='termsCondition'),

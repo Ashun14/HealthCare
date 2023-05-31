@@ -379,7 +379,7 @@ margin: 0.6em 0;
   font-weight: 500;
   margin: 1em 0;
   text-align: center;
-  word-break: break-all;
+  word-break: break-word;
   max-width: 100%;
 }
 .news-container .container:hover {
